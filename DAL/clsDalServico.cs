@@ -24,9 +24,9 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(insertServico, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(insertServico, conMySql);
                 
                 return true;
@@ -41,9 +41,9 @@ namespace DAL
             string atualizarServico = "update TB_NG_SERVICO set TOTAL_ESTACIONAMENTO = '" + objServico.Total_estacionamento +", TOTAL_PEDAGIO= "+ objServico.Total_pedagio+" where ID = " + objServico.Id_servicos + " ;";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(atualizarServico, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(atualizarServico, conMySql);
 
                 return true;
@@ -59,9 +59,9 @@ namespace DAL
             string deletarServico = "delete from TB_NG_SERVICO where SERVICO_ID = " + objServico.Id_servicos+ " ;";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(deletarServico, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(deletarServico, conMySql);
 
                 return true;
@@ -77,7 +77,7 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarMarca, conServer);
                     dr.Read();
@@ -86,7 +86,7 @@ namespace DAL
                     objServico.Total_estacionamento = Convert.ToDouble(dr[1].ToString());
                     objServico.Total_pedagio = Convert.ToInt32(dr[0].ToString());
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarMarca, conMySql);
                     dr.Read();
@@ -138,7 +138,7 @@ namespace DAL
             List<clsServicos> listaServico = new List<clsServicos>();
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarTodosServicos, conServer);
                     while (dr.Read())
@@ -150,7 +150,7 @@ namespace DAL
                         listaServico.Add(objServico);
                     }
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarTodosServicos, conMySql);
                     while (dr.Read())

@@ -11,6 +11,7 @@ namespace DAL
 {
     public class clsDalCorVeiculo:SqlHelper
     {
+        clsGlobal varGlob = new clsGlobal();
         public bool InsertCorVeiculo(MySqlConnection conMySql, SqlConnection conServer,clsCorVeiculo objCorVeic)
         {
             string InserirCorVeiculo = "insert into TB_CD_VEICULO_COR  (ID,DESCRICAO " +
@@ -19,9 +20,9 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(InserirCorVeiculo, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(InserirCorVeiculo, conMySql);
 
                 return true;
@@ -37,9 +38,9 @@ namespace DAL
                                                           " DESCRICAO = '" + objCorVei.Cor_desc + " ';";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(atualizarCorVeiculo, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(atualizarCorVeiculo, conMySql);
 
                 return true;
@@ -55,9 +56,9 @@ namespace DAL
             string deletarCorVeiculo = "delete from TB_CD_VEICULO_COR where ID = " + objCorVei.Id_cor + " ;";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(deletarCorVeiculo, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(deletarCorVeiculo, conMySql);
 
                 return true;
@@ -73,7 +74,7 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(BuscarCorPeloId, conServer);
                     dr.Read();
@@ -82,7 +83,7 @@ namespace DAL
 
 
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(BuscarCorPeloId, conMySql);
                     dr.Read();
@@ -104,7 +105,7 @@ namespace DAL
             List<clsCorVeiculo> ListCorVeiculo = new List<clsCorVeiculo>();
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarTodasCores, conServer);
                     while (dr.Read())
@@ -115,7 +116,7 @@ namespace DAL
                         ListCorVeiculo.Add(objCorVeic);
                     }
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarTodasCores, conMySql);
                     while (dr.Read())

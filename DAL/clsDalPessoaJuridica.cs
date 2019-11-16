@@ -30,9 +30,9 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(inserirPessoa, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(inserirPessoa, conMySql);
 
                 return true;
@@ -48,9 +48,9 @@ namespace DAL
                 "PESSOA_JURIDICA_INCR_EST='" + objPessoaJuridica.Inscricao_estadual +  "' where ID_PESSOA = " + objPessoaJuridica.Id_Pessoa.Id + " ;";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(atualizarPessoaFisica, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(atualizarPessoaFisica, conMySql);
 
                 return true;
@@ -66,9 +66,9 @@ namespace DAL
             string deletarPessoaJuridica = "delete from TB_CD_PESSOA_JURIDICA where ID_PESSOA = " + objPessoaJuridica.Id_Pessoa.Id + " ;"; //verificar se está certo
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(deletarPessoaJuridica, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(deletarPessoaJuridica, conMySql);
 
                 return true;
@@ -84,7 +84,7 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarPessoa, conServer);
                     dr.Read();
@@ -96,7 +96,7 @@ namespace DAL
                     objPessoaJuridica.Id_Pessoa.Id = Convert.ToInt32(dr[3].ToString());
 
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarPessoa, conMySql);
                     dr.Read();
@@ -157,7 +157,7 @@ namespace DAL
             List<clsPessoaJuridica> listaPessoa = new List<clsPessoaJuridica>();
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarTodasPessoas, conServer);
                     while (dr.Read())
@@ -172,7 +172,7 @@ namespace DAL
                         listaPessoa.Add(objPessoaJuridica);
                     }
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarTodasPessoas, conMySql);
                     while (dr.Read())

@@ -22,9 +22,9 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(insertTipo, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(insertTipo, conMySql);
 
                 return true;
@@ -39,9 +39,9 @@ namespace DAL
             string atualizaTipo = "update TB_CD_TIPO_PERMISSAO set DESCRICAO = '" + objTipo.Descricao + " where id = " + objTipo.Id + " ;";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(atualizaTipo, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(atualizaTipo, conMySql);
 
                 return true;
@@ -57,9 +57,9 @@ namespace DAL
             string deletarStatus = "delete from TB_CD_TIPO_PERMISSAO where ID = " + objTipo.Id + " ;";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(deletarStatus, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(deletarStatus, conMySql);
 
                 return true;
@@ -75,7 +75,7 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarTipo, conServer);
                     dr.Read();
@@ -83,7 +83,7 @@ namespace DAL
                     objTipos.Descricao = dr[1].ToString();
 
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarTipo, conMySql);
                     dr.Read();
@@ -131,7 +131,7 @@ namespace DAL
             List<clsTipoPermissao> listaTipo = new List<clsTipoPermissao>();
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarTodasPermissoes, conServer);
                     while (dr.Read())
@@ -142,7 +142,7 @@ namespace DAL
                         listaTipo.Add(objTipos);
                     }
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarTodasPermissoes, conMySql);
                     while (dr.Read())

@@ -25,9 +25,9 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(insertPedagio, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(insertPedagio, conMySql);
 
                 return true;
@@ -43,9 +43,9 @@ namespace DAL
                 "SERVICOS_ID='"+objPedagio.Servicos.Id_servicos+"' where id = " + objPedagio.Id + " ;";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(atualizarPedagio, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(atualizarPedagio, conMySql);
 
                 return true;
@@ -61,9 +61,9 @@ namespace DAL
             string deletarPedagio = "delete from TB_NG_PEDAGIO where ID = " + objPedagio.Id + " ;";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(deletarPedagio, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(deletarPedagio, conMySql);
 
                 return true;
@@ -79,7 +79,7 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarPedagio, conServer);
                     dr.Read();
@@ -90,7 +90,7 @@ namespace DAL
                     
 
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarPedagio, conMySql);
                     dr.Read();
@@ -145,7 +145,7 @@ namespace DAL
             List<clsPedagio> listaPedagio = new List<clsPedagio>();
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarTodosPedagios, conServer);
                     while (dr.Read())
@@ -158,7 +158,7 @@ namespace DAL
                         listaPedagio.Add(objPedagio);
                     }
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarTodosPedagios, conMySql);
                     while (dr.Read())

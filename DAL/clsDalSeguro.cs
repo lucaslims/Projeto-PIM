@@ -22,9 +22,9 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(insertSeguro, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(insertSeguro, conMySql);
 
                 return true;
@@ -39,9 +39,9 @@ namespace DAL
             string atualizarSeguro = "update TB_SEGURO set SEGURO_DESC = '" + objSeguro.Desc_seguro + " where id = " + objSeguro.Id_seguro + " ;";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(atualizarSeguro, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(atualizarSeguro, conMySql);
 
                 return true;
@@ -57,9 +57,9 @@ namespace DAL
             string deletarSeguro = "delete from TB_SEGURO where SEGURO_ID = " + objSeguro.Id_seguro + " ;";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(deletarSeguro, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(deletarSeguro, conMySql);
 
                 return true;
@@ -75,7 +75,7 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarMarca, conServer);
                     dr.Read();
@@ -83,7 +83,7 @@ namespace DAL
                     objSeguro.Desc_seguro = dr[1].ToString();
 
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarMarca, conMySql);
                     dr.Read();
@@ -131,7 +131,7 @@ namespace DAL
             List<clsSeguro> listaSeguro = new List<clsSeguro>();
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(BuscarTodasMarcas, conServer);
                     while (dr.Read())
@@ -142,7 +142,7 @@ namespace DAL
                         listaSeguro.Add(objSeguro);
                     }
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(BuscarTodasMarcas, conMySql);
                     while (dr.Read())

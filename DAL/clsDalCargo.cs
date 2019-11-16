@@ -11,6 +11,7 @@ namespace DAL
 {
     public class clsDalCargo:SqlHelper
     {
+        clsGlobal varGlob = new clsGlobal();
         public bool InsertCargo(MySqlConnection conMySql, SqlConnection conServer, clsCargo objCargo )
         {
             string InserirCargo = "insert into TB_CD_CARGO  (ID,DESCRICAO " +
@@ -79,8 +80,6 @@ namespace DAL
                     dr.Read();
                     objCargo.Id = Convert.ToInt32(dr[0].ToString());
                     objCargo.Descricao = dr[1].ToString();
-               
-
                 }
                 else if (varGlob.BdConexao == "MySql")
                 {
@@ -88,7 +87,6 @@ namespace DAL
                     dr.Read();
                     objCargo.Id = Convert.ToInt32(dr[0].ToString());
                     objCargo.Descricao = dr[1].ToString();
-
                 }
 
                 return objCargo;

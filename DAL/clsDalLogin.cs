@@ -24,9 +24,9 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(inserirLogin, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(inserirLogin, conMySql);
 
                 return true;
@@ -44,9 +44,9 @@ namespace DAL
                                                           " where id_pessoa = " + objLogin.Id_pessoa.Id + " ;";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(atualizarLogin, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(atualizarLogin, conMySql);
 
                 return true;
@@ -62,9 +62,9 @@ namespace DAL
             string deletarLogin = "delete from TB_CD_LOGIN where id_pessoa = " + objLogin.Id_pessoa.Id + " ;";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(deletarLogin, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(deletarLogin, conMySql);
 
                 return true;
@@ -80,7 +80,7 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarLoginID, conServer);
                     dr.Read();
@@ -89,7 +89,7 @@ namespace DAL
                     objLogin.Senha_login = dr[2].ToString();
                     objLogin.Id_tipo_permissao.Id = Convert.ToInt32(dr[3].ToString());
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarLoginID, conMySql);
                     dr.Read();
@@ -144,7 +144,7 @@ namespace DAL
             List<clsLogin> listaLogin = new List<clsLogin>();
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarTodosLogins, conServer);
                     while (dr.Read())
@@ -157,7 +157,7 @@ namespace DAL
                         listaLogin.Add(objLogin);
                     }
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarTodosLogins, conMySql);
                     while (dr.Read())

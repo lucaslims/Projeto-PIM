@@ -21,9 +21,9 @@ namespace DAL
                                         "values ('" + objPessoa.Nome + "' , " + objPessoa.StatusPessoa + " );";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(inserirPessoa, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(inserirPessoa, conMySql);
 
                 return true;
@@ -40,9 +40,9 @@ namespace DAL
                                         "     id_status = " + objPessoa.StatusPessoa;
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(alterarPessoa, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(alterarPessoa, conMySql);
 
                 return true;
@@ -57,9 +57,9 @@ namespace DAL
             string deletarPessoa = "delete from tb_cd_pessoa where id = " + objPessoa.Id + " ;";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(deletarPessoa, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(deletarPessoa, conMySql);
 
                 return true;
@@ -103,7 +103,7 @@ namespace DAL
             List<clsPessoa> listaPessoas = new List<clsPessoa>();
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarTodasPessoas, conServer);
                     while (dr.Read())
@@ -115,7 +115,7 @@ namespace DAL
                         listaPessoas.Add(objPessoa);
                     }
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarTodasPessoas, conMySql);
                     while (dr.Read())

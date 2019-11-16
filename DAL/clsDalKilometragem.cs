@@ -11,6 +11,7 @@ namespace DAL
 {
     public class clsDalKilometragem :SqlHelper
     {
+        clsGlobal varGlob = new clsGlobal();
         public bool InsertKilometragem(MySqlConnection conMySql, SqlConnection conServer, clsKilometragem objKilo)
         {
             string inserirKilometragem = "insert into TB_NG_KILOMETRAGEM  (ID,TOTAL,VIAGEM_ID " +
@@ -20,9 +21,9 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(inserirKilometragem, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(inserirKilometragem, conMySql);
 
                 return true;
@@ -39,9 +40,9 @@ namespace DAL
                                                           " VIAGEM = " + objKilo.Viagem + " ;";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(atualizarKilometragem, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(atualizarKilometragem, conMySql);
 
                 return true;
@@ -57,9 +58,9 @@ namespace DAL
             string deletarKilometragem = "delete from TB_NG_KILOMETRAGEM where ID = " + objKilo.Id + " ;";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(deletarKilometragem, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(deletarKilometragem, conMySql);
 
                 return true;
@@ -75,7 +76,7 @@ namespace DAL
 
         //    try
         //    {
-        //        if (conMySql is null)
+        //        if (varGlob.BdConexao == "SqlServer")
         //        {
         //            SqlDataReader dr = RetornaDataReaderSqlServer(buscarFuncionarioId, conServer);
         //            dr.Read();
@@ -84,7 +85,7 @@ namespace DAL
         //            objFun.Cargo.Id = Convert.ToInt32(dr[2].ToString());
 
         //        }
-        //        else if (conServer is null)
+        //        else if (varGlob.BdConexao == "MySql")
         //        {
         //            MySqlDataReader dr = RetornaDataReaderMySql(buscarFuncionarioId, conMySql);
         //            dr.Read();
@@ -107,7 +108,7 @@ namespace DAL
         //    List<clsKilometragem> ListaFuncionario = new List<clsKilometragem>();
         //    try
         //    {
-        //        if (conMySql is null)
+        //        if (varGlob.BdConexao == "SqlServer")
         //        {
         //            SqlDataReader dr = RetornaDataReaderSqlServer(buscarTodosFuncionarios, conServer);
         //            while (dr.Read())
@@ -119,7 +120,7 @@ namespace DAL
         //                ListaFuncionario.Add(objFun);
         //            }
         //        }
-        //        else if (conServer is null)
+        //        else if (varGlob.BdConexao == "MySql")
         //        {
         //            MySqlDataReader dr = RetornaDataReaderMySql(buscarTodosFuncionarios, conMySql);
         //            while (dr.Read())

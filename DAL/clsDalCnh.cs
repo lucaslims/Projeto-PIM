@@ -11,6 +11,7 @@ namespace DAL
 {
     public class clsDalCnh:SqlHelper
     {
+     clsGlobal varGlob = new clsGlobal();
         public bool InsertCnh(MySqlConnection conMySql, SqlConnection conServer, clsCnh objcnh)
         {
             string InserirCnh = "insert into TB_CNH  (CNH_ID,NUMERO,CATEGORIA,CNH_DT,VALIDADE " +
@@ -21,9 +22,9 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(InserirCnh, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(InserirCnh, conMySql);
 
                 return true;
@@ -41,9 +42,9 @@ namespace DAL
                                                           "CNH_DT_VALIDADE = "+ objcnh.Dt_validade_CNH+";";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(atualizarCnh, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(atualizarCnh, conMySql);
 
                 return true;
@@ -59,9 +60,9 @@ namespace DAL
             string deletarCNH = "delete from TB_CNH where CNH_ID = " + objcnh.Id_CNH + " ;";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(deletarCNH, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(deletarCNH, conMySql);
 
                 return true;
@@ -77,7 +78,7 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarCnhPeloId, conServer);
                     dr.Read();
@@ -88,7 +89,7 @@ namespace DAL
 
 
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarCnhPeloId, conMySql);
                     dr.Read();
@@ -113,7 +114,7 @@ namespace DAL
             List<clsCnh> ListaCnh = new List<clsCnh>();
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarTodasCnh, conServer);
                     while (dr.Read())
@@ -126,7 +127,7 @@ namespace DAL
                         ListaCnh.Add(objcnh);
                     }
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarTodasCnh, conMySql);
                     while (dr.Read())

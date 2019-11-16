@@ -11,6 +11,7 @@ namespace DAL
 {
     public class clsDalEstado:SqlHelper
     {
+        clsGlobal varGlob = new clsGlobal();
         public bool InsertEstado(MySqlConnection conMySql, SqlConnection conServer, clsEstado objEstado)
         {
             string inserirEstado = "insert into TB_CD_ESTADO  (id,descricao,ABREVIACAO,ID_PAIS, ICMS) " +
@@ -22,9 +23,9 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(inserirEstado, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(inserirEstado, conMySql);
 
                 return true;
@@ -43,9 +44,9 @@ namespace DAL
                                                           " where id_pais = "+ objEstado.Pais.Id + " ;";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(atualizarEstado, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(atualizarEstado, conMySql);
 
                 return true;
@@ -61,9 +62,9 @@ namespace DAL
             string deletarLogin = "delete from TB_CD_ESTADO where id_pais = " + objEstado.Pais.Id + " ;";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(deletarLogin, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(deletarLogin, conMySql);
 
                 return true;
@@ -79,7 +80,7 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarEstadoId, conServer);
                     dr.Read();
@@ -89,7 +90,7 @@ namespace DAL
                     objEstado.Pais.Id = Convert.ToInt32(dr[3].ToString());
                     objEstado.Icms = Convert.ToDouble(dr[4].ToString());
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarEstadoId, conMySql);
                     dr.Read();
@@ -113,7 +114,7 @@ namespace DAL
             List<clsEstado> listaEstado = new List<clsEstado>();
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarTodosEstados, conServer);
                     while (dr.Read())
@@ -127,7 +128,7 @@ namespace DAL
                         listaEstado.Add(objEstado);
                     }
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarTodosEstados, conMySql);
                     while (dr.Read())

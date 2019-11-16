@@ -10,6 +10,7 @@ namespace DAL
 {
     public class clsDalFuncionario:SqlHelper
     {
+        clsGlobal varGlob = new clsGlobal();
         public bool InsertFuncionario(MySqlConnection conMySql, SqlConnection conServer, clsFuncionario objFunc)
         {
             string inserirFuncionario = "insert into TB_CD_FUNCIONARIO  (ID_PESSOA,DEPARTAMENTO,CARGO " +
@@ -19,9 +20,9 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(inserirFuncionario, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(inserirFuncionario, conMySql);
 
                 return true;
@@ -38,9 +39,9 @@ namespace DAL
                                                           " CARGO = " + objFunc.Cargo.Id + " ;";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(atualizarFuncionario, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(atualizarFuncionario, conMySql);
 
                 return true;
@@ -56,9 +57,9 @@ namespace DAL
             string deletarFuncionario = "delete from TB_CD_FUNCIONARIO where ID_PESSOA = " + objFunc.Pessoa.Id + " ;";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(deletarFuncionario, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(deletarFuncionario, conMySql);
 
                 return true;
@@ -74,7 +75,7 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarFuncionarioId, conServer);
                     dr.Read();
@@ -83,7 +84,7 @@ namespace DAL
                     objFun.Cargo.Id =Convert.ToInt32(dr[2].ToString());
 
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarFuncionarioId, conMySql);
                     dr.Read();
@@ -106,7 +107,7 @@ namespace DAL
             List<clsFuncionario> ListaFuncionario = new List<clsFuncionario>();
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarTodosFuncionarios, conServer);
                     while (dr.Read())
@@ -118,7 +119,7 @@ namespace DAL
                         ListaFuncionario.Add(objFun);
                     }
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarTodosFuncionarios, conMySql);
                     while (dr.Read())

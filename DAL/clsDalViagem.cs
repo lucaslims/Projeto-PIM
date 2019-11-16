@@ -25,9 +25,9 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(inserirViagem, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(inserirViagem, conMySql);
 
                 return true;
@@ -45,9 +45,9 @@ namespace DAL
                                                               " where VEICULO_ID = " + objViagem.Veiculo.Id+                   ";  ";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(atualizarViagem, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(atualizarViagem, conMySql);
 
                 return true;
@@ -63,9 +63,9 @@ namespace DAL
             string deletarViagem = "delete from TB_NG_VIAGEM where VEICULO_ID = " + objViagem.Veiculo.Id + " ;"; //verificar se está certo
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(deletarViagem, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(deletarViagem, conMySql);
 
                 return true;
@@ -81,7 +81,7 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarViagem, conServer);
                     dr.Read();
@@ -93,7 +93,7 @@ namespace DAL
                     objViagem.Servico.Id_servicos = Convert.ToInt32(dr[3].ToString());
 
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarViagem, conMySql);
                     dr.Read();
@@ -155,7 +155,7 @@ namespace DAL
             List<clsViagem> listaViagens = new List<clsViagem>();
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarTodasViagens, conServer);
                     while (dr.Read())
@@ -170,7 +170,7 @@ namespace DAL
                         listaViagens.Add(objViagem);
                     }
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarTodasViagens, conMySql);
                     while (dr.Read())

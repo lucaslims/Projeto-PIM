@@ -11,6 +11,7 @@ namespace DAL
 {
     public class clsDalDepartamento :SqlHelper
     {
+        clsGlobal varGlob = new clsGlobal();
         public bool InsertDepartamento(MySqlConnection conMySql, SqlConnection conServer, clsDepartamento objDepertamento)
         {
             string InserirDepartamento = "insert into TB_CD_DEPARTAMENTO  (ID,DESCRICAO " +
@@ -19,9 +20,9 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(InserirDepartamento, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(InserirDepartamento, conMySql);
 
                 return true;
@@ -37,9 +38,9 @@ namespace DAL
                                                           " DESCRICAO = '" + objDepertamento.Descricao + " ';";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(atualizarDepartamento, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(atualizarDepartamento, conMySql);
 
                 return true;
@@ -55,9 +56,9 @@ namespace DAL
             string deletarDepartamento = "delete from TB_CD_DEPARTAMENTO where ID = " + objDepertamento.Id + " ;";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(deletarDepartamento, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(deletarDepartamento, conMySql);
 
                 return true;
@@ -73,7 +74,7 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(BuscarDepartamentoId, conServer);
                     dr.Read();
@@ -82,7 +83,7 @@ namespace DAL
 
 
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(BuscarDepartamentoId, conMySql);
                     dr.Read();
@@ -104,7 +105,7 @@ namespace DAL
             List<clsDepartamento> ListDepartamento = new List<clsDepartamento>();
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarTodosDepartamentos, conServer);
                     while (dr.Read())
@@ -115,7 +116,7 @@ namespace DAL
                         ListDepartamento.Add(objDepartamento);
                     }
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarTodosDepartamentos, conMySql);
                     while (dr.Read())

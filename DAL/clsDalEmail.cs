@@ -11,15 +11,16 @@ namespace DAL
 {
     public class clsDalEmail : SqlHelper
     {
+        clsGlobal varGlob = new clsGlobal();
         public bool InsertEmail(MySqlConnection conMySql, SqlConnection conServer, clsEmail objEmail)
         {
             string inserirEmail = "insert into TB_CD_PESSOA_EMAIL (id_pessoa,email) " +
                                         "values ('" + objEmail.Pessoa.Id+ "' , " + objEmail.Email + " );";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(inserirEmail, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(inserirEmail, conMySql);
 
                 return true;
@@ -37,9 +38,9 @@ namespace DAL
                                         "     id_pessoa = " + objEmail.Pessoa.Id;
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(alterarEmail, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(alterarEmail, conMySql);
 
                 return true;
@@ -55,9 +56,9 @@ namespace DAL
             string deletarEmail = "delete from TB_CD_PESSOA_EMAIL where ID = " + objEmail.Id + " ;";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(deletarEmail, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(deletarEmail, conMySql);
 
                 return true;
@@ -74,7 +75,7 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarEmailId, conServer);
                     dr.Read();
@@ -82,7 +83,7 @@ namespace DAL
                     objEmail.Email = dr[1].ToString();
                     objEmail.Pessoa.Id= Convert.ToInt32(dr[3].ToString());
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarEmailId, conMySql);
                     dr.Read();
@@ -104,7 +105,7 @@ namespace DAL
             List<clsEmail> listaEmail = new List<clsEmail>();
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarTodosEmails, conServer);
                     while (dr.Read())
@@ -116,7 +117,7 @@ namespace DAL
                         listaEmail.Add(objEmail);
                     }
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarTodosEmails, conMySql);
                     while (dr.Read())

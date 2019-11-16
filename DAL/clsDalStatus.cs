@@ -22,9 +22,9 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(insertStatus, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(insertStatus, conMySql);
 
                 return true;
@@ -39,9 +39,9 @@ namespace DAL
             string atualizarStatus = "update TB_CD_STATUS_VEICULO set DESCRICAO = '" + objStatus.Desc_statusveiculo + " where id = " + objStatus.Id_statusveiculo + " ;";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(atualizarStatus, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(atualizarStatus, conMySql);
 
                 return true;
@@ -57,9 +57,9 @@ namespace DAL
             string deletarStatus = "delete from TB_CD_STATUS_VEICULO where ID = " + objStatus.Id_statusveiculo + " ;";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(deletarStatus, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(deletarStatus, conMySql);
 
                 return true;
@@ -75,7 +75,7 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarStatus, conServer);
                     dr.Read();
@@ -83,7 +83,7 @@ namespace DAL
                     objStatus.Desc_statusveiculo = dr[1].ToString();
 
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarStatus, conMySql);
                     dr.Read();
@@ -131,7 +131,7 @@ namespace DAL
             List<clsStatusVeiculo> listaStatus = new List<clsStatusVeiculo>();
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(BuscarTodosStatus, conServer);
                     while (dr.Read())
@@ -142,7 +142,7 @@ namespace DAL
                         listaStatus.Add(objStatus);
                     }
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(BuscarTodosStatus, conMySql);
                     while (dr.Read())

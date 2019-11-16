@@ -11,6 +11,7 @@ namespace DAL
 {
     class clsDalEstacionamento :SqlHelper
     {
+        clsGlobal varGlob = new clsGlobal();
         public bool InsertEstacionamento(MySqlConnection conMySql, SqlConnection conServer, clsEstacionamento objEstacionamento)
         {
             string inserirEstacionamento = "insert into TB_NG_ESTACIONAMENTO  (ID,VALOR,QUANTIDADE,SERVICOS_ID) " +
@@ -21,9 +22,9 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(inserirEstacionamento, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(inserirEstacionamento, conMySql);
 
                 return true;
@@ -42,9 +43,9 @@ namespace DAL
                                                           " where ID = " + objEstacionamento.Servicos.Id_servicos + " ;"; //LUCAS
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(atualizarLogin, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(atualizarLogin, conMySql);
 
                 return true;
@@ -60,9 +61,9 @@ namespace DAL
             string deleteEstacionamento = "delete from TB_NG_ESTACIONAMENTO where ID = " + objEstacionamento.Servicos.Id_servicos + " ;";
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                     ExecutarComandoSqlServer(deleteEstacionamento, conServer);
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(deleteEstacionamento, conMySql);
 
                 return true;
@@ -78,7 +79,7 @@ namespace DAL
 
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarEstacionamentoID, conServer);
                     dr.Read();
@@ -88,7 +89,7 @@ namespace DAL
                     objEstacionamento.Servicos.Id_servicos = Convert.ToInt32(dr[3].ToString());
                    
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarEstacionamentoID, conMySql);
                     dr.Read();
@@ -111,7 +112,7 @@ namespace DAL
             List<clsEstacionamento> listaEstacionamento = new List<clsEstacionamento>();
             try
             {
-                if (conMySql is null)
+                if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarTodosEstacionamento, conServer);
                     while (dr.Read())
@@ -124,7 +125,7 @@ namespace DAL
                         listaEstacionamento.Add(objEstacionamento);
                     }
                 }
-                else if (conServer is null)
+                else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarTodosEstacionamento, conMySql);
                     while (dr.Read())
@@ -138,7 +139,7 @@ namespace DAL
                     }
                 }
 
-                return listaEstado;
+                return listaEstacionamento;
             }
             catch (Exception ex)
             {

@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 
    public class clsDalPais :SqlHelper
     {
+        clsGlobal varGlob = new clsGlobal();
     public bool InsertPais(MySqlConnection conMySql, SqlConnection conServer, clsPais objPais)
     {
         string inserirPais = "insert into TB_CD_PAIS  (id,descricao,ABREVIACAO) " +
@@ -18,9 +19,9 @@ using System.Data.SqlClient;
 
         try
         {
-            if (conMySql is null)
+            if (varGlob.BdConexao == "SqlServer")
                 ExecutarComandoSqlServer(inserirPais, conServer);
-            else if (conServer is null)
+            else if (varGlob.BdConexao == "MySql")
                 ExecutarComandoMySql(inserirPais, conMySql);
 
             return true;
@@ -37,9 +38,9 @@ using System.Data.SqlClient;
                                                       " ABREVIACAO = " + objPais.Abreviacao  + " ;";
         try
         {
-            if (conMySql is null)
+            if (varGlob.BdConexao == "SqlServer")
                 ExecutarComandoSqlServer(atualizarPais, conServer);
-            else if (conServer is null)
+            else if (varGlob.BdConexao == "MySql")
                 ExecutarComandoMySql(atualizarPais, conMySql);
 
             return true;
@@ -55,9 +56,9 @@ using System.Data.SqlClient;
         string deletarPais = "delete from TB_CD_PAIS where id = " + objPais.Id + " ;";
         try
         {
-            if (conMySql is null)
+            if (varGlob.BdConexao == "SqlServer")
                 ExecutarComandoSqlServer(deletarPais, conServer);
-            else if (conServer is null)
+            else if (varGlob.BdConexao == "MySql")
                 ExecutarComandoMySql(deletarPais, conMySql);
 
             return true;
@@ -73,7 +74,7 @@ using System.Data.SqlClient;
 
         try
         {
-            if (conMySql is null)
+            if (varGlob.BdConexao == "SqlServer")
             {
                 SqlDataReader dr = RetornaDataReaderSqlServer(buscarPaisId, conServer);
                 dr.Read();
@@ -82,7 +83,7 @@ using System.Data.SqlClient;
                 objPais.Abreviacao = dr[2].ToString();
 
             }
-            else if (conServer is null)
+            else if (varGlob.BdConexao == "MySql")
             {
                 MySqlDataReader dr = RetornaDataReaderMySql(buscarPaisId, conMySql);
                 dr.Read();
@@ -105,7 +106,7 @@ using System.Data.SqlClient;
         List<clsPais> listaPais = new List<clsPais>();
         try
         {
-            if (conMySql is null)
+            if (varGlob.BdConexao == "SqlServer")
             {
                 SqlDataReader dr = RetornaDataReaderSqlServer(buscarTodosPais, conServer);
                 while (dr.Read())
@@ -117,7 +118,7 @@ using System.Data.SqlClient;
                     listaPais.Add(objPais);
                 }
             }
-            else if (conServer is null)
+            else if (varGlob.BdConexao == "MySql")
             {
                 MySqlDataReader dr = RetornaDataReaderMySql(buscarTodosPais, conMySql);
                 while (dr.Read())

@@ -11,7 +11,7 @@ namespace DAL
 {
     public class clsDalLocacao :SqlHelper
     {
-        
+        clsGlobal varGlob = new clsGlobal();
             public bool InsertLocacao(MySqlConnection conMySql, SqlConnection conServer, clsLocacao objLocacao)
             {
             string inserirLocacao = "insert into TB_NG_LOCACAO  (ID,DT_LOC,TEMPO_LOC,CUSTO,TAXA_EXTRA,SEGURO_ID,PESSOA_ID,VEICULO_ID) " +
@@ -26,9 +26,9 @@ namespace DAL
 
                 try
                 {
-                    if (conMySql is null)
+                    if (varGlob.BdConexao == "SqlServer")
                         ExecutarComandoSqlServer(inserirLocacao, conServer);
-                    else if (conServer is null)
+                    else if (varGlob.BdConexao == "MySql")
                         ExecutarComandoMySql(inserirLocacao, conMySql);
 
                     return true;
@@ -51,9 +51,9 @@ namespace DAL
                                                               " where ID = " + objLocacao.Id_locacao + " ;";
                 try
                 {
-                    if (conMySql is null)
+                    if (varGlob.BdConexao == "SqlServer")
                         ExecutarComandoSqlServer(atualizarLocacao, conServer);
-                    else if (conServer is null)
+                    else if (varGlob.BdConexao == "MySql")
                         ExecutarComandoMySql(atualizarLocacao, conMySql);
 
                     return true;
@@ -69,9 +69,9 @@ namespace DAL
                 string deletarVeiculo = "delete from TB_NG_LOCACAO where ID = " + objLocacao.Id_locacao + " ;"; //Placa
                 try
                 {
-                    if (conMySql is null)
+                    if (varGlob.BdConexao == "SqlServer")
                         ExecutarComandoSqlServer(deletarVeiculo, conServer);
-                    else if (conServer is null)
+                    else if (varGlob.BdConexao == "MySql")
                         ExecutarComandoMySql(deletarVeiculo, conMySql);
 
                     return true;
@@ -87,7 +87,7 @@ namespace DAL
 
                 try
                 {
-                    if (conMySql is null)
+                    if (varGlob.BdConexao == "SqlServer")
                     {
                         SqlDataReader dr = RetornaDataReaderSqlServer(buscarLocacaoId, conServer);
                         dr.Read();
@@ -101,7 +101,7 @@ namespace DAL
                     objLocacao.Veiculo.Statusveiculo.Id_statusveiculo = Convert.ToInt32(dr[7].ToString());
                     
                     }
-                    else if (conServer is null)
+                    else if (varGlob.BdConexao == "MySql")
                     {
                         MySqlDataReader dr = RetornaDataReaderMySql(buscarLocacaoId, conMySql);
                         dr.Read();
@@ -128,7 +128,7 @@ namespace DAL
                 List<clsLocacao> listaLocacao = new List<clsLocacao>();
                 try
                 {
-                    if (conMySql is null)
+                    if (varGlob.BdConexao == "SqlServer")
                     {
                         SqlDataReader dr = RetornaDataReaderSqlServer(buscarTodasLocacoes, conServer);
                         while (dr.Read())
@@ -145,7 +145,7 @@ namespace DAL
                         listaLocacao.Add(objLocacao);
                         }
                     }
-                    else if (conServer is null)
+                    else if (varGlob.BdConexao == "MySql")
                     {
                         MySqlDataReader dr = RetornaDataReaderMySql(buscarTodasLocacoes, conMySql);
                         while (dr.Read())
