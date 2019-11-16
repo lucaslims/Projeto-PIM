@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{57BAB1D7-444B-4357-B1D9-5B95AFEF4D77}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ClutchKinetcs</RootNamespace>
+    <AssemblyName>ClutchKinetcs</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>H:\PIM\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.18\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormCadAbast.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadAbast.designer.cs">
+      <DependentUpon>FormCadAbast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadFuncionario.designer.cs">
+      <DependentUpon>FormCadFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadLocacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadLocacao.designer.cs">
+      <DependentUpon>FormCadLocacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadLogin.designer.cs">
+      <DependentUpon>FormCadLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadPessoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadPessoa.Designer.cs">
+      <DependentUpon>FormCadPessoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadServico.designer.cs">
+      <DependentUpon>FormCadServico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadViagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadViagem.designer.cs">
+      <DependentUpon>FormCadViagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenuFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuFuncionario.Designer.cs">
+      <DependentUpon>FormMenuFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenuLocacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuLocacao.Designer.cs">
+      <DependentUpon>FormMenuLocacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenuLocalizacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuLocalizacao.Designer.cs">
+      <DependentUpon>FormMenuLocalizacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenuViagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuViagem.Designer.cs">
+      <DependentUpon>FormMenuViagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenuVeiculo .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuVeiculo .Designer.cs">
+      <DependentUpon>FormMenuVeiculo .cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenuPessoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuPessoa.Designer.cs">
+      <DependentUpon>FormMenuPessoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuPrincipal.Designer.cs">
+      <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenuServicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuServicos.Designer.cs">
+      <DependentUpon>FormMenuServicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSplash.Designer.cs">
+      <DependentUpon>FormSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCadAbast.resx">
+      <DependentUpon>FormCadAbast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadFuncionario.resx">
+      <DependentUpon>FormCadFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadLocacao.resx">
+      <DependentUpon>FormCadLocacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadLogin.resx">
+      <DependentUpon>FormCadLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadPessoa.resx">
+      <DependentUpon>FormCadPessoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadServico.resx">
+      <DependentUpon>FormCadServico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadViagem.resx">
+      <DependentUpon>FormCadViagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuFuncionario.resx">
+      <DependentUpon>FormMenuFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuLocacao.resx">
+      <DependentUpon>FormMenuLocacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuLocalizacao.resx">
+      <DependentUpon>FormMenuLocalizacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuViagem.resx">
+      <DependentUpon>FormMenuViagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuVeiculo .resx">
+      <DependentUpon>FormMenuVeiculo .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuPessoa.resx">
+      <DependentUpon>FormMenuPessoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuPrincipal.resx">
+      <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuServicos.resx">
+      <DependentUpon>FormMenuServicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSplash.resx">
+      <DependentUpon>FormSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\computer.png" />
+    <Content Include="Resources\credit-card.png" />
+    <Content Include="Resources\delivery-truck.png" />
+    <Content Include="Resources\driver.png" />
+    <Content Include="Resources\folder.png" />
+    <Content Include="Resources\gear.png" />
+    <Content Include="Resources\Martz90-Hex-Car.ico" />
+    <Content Include="Resources\mobile.png" />
+    <Content Include="Resources\pie-chart.png" />
+    <Content Include="Resources\question.png" />
+    <Content Include="Resources\Resources importados\1.png" />
+    <Content Include="Resources\Resources importados\11.png" />
+    <Content Include="Resources\Resources importados\3.gif" />
+    <Content Include="Resources\Resources importados\icons8-adicionar-usuário-masculino-30.png" />
+    <Content Include="Resources\Resources importados\icons8-adicionar-usuário-masculino-50.png" />
+    <Content Include="Resources\Resources importados\icons8-adicionar-usuário-masculino-64.png" />
+    <Content Include="Resources\Resources importados\icons8-apagador-64.png" />
+    <Content Include="Resources\Resources importados\icons8-banco-de-dados-filled-50.png" />
+    <Content Include="Resources\Resources importados\icons8-calculadora-64.png" />
+    <Content Include="Resources\Resources importados\icons8-chevron-right-55.png" />
+    <Content Include="Resources\Resources importados\icons8-configurações-3-filled-100.png" />
+    <Content Include="Resources\Resources importados\icons8-dois-smartphones-50.png" />
+    <Content Include="Resources\Resources importados\icons8-editar-arquivo-64.png" />
+    <Content Include="Resources\Resources importados\icons8-empresa-cliente-30.png" />
+    <Content Include="Resources\Resources importados\icons8-empresária-30.png" />
+    <Content Include="Resources\Resources importados\icons8-engarrafamento-30.png" />
+    <Content Include="Resources\Resources importados\icons8-escudo-de-usuário-28.png" />
+    <Content Include="Resources\Resources importados\icons8-escudo-de-usuário-30.png" />
+    <Content Include="Resources\Resources importados\icons8-excluir-64.png" />
+    <Content Include="Resources\Resources importados\icons8-fiat-500-30.png" />
+    <Content Include="Resources\Resources importados\icons8-gestão-de-cliente-18.png" />
+    <Content Include="Resources\Resources importados\icons8-gestão-de-cliente-20.png" />
+    <Content Include="Resources\Resources importados\icons8-gestão-de-cliente-30.png" />
+    <Content Include="Resources\Resources importados\icons8-gestão-de-cliente-301.png" />
+    <Content Include="Resources\Resources importados\icons8-internet-50.png" />
+    <Content Include="Resources\Resources importados\icons8-mais-64.png" />
+    <Content Include="Resources\Resources importados\icons8-mapa-múndi-45.png" />
+    <Content Include="Resources\Resources importados\icons8-motorista-30.png" />
+    <Content Include="Resources\Resources importados\icons8-pesquisar-64.png" />
+    <Content Include="Resources\Resources importados\icons8-sair-40 %281%29.png" />
+    <Content Include="Resources\Resources importados\icons8-sair-40.png" />
+    <Content Include="Resources\Resources importados\icons8-segurança-verificada-30.png" />
+    <Content Include="Resources\Resources importados\icons8-senha-55.png" />
+    <Content Include="Resources\Resources importados\icons8-usuário-40.png" />
+    <Content Include="Resources\Resources importados\icons8-usuário-de-gênero-neutro-40.png" />
+    <Content Include="Resources\Resources importados\jojo_artworks_cel_shaded_by_mcashe-dcpsbxi.png" />
+    <Content Include="Resources\Resources importados\loading-gears-animation-13-3.gif" />
+    <Content Include="Resources\Resources importados\loading4.gif" />
+    <Content Include="Resources\Resources importados\nyan2.gif" />
+    <Content Include="Resources\Resources importados\test2.png" />
+    <Content Include="Resources\Resources importados\teste.png" />
+    <Content Include="Resources\Resources importados\testeee.png" />
+    <Content Include="Resources\searching.png" />
+    <Content Include="Resources\town.png" />
+    <Content Include="Resources\user.png" />
+    <Content Include="Resources\verification.png" />
+    <None Include="Resources\unlock.png" />
+    <None Include="Resources\route.png" />
+    <None Include="Resources\rentcar.png" />
+    <None Include="Resources\placeholder.png" />
+    <None Include="Resources\minimize2.png" />
+    <None Include="Resources\minimize.png" />
+    <None Include="Resources\maximize.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\lock.png" />
+    <None Include="Resources\key.png" />
+    <None Include="Resources\id-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Control\Control.csproj">
+      <Project>{c3255811-9815-4305-83d2-76b9f62b9330}</Project>
+      <Name>Control</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{2cf0afaf-5c81-498d-b2ae-e818455fa8c4}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{de8f2130-3815-4dd2-8d70-e85e12bb36a2}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
