@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 using Control;
 namespace DAL
 {
-    class clsDalTelefone :SqlHelper
+    public class clsDalTelefone : SqlHelper
     {
         clsGlobal varGlob = new clsGlobal();
 
@@ -114,43 +114,43 @@ namespace DAL
                 throw ex;
             }
         }
-       /* public clsPessoaJuridica SelectPessoaJuridica(MySqlConnection conMySql, SqlConnection conServer, clsPessoaJuridica objPessoaJuridica)
-        {
-            string buscarModeloID = "select * from TB_CD_PESSOA_JURIDICA where PESSOA_FISICA_ID = '" + objPessoaJuridica.Id_pessoa_juridica + "'";
+        /* public clsPessoaJuridica SelectPessoaJuridica(MySqlConnection conMySql, SqlConnection conServer, clsPessoaJuridica objPessoaJuridica)
+         {
+             string buscarModeloID = "select * from TB_CD_PESSOA_JURIDICA where PESSOA_FISICA_ID = '" + objPessoaJuridica.Id_pessoa_juridica + "'";
 
-            try
-            {
-                if (varGlob.BdConexao == "SqlServer")
-                {
-                    SqlDataReader dr = RetornaDataReaderSqlServer(buscarModeloID, conServer);
-                    dr.Read();
-                    objPessoaJuridica.Id_pessoa_juridica = Convert.ToInt32(dr[0].ToString());
-                    objPessoaJuridica.Cnpj = Convert.ToInt32(dr[1].ToString());
-                    objPessoaJuridica.Inscricao_municipal = dr[2].ToString();
-                    objPessoaJuridica.Inscricao_estadual = dr[3].ToString();
+             try
+             {
+                 if (varGlob.BdConexao == "SqlServer")
+                 {
+                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarModeloID, conServer);
+                     dr.Read();
+                     objPessoaJuridica.Id_pessoa_juridica = Convert.ToInt32(dr[0].ToString());
+                     objPessoaJuridica.Cnpj = Convert.ToInt32(dr[1].ToString());
+                     objPessoaJuridica.Inscricao_municipal = dr[2].ToString();
+                     objPessoaJuridica.Inscricao_estadual = dr[3].ToString();
 
-                    objPessoaJuridica.Id_Pessoa.Id = Convert.ToInt32(dr[3].ToString());
-                }
-                else if (varGlob.BdConexao == "MySql")
-                {
-                    MySqlDataReader dr = RetornaDataReaderMySql(buscarModeloID, conMySql);
-                    dr.Read();
-                    objPessoaJuridica.Id_pessoa_juridica = Convert.ToInt32(dr[0].ToString());
-                    objPessoaJuridica.Cnpj = Convert.ToInt32(dr[1].ToString());
-                    objPessoaJuridica.Inscricao_municipal = dr[2].ToString();
-                    objPessoaJuridica.Inscricao_estadual = dr[3].ToString();
+                     objPessoaJuridica.Id_Pessoa.Id = Convert.ToInt32(dr[3].ToString());
+                 }
+                 else if (varGlob.BdConexao == "MySql")
+                 {
+                     MySqlDataReader dr = RetornaDataReaderMySql(buscarModeloID, conMySql);
+                     dr.Read();
+                     objPessoaJuridica.Id_pessoa_juridica = Convert.ToInt32(dr[0].ToString());
+                     objPessoaJuridica.Cnpj = Convert.ToInt32(dr[1].ToString());
+                     objPessoaJuridica.Inscricao_municipal = dr[2].ToString();
+                     objPessoaJuridica.Inscricao_estadual = dr[3].ToString();
 
-                    objPessoaJuridica.Id_Pessoa.Id = Convert.ToInt32(dr[3].ToString());
-                }
+                     objPessoaJuridica.Id_Pessoa.Id = Convert.ToInt32(dr[3].ToString());
+                 }
 
-                return objPessoaJuridica;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        } */
-        public List<clsTelefone>ListarTelefone(MySqlConnection conMySql, SqlConnection conServer)
+                 return objPessoaJuridica;
+             }
+             catch (Exception ex)
+             {
+                 throw ex;
+             }
+         } */
+        public List<clsTelefone> ListarTelefone(MySqlConnection conMySql, SqlConnection conServer)
         {
             string buscarTodosTelefones = "select * from TB_CD_PESSOA_JURIDICA";
             List<clsTelefone> listaTelefone = new List<clsTelefone>();

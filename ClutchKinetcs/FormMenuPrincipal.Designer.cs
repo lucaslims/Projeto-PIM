@@ -55,6 +55,8 @@
             this.lblBemVindo = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
+            this.toolTipPessoas = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipVeiculos = new System.Windows.Forms.ToolTip(this.components);
             this.pnlOpcSW.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoSistema)).BeginInit();
             this.SuspendLayout();
@@ -127,7 +129,7 @@
             this.btnRelatorios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRelatorios.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.btnRelatorios.ForeColor = System.Drawing.Color.White;
-            this.btnRelatorios.Image = ((System.Drawing.Image)(resources.GetObject("btnRelatorios.Image")));
+            this.btnRelatorios.Image = global::ClutchKinetcs.Properties.Resources.folder;
             this.btnRelatorios.ImagePosition = 20;
             this.btnRelatorios.ImageZoom = 60;
             this.btnRelatorios.LabelPosition = 0;
@@ -333,6 +335,7 @@
             this.pnlOpcSW.Name = "pnlOpcSW";
             this.pnlOpcSW.Size = new System.Drawing.Size(1280, 25);
             this.pnlOpcSW.TabIndex = 46;
+            this.pnlOpcSW.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pnlOpcSW_MouseDoubleClick);
             this.pnlOpcSW.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlOpcSW_MouseDown);
             this.pnlOpcSW.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlOpcSW_MouseMove);
             // 
@@ -464,6 +467,14 @@
             this.pnlPrincipal.Size = new System.Drawing.Size(950, 678);
             this.pnlPrincipal.TabIndex = 33;
             // 
+            // toolTipPessoas
+            // 
+            this.toolTipPessoas.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
+            // toolTipVeiculos
+            // 
+            this.toolTipVeiculos.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
             // FormMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -529,5 +540,7 @@
         private Bunifu.Framework.UI.BunifuTileButton btnMinimizedState;
         public System.Windows.Forms.FlowLayoutPanel floLayPnlMenSegundario;
         public System.Windows.Forms.Panel pnlPrincipal;
+        private System.Windows.Forms.ToolTip toolTipPessoas;
+        private System.Windows.Forms.ToolTip toolTipVeiculos;
     }
 }

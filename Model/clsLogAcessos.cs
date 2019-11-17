@@ -19,6 +19,6 @@ public class clsLogAcessos {
 
     public int Id { get => id; set => id = value; }
     public clsPessoa Id_pessoa { get => id_pessoa; set => id_pessoa = value; }
-    public DateTime Datahora { get => datahora; set => datahora = value; }
+    public DateTime Datahora { get => datahora;}
     public string Usuario { get => usuario; set => usuario = value; }
 }

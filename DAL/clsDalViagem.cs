@@ -9,7 +9,7 @@ using Control;
 
 namespace DAL
 {
-    class clsDalViagem :SqlHelper
+    public class clsDalViagem :SqlHelper
     {
         clsGlobal varGlob = new clsGlobal();
 

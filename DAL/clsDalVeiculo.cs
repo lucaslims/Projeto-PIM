@@ -18,10 +18,11 @@ namespace DAL
                                   " values (" + objVeiculo.Id + ", " + //ver com o Lucas sobre o campo
                                           "'" + objVeiculo.Placa_vec + "', " +
                                           "'" + objVeiculo.Chassi_vec + "', " +
-                                          "'"+ objVeiculo.Descricao + "'," +
+                                          "'" + objVeiculo.Descricao + "'," +
                                                 objVeiculo.Corveiculo.Id_cor +","+
-                                                objVeiculo.Marcaveiculo.Id_marca+","+
-                                                objVeiculo.Tipoveiculo.Id_tipoveiculo +","+
+                                                objVeiculo.Marcaveiculo.Id_marca+"," +
+                                                objVeiculo.Marcaveiculo.Modeloveiculo.Id_modelo + "," +
+                                                objVeiculo.Marcaveiculo.Tipoveiculo.Id_tipoveiculo +","+
                                                 objVeiculo.Statusveiculo.Id_statusveiculo +"); ";
 
             try
@@ -45,8 +46,8 @@ namespace DAL
                                                           " DESCRICAO = '" + objVeiculo.Descricao + "', " +
                                                           " COR_ID = " + objVeiculo.Corveiculo .Id_cor+ ", " +
                                                           " MARCA_ID = " + objVeiculo.Marcaveiculo.Id_marca + ", " +
-                                                          " MODELO_ID = " + objVeiculo.Modeloveiculo.Id_modelo + ", " +
-                                                          " TIPO_ID = " + objVeiculo.Tipoveiculo.Id_tipoveiculo + ", " +
+                                                          " MODELO_ID = " + objVeiculo.Marcaveiculo.Modeloveiculo.Id_modelo + ", " +
+                                                          " TIPO_ID = " + objVeiculo.Marcaveiculo.Tipoveiculo.Id_tipoveiculo + ", " +
                                                           " STATUS_ID = " + objVeiculo.Statusveiculo.Id_statusveiculo + ", " +
                                                           " where ID = " + objVeiculo.Id + " ;";//ver com o Lucas ID
             try
@@ -98,8 +99,8 @@ namespace DAL
                     objVeiculo.Corveiculo.Id_cor = Convert.ToInt32(dr[4].ToString());
                     objVeiculo.Chassi_vec = Convert.ToInt32(dr[5].ToString());
                     objVeiculo.Marcaveiculo.Id_marca = Convert.ToInt32(dr[6].ToString());
-                    objVeiculo.Modeloveiculo.Id_modelo = Convert.ToInt32(dr[7].ToString());
-                    objVeiculo.Tipoveiculo.Id_tipoveiculo = Convert.ToInt32(dr[8].ToString());
+                    objVeiculo.Marcaveiculo.Modeloveiculo.Id_modelo = Convert.ToInt32(dr[7].ToString());
+                    objVeiculo.Marcaveiculo.Tipoveiculo.Id_tipoveiculo = Convert.ToInt32(dr[8].ToString());
                     objVeiculo.Statusveiculo.Id_statusveiculo = Convert.ToInt32(dr[9].ToString());
                 }
                 else if (varGlob.BdConexao == "MySql")
@@ -113,8 +114,8 @@ namespace DAL
                     objVeiculo.Corveiculo.Id_cor = Convert.ToInt32(dr[4].ToString());
                     objVeiculo.Chassi_vec = Convert.ToInt32(dr[5].ToString());
                     objVeiculo.Marcaveiculo.Id_marca = Convert.ToInt32(dr[6].ToString());
-                    objVeiculo.Modeloveiculo.Id_modelo = Convert.ToInt32(dr[7].ToString());
-                    objVeiculo.Tipoveiculo.Id_tipoveiculo = Convert.ToInt32(dr[8].ToString());
+                    objVeiculo.Marcaveiculo.Modeloveiculo.Id_modelo = Convert.ToInt32(dr[7].ToString());
+                    objVeiculo.Marcaveiculo.Tipoveiculo.Id_tipoveiculo = Convert.ToInt32(dr[8].ToString());
                     objVeiculo.Statusveiculo.Id_statusveiculo = Convert.ToInt32(dr[9].ToString());
                 }
 
@@ -144,8 +145,8 @@ namespace DAL
                         objVeiculo.Corveiculo.Id_cor = Convert.ToInt32(dr[4].ToString());
                         objVeiculo.Chassi_vec = Convert.ToInt32(dr[5].ToString());
                         objVeiculo.Marcaveiculo.Id_marca = Convert.ToInt32(dr[6].ToString());
-                        objVeiculo.Modeloveiculo.Id_modelo = Convert.ToInt32(dr[7].ToString());
-                        objVeiculo.Tipoveiculo.Id_tipoveiculo = Convert.ToInt32(dr[8].ToString());
+                        objVeiculo.Marcaveiculo.Modeloveiculo.Id_modelo = Convert.ToInt32(dr[7].ToString());
+                        objVeiculo.Marcaveiculo.Tipoveiculo.Id_tipoveiculo = Convert.ToInt32(dr[8].ToString());
                         objVeiculo.Statusveiculo.Id_statusveiculo = Convert.ToInt32(dr[9].ToString());
                         listaVeiculos.Add(objVeiculo);
                     }
@@ -163,8 +164,8 @@ namespace DAL
                         objVeiculo.Corveiculo.Id_cor = Convert.ToInt32(dr[4].ToString());
                         objVeiculo.Chassi_vec = Convert.ToInt32(dr[5].ToString());
                         objVeiculo.Marcaveiculo.Id_marca = Convert.ToInt32(dr[6].ToString());
-                        objVeiculo.Modeloveiculo.Id_modelo = Convert.ToInt32(dr[7].ToString());
-                        objVeiculo.Tipoveiculo.Id_tipoveiculo = Convert.ToInt32(dr[8].ToString());
+                        objVeiculo.Marcaveiculo.Modeloveiculo.Id_modelo = Convert.ToInt32(dr[7].ToString());
+                        objVeiculo.Marcaveiculo.Tipoveiculo.Id_tipoveiculo = Convert.ToInt32(dr[8].ToString());
                         objVeiculo.Statusveiculo.Id_statusveiculo = Convert.ToInt32(dr[9].ToString());
                         listaVeiculos.Add(objVeiculo);
                     }

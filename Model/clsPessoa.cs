@@ -15,9 +15,9 @@ public class clsPessoa
 
     private string nome;
 
-    private string statusPessoa;
+    private clsStatus statusPessoa;
 
     public int Id { get => id; set => this.id = value; }
     public string Nome { get => nome; set => this.nome = value; }
-    public string StatusPessoa { get => statusPessoa; set => this.statusPessoa = value; }
+    public clsStatus StatusPessoa { get => statusPessoa; set => this.statusPessoa = value; }
 }

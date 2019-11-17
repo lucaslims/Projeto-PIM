@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class clsDalTipoPessoa : SqlHelper
+    public class clsDalEndereco : SqlHelper
     {
     }
 }

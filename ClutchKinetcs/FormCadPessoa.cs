@@ -1,4 +1,6 @@
 ﻿using Control;
+using DAL;
+using Model;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -29,7 +31,7 @@ namespace ClutchKinetcs
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-                this.WindowState = FormWindowState.Maximized;
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void FormCadPessoa_ParentChanged(object sender, EventArgs e)
@@ -44,97 +46,90 @@ namespace ClutchKinetcs
         private void button1_Click(object sender, EventArgs e)
         {
 
-            //connMySql = clsConexao.GetConexaoMySql();
-            //connSqlServer = clsConexao.GetConexaoSqlServer();
+            connMySql = clsConexao.GetConexaoMySql();
+            connSqlServer = clsConexao.GetConexaoSqlServer();
 
-            //string nome, cep, rua, numero, complemento, bairro, cidade, estado, email, celular, telefone, status, tipo;
-            //nome = txtNomeCadCli.Text;
-            //cep = txtCepCadCli.Text;
-            //rua = txtRuaCadCli.Text;
-            //complemento = txtComplCadCli.Text;
-            //bairro = txtBairroCadCli.Text;
-            //cidade = txtCidadeCadCli.Text;
-            //numero = txtNumCadCli.Text;
-            //estado = txtUfCadCli.Text;
-            //email = txtEmailCadCli.Text;
-            //celular = txtCelularCadCli.Text;
-            //telefone = txtTelefoneCadCli.Text;
-            //status = cmbStatus.selectedValue;
-            //tipo = dplTipoPessoa.selectedValue;
+            clsPessoa pessoa = new clsPessoa();
+            clsTipoPessoa tipopessoa = new clsTipoPessoa();
+            clsEmail email = new clsEmail();
+            clsEstado estado = new clsEstado();
+            clsCidade cidade = new clsCidade();
+            clsTelefone telefone = new clsTelefone();
+            clsEndereco endereco = new clsEndereco();
+            clsStatus status = new clsStatus();
+            clsPais pais = new clsPais();
 
-            //clsPessoa pessoa = new clsPessoa();
-            //clsTipoPessoa tipoPessoa = new clsTipoPessoa();
-            //clsEmail Email = new clsEmail();
-            //clsEstado Estado = new clsEstado();
-            //clsCidade Cidade = new clsCidade();
-            //clsTelefone Telefone = new clsTelefone();
-            //clsEndereco Endereco = new clsEndereco();
-            //clsStatus Status = new clsStatus();
-            //clsPais Pais = new clsPais();
+            status.Id = Convert.ToInt32(cBoxStatusClienteCadCli.selectedValue);
 
-            //Status.id = cmbStatus.selectedValue;
-            //tipoPessoa.Id_tipo = Convert.ToInt32(tipo);
-            //pessoa.Nome = nome;
-            //pessoa.StatusPessoa = status; //STATUS
-            //Pais.Id = 1;
-            //Estado.Pais = Pais;
-            //Estado.Abreviacao = estado;
-            //Cidade.Estado = Estado;
-            //Cidade.Descricao = cidade;
-            //Endereco.Cep = cep;
-            //Endereco.Pessoa = pessoa;
-            //Endereco.Logradouro = rua;
-            //Endereco.Cmplemento = complemento;
-            //Endereco.Bairro = bairro;
-            //Email.Email = email;
-            //Email.Pessoa = pessoa;
-            //Telefone.Numero = Convert.ToInt32(numero);
-            //Telefone.Numero = Convert.ToInt32(numero);
+            tipopessoa.Id = Convert.ToInt32(cBoxTipoPessoa.selectedValue);
+
+            pessoa.Nome = txtNomeCadCli.Text;
+            pessoa.StatusPessoa = status; //status
+
+            pais.Id = 1;
+
+            estado.Pais = pais;
+            estado.Descricao = txtUfCadCli.Text;
+
+            cidade.Estado = estado;
+            cidade.Descricao = txtCidadeCadCli.Text;
+
+            endereco.Cep = txtCepCadCli.Text;
+            endereco.Pessoa = pessoa;
+            endereco.Logradouro = txtRuaCadCli.Text + " - ";
+            endereco.Numero = Convert.ToInt32(txtNumCadCli.Text);
+            endereco.Complemento = txtComplCadCli.Text;
+            endereco.Bairro = txtBairroCadCli.Text;
+
+            email.Email = txtEmailCadCli.Text;
+            email.Pessoa = pessoa;
+
+            telefone.Numero = Convert.ToInt32(txtNumCadCli.Text);
+            telefone.Numero = Convert.ToInt32(txtNumCadCli.Text);
+
+            varGlob.InsereLog();
+
+            clsDalPessoa dalpessoa = new clsDalPessoa();
+            clsDalTipoPessoa daltipopessoa = new clsDalTipoPessoa();
+            clsDalEmail dalemail = new clsDalEmail();
+            clsDalEstado dalestado = new clsDalEstado();
+            clsDalCidade dalcidade = new clsDalCidade();
+            clsDalTelefone daltelefone = new clsDalTelefone();
+            clsDalEndereco dalendereco = new clsDalEndereco();
+            clsDalStatusVeiculo dalstatus = new clsDalStatusVeiculo();
+            clsDalPais dalpais = new clsDalPais();
+            clsDalGeral lastid = new clsDalGeral();
+
+            try
+            {
+                connMySql.Open();
+                connSqlServer.Open();
 
 
+                dalstatus.InsertStatus(connMySql, connSqlServer, status);
 
+                dalpessoa.InsertPessoa(connMySql, connSqlServer, pessoa);
 
-            //varGlob.InsereLog();
+                pessoa = lastid.SelectUtimoIdPessoa(connMySql, connSqlServer, pessoa);
 
+                dalestado.InsertEstado(connMySql, connSqlServer, estado);
+                dalcidade.insertcidade(connMySql, connSqlServer, cidade);
 
-            //clsDalPessoa dalPessoa = new clsDalPessoa();
-            //clsDalTipoPessoa daltipoPessoa = new clsDalTipoPessoa();
-            //clsDalEmail dalEmail = new clsDalEmail();
-            //clsDalEstado dalEstado = new clsDalEstado();
-            //clsDalCidade dalCidade = new clsDalCidade();
-            //clsDalTelefone dalTelefone = new clsDalTelefone();
-            //clsDalEndereco dalEndereco = new clsDalEndereco();
-            //clsDalStatus dalStatus = new clsDalStatus();
-            //clsDalPais dalPais = new clsDalPais();
-            //clsDalGeral lastId = new clsDalGeral();
+                dalendereco.insertEndereco(connMySql, connSqlServer, endereco);
 
-            //try
-            //{
-            //    connMySql.Open();
-            //    connSqlServer.Open();
-            //    if (varGlob.BdConexao == "MySql")
-            //        dalPessoa.AbrirConexaoMySql(connMySql);
-            //    else if (varGlob.BdConexao == "SqlServer")
-            //        dalPessoa.AbrirConexaoSqlServer(connSqlServer);
-            //    dalStatus.InsertStatus(connMySql, connSqlServer, Status);
-            //    daltipoPessoa.InsertTipo(connMySql, connSqlServer, tipo); //criar
-            //    dalPessoa.InsertPessoa(connMySql, connSqlServer, pessoa);
-            //    pessoa = lastId.SelectUtimoIdPessoa(connMySql, connSqlServer, pessoa);
-            //    dalEstado.InsertEstado(connMySql, connSqlServer, Estado);
-            //    dalCidade.InsertCidade(connMySql, connSqlServer, cidade);
-            //    dalEndereco.insertEndereco(connMySql, connSqlServer, Endereco);
-            //    dalEmail.InsertEmail(connMySql, connSqlServer, Email);
-            //    dalTelefone.insertTelefone(connMySql, connSqlServer, Telefone); //celular
-            //    dalTelefone.insertTelefone(connMySql, connSqlServer, Telefone);//telefone
+                dalemail.InsertEmail(connMySql, connSqlServer, email);
+
+                daltelefone.insertTelefone(connMySql, connSqlServer, telefone); //celular
+                daltelefone.insertTelefone(connMySql, connSqlServer, telefone);//telefone
 
 
 
-            //    connMySql.Close();
-            //    connSqlServer.Close();
-            //}
+                connMySql.Close();
+                connSqlServer.Close();
+            }
 
-            //catch (Exception ex) { MessageBox.Show("Registro não encontrado! Erro: " + ex.Message); throw ex; }
-            //finally { dalPessoa.FecharConexaoMySql(connMySql); dalLogin.FecharConexaoSqlServer(connSqlServer); }
+            catch (Exception ex) { MessageBox.Show("registro não encontrado! erro: " + ex.Message); throw ex; }
+            finally { }
 
         }
     }

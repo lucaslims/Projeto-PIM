@@ -9,14 +9,14 @@ using Control;
 
 namespace DAL
 {
-    public class clsDalCargo:SqlHelper
+    public class clsDalCargo : SqlHelper
     {
         clsGlobal varGlob = new clsGlobal();
-        public bool InsertCargo(MySqlConnection conMySql, SqlConnection conServer, clsCargo objCargo )
+        public bool InsertCargo(MySqlConnection conMySql, SqlConnection conServer, clsCargo objCargo)
         {
             string InserirCargo = "insert into TB_CD_CARGO  (ID,DESCRICAO " +
                                   " values (" + objCargo.Id + ", " +
-                                          "'" + objCargo.Descricao +");";
+                                          "'" + objCargo.Descricao + ");";
 
             try
             {
@@ -124,7 +124,7 @@ namespace DAL
                         ListaCargo.Add(objCargo);
                     }
                 }
-                
+
 
                 return ListaCargo;
             }
