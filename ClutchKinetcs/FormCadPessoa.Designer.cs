@@ -77,6 +77,7 @@
             this.lblUfCadCli = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.gbGeralCadCli = new System.Windows.Forms.GroupBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.gbPessoaFisicaCadCli.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -763,6 +764,16 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(552, 478);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 42;
+            this.button1.Text = "Cadastrar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormCadPessoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -770,6 +781,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(918, 600);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.gbPessoaFisicaCadCli);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbPessoaJuridicaCadCli);
@@ -842,5 +854,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lblUfCadCli;
         private System.Windows.Forms.GroupBox gbGeralCadCli;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button1;
     }
 }

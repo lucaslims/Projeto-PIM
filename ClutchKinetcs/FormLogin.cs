@@ -41,37 +41,6 @@ namespace ClutchKinetcs
             InitializeComponent();
             this.MouseDown += new MouseEventHandler(PnlOpcSW_MouseDown);
             this.MouseMove += new MouseEventHandler(PnlOpcSW_MouseMove);
-            DialogResult result = DialogResult.None;
-            do
-            {
-                do
-                {
-                    try
-                    {
-                        connMySql = clsConexao.GetConexaoMySql();
-                        varGlob.AbrirConexaoMySql(connMySql);
-                        MessageBox.Show("Conectado com Mysql", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        varGlob.BdConexao = "MySql";
-                    }
-                    catch (MySqlException) { result = MessageBox.Show("Sem conexao com o: MySql\n\nTentar conectar-se novamente?", "ERRO DE CONEXÃO", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error); }
-                    finally { varGlob.FecharConexaoMySql(connMySql); }
-
-                } while (result == DialogResult.Retry);
-
-                if (string.IsNullOrEmpty(varGlob.BdConexao))
-                {
-                    try
-                    {
-                        connSqlServer = clsConexao.GetConexaoSqlServer();
-                        varGlob.AbrirConexaoSqlServer(connSqlServer);
-                        MessageBox.Show("Conectado com SqlServer", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        varGlob.BdConexao = "SqlServer";
-                    }
-                    catch (SqlException) { result = MessageBox.Show("Sem conexao com o Mysql e Sql Server \n\nTentar conectar-se novamente?", "ERRO DE CONEXÃO", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error); }
-                    finally { varGlob.FecharConexaoSqlServer(connSqlServer); }
-                }
-
-            } while (result == DialogResult.Retry);
         }
 
         private void BtnFecharSW_Click(object sender, EventArgs e)

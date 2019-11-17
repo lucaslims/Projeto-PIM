@@ -69,6 +69,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CaixaDialogoPersonalizada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CaixaDialogoPersonalizada.Designer.cs">
+      <DependentUpon>CaixaDialogoPersonalizada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAttFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAttFuncionario.designer.cs">
+      <DependentUpon>FormAttFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAttLocacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAttLocacao.designer.cs">
+      <DependentUpon>FormAttLocacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAttLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAttLogin.designer.cs">
+      <DependentUpon>FormAttLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAttPessoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAttPessoa.designer.cs">
+      <DependentUpon>FormAttPessoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAttServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAttServico.designer.cs">
+      <DependentUpon>FormAttServico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAttVeiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAttVeiculo.designer.cs">
+      <DependentUpon>FormAttVeiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAttViagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAttViagem.designer.cs">
+      <DependentUpon>FormAttViagem.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCadAbast.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +158,84 @@
     </Compile>
     <Compile Include="FormCadViagem.designer.cs">
       <DependentUpon>FormCadViagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConFuncionario.designer.cs">
+      <DependentUpon>FormConFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConLocacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConLocacao.designer.cs">
+      <DependentUpon>FormConLocacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConLogin.designer.cs">
+      <DependentUpon>FormConLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConServico.designer.cs">
+      <DependentUpon>FormConServico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConVeiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConVeiculo.designer.cs">
+      <DependentUpon>FormConVeiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConViagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConViagem.designer.cs">
+      <DependentUpon>FormConViagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDelFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDelFuncionario.designer.cs">
+      <DependentUpon>FormDelFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDelLocacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDelLocacao.designer.cs">
+      <DependentUpon>FormDelLocacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDelLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDelLogin.designer.cs">
+      <DependentUpon>FormDelLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDelPessoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDelPessoa.designer.cs">
+      <DependentUpon>FormDelPessoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDelServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDelServico.designer.cs">
+      <DependentUpon>FormDelServico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDelVeiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDelVeiculo.designer.cs">
+      <DependentUpon>FormDelVeiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDelViagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDelViagem.designer.cs">
+      <DependentUpon>FormDelViagem.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -173,6 +299,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CaixaDialogoPersonalizada.resx">
+      <DependentUpon>CaixaDialogoPersonalizada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAttFuncionario.resx">
+      <DependentUpon>FormAttFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAttLocacao.resx">
+      <DependentUpon>FormAttLocacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAttLogin.resx">
+      <DependentUpon>FormAttLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAttPessoa.resx">
+      <DependentUpon>FormAttPessoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAttServico.resx">
+      <DependentUpon>FormAttServico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAttVeiculo.resx">
+      <DependentUpon>FormAttVeiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAttViagem.resx">
+      <DependentUpon>FormAttViagem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCadAbast.resx">
       <DependentUpon>FormCadAbast.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +343,45 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadViagem.resx">
       <DependentUpon>FormCadViagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConFuncionario.resx">
+      <DependentUpon>FormConFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConLocacao.resx">
+      <DependentUpon>FormConLocacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConLogin.resx">
+      <DependentUpon>FormConLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConServico.resx">
+      <DependentUpon>FormConServico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConVeiculo.resx">
+      <DependentUpon>FormConVeiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConViagem.resx">
+      <DependentUpon>FormConViagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDelFuncionario.resx">
+      <DependentUpon>FormDelFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDelLocacao.resx">
+      <DependentUpon>FormDelLocacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDelLogin.resx">
+      <DependentUpon>FormDelLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDelPessoa.resx">
+      <DependentUpon>FormDelPessoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDelServico.resx">
+      <DependentUpon>FormDelServico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDelVeiculo.resx">
+      <DependentUpon>FormDelVeiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDelViagem.resx">
+      <DependentUpon>FormDelViagem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -259,6 +448,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\computer.png" />
+    <None Include="Resources\confirmation_verification-512.png" />
     <Content Include="Resources\credit-card.png" />
     <Content Include="Resources\delivery-truck.png" />
     <Content Include="Resources\driver.png" />

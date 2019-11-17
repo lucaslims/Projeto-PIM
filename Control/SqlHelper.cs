@@ -18,8 +18,12 @@ namespace Control
         {
             try
             {
+
                 if (con.State == ConnectionState.Closed)
                 {
+
+                    Console.WriteLine("State: {0}", con.State);
+                    Console.WriteLine("ConnectionTimeout: {0}", con.ConnectionTimeout);
                     con.Open();
                 }
             }
@@ -234,6 +238,8 @@ namespace Control
             {
                 if (con.State == ConnectionState.Closed)
                 {
+                    Console.WriteLine("State: {0}", con.State);
+                    Console.WriteLine("ConnectionTimeout: {0}", con.ConnectionTimeout);
                     con.Open();
                 }
             }
