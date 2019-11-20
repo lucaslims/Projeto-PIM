@@ -447,6 +447,7 @@
     <None Include="Resources\close2.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Bunifu_UI_v1.52.dll" />
     <Content Include="Resources\computer.png" />
     <None Include="Resources\confirmation_verification-512.png" />
     <Content Include="Resources\credit-card.png" />
