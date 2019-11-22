@@ -49,87 +49,58 @@ namespace ClutchKinetcs
             connMySql = clsConexao.GetConexaoMySql();
             connSqlServer = clsConexao.GetConexaoSqlServer();
 
-            clsPessoa pessoa = new clsPessoa();
-            clsTipoPessoa tipopessoa = new clsTipoPessoa();
-            clsEmail email = new clsEmail();
-            clsEstado estado = new clsEstado();
-            clsCidade cidade = new clsCidade();
-            clsTelefone telefone = new clsTelefone();
-            clsEndereco endereco = new clsEndereco();
-            clsStatus status = new clsStatus();
-            clsPais pais = new clsPais();
-
-            status.Id = Convert.ToInt32(cBoxStatusClienteCadCli.selectedValue);
-
-            tipopessoa.Id = Convert.ToInt32(cBoxTipoPessoa.selectedValue);
-
-            pessoa.Nome = txtNomeCadCli.Text;
-            pessoa.StatusPessoa = status; //status
-
-            pais.Id = 1;
-
-            estado.Pais = pais;
-            estado.Descricao = txtUfCadCli.Text;
-
-            cidade.Estado = estado;
-            cidade.Descricao = txtCidadeCadCli.Text;
-
-            endereco.Cep = txtCepCadCli.Text;
-            endereco.Pessoa = pessoa;
-            endereco.Logradouro = txtRuaCadCli.Text + " - ";
-            endereco.Numero = Convert.ToInt32(txtNumCadCli.Text);
-            endereco.Complemento = txtComplCadCli.Text;
-            endereco.Bairro = txtBairroCadCli.Text;
-
-            email.Email = txtEmailCadCli.Text;
-            email.Pessoa = pessoa;
-
-            telefone.Numero = Convert.ToInt32(txtNumCadCli.Text);
-            telefone.Numero = Convert.ToInt32(txtNumCadCli.Text);
-
-            varGlob.InsereLog();
-
-            clsDalPessoa dalpessoa = new clsDalPessoa();
-            clsDalTipoPessoa daltipopessoa = new clsDalTipoPessoa();
-            clsDalEmail dalemail = new clsDalEmail();
-            clsDalEstado dalestado = new clsDalEstado();
-            clsDalCidade dalcidade = new clsDalCidade();
-            clsDalTelefone daltelefone = new clsDalTelefone();
-            clsDalEndereco dalendereco = new clsDalEndereco();
-            clsDalStatusVeiculo dalstatus = new clsDalStatusVeiculo();
-            clsDalPais dalpais = new clsDalPais();
-            clsDalGeral lastid = new clsDalGeral();
-
+            List<string> dadosPessoa = new List<string>();
             try
             {
+                dadosPessoa.Add(txtNomeCadCli.Text);
+                //dadosPessoa.Add(cBoxStatusClienteCadCli.selectedValue.ToString()); //arrumar
+                dadosPessoa.Add("1"); // apenas para teste tirar depois
+                dadosPessoa.Add(txtCpfPessFisCadCli.Text);
+                dadosPessoa.Add(txtRgPessFisCadCli.Text);
+                dadosPessoa.Add(txtDtNascPessFisCadCli.Text);
+                dadosPessoa.Add(txtCepCadCli.Text);
+                dadosPessoa.Add(txtRuaCadCli.Text);
+                dadosPessoa.Add(txtNumCadCli.Text);
+                dadosPessoa.Add(txtComplCadCli.Text);
+                dadosPessoa.Add(txtCidadeCadCli.Text); //tem q passar id cidade arrumar
+                dadosPessoa.Add(txtEmailCadCli.Text);
+                dadosPessoa.Add("55");//ddi
+                dadosPessoa.Add(txtTelefoneCadCli.Text.Substring(0, 2));//ddd telefone- colocar mascara no campo
+                dadosPessoa.Add(txtTelefoneCadCli.Text.Substring(2));//numero de telefone- colocar mascara no campo
+                dadosPessoa.Add("55");//ddi
+                dadosPessoa.Add(txtCelularCadCli.Text.Substring(0, 2));// ddd celular- colocar mascara no campo
+                dadosPessoa.Add(txtCelularCadCli.Text.Substring(2));//numero de celular- colocar mascara no campo
+
+                varGlob.InsereLog();
+
+                clsDalPessoa dalpessoa = new clsDalPessoa();
+
                 connMySql.Open();
                 connSqlServer.Open();
+                try
+                {
 
+                    dalpessoa.InsertPessoaPFProcedure(connMySql, connSqlServer, dadosPessoa);
 
-                dalstatus.InsertStatus(connMySql, connSqlServer, status);
+                    connMySql.Close();
+                    connSqlServer.Close();
+                    MessageBox.Show("Cadastro realizado com sucesso!!");
+                }
 
-                dalpessoa.InsertPessoa(connMySql, connSqlServer, pessoa);
-
-                pessoa = lastid.SelectUtimoIdPessoa(connMySql, connSqlServer, pessoa);
-
-                dalestado.InsertEstado(connMySql, connSqlServer, estado);
-                dalcidade.insertcidade(connMySql, connSqlServer, cidade);
-
-                dalendereco.insertEndereco(connMySql, connSqlServer, endereco);
-
-                dalemail.InsertEmail(connMySql, connSqlServer, email);
-
-                daltelefone.insertTelefone(connMySql, connSqlServer, telefone); //celular
-                daltelefone.insertTelefone(connMySql, connSqlServer, telefone);//telefone
-
-
-
-                connMySql.Close();
-                connSqlServer.Close();
+                catch (Exception ex) { MessageBox.Show("registro não encontrado! erro: " + ex.Message); }
+                finally
+                {
+                    connMySql.Close();
+                    connSqlServer.Close();
+                }
             }
+            catch (Exception ex) { MessageBox.Show("registro não encontrado! erro: " + ex.Message); }
 
-            catch (Exception ex) { MessageBox.Show("registro não encontrado! erro: " + ex.Message); throw ex; }
-            finally { }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
 
         }
     }
