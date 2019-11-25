@@ -62,6 +62,7 @@ namespace ClutchKinetcs
                 dadosPessoa.Add(txtRuaCadCli.Text);
                 dadosPessoa.Add(txtNumCadCli.Text);
                 dadosPessoa.Add(txtComplCadCli.Text);
+                dadosPessoa.Add(txtBairroCadCli.Text);
                 dadosPessoa.Add(txtCidadeCadCli.Text); //tem q passar id cidade arrumar
                 dadosPessoa.Add(txtEmailCadCli.Text);
                 dadosPessoa.Add("55");//ddi
