@@ -234,7 +234,8 @@
             this.Controls.Add(this.gbGeralCadCli);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormCadLogin";
-            this.Text = "FormCadLogin";
+            this.Text = "pas";
+            this.Load += new System.EventHandler(this.FormCadLogin_Load);
             this.gbFuncionarioLog.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.gbGeralCadCli.ResumeLayout(false);

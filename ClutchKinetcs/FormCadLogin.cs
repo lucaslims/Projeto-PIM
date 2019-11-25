@@ -21,5 +21,10 @@ namespace ClutchKinetcs
         {
 
         }
+
+        private void FormCadLogin_Load(object sender, EventArgs e)
+        {
+            //teste
+        }
     }
 }
