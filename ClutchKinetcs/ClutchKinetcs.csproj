@@ -141,6 +141,12 @@
     <Compile Include="FormCadLogin.designer.cs">
       <DependentUpon>FormCadLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCadModelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadModelo.Designer.cs">
+      <DependentUpon>FormCadModelo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCadPessoa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,12 @@
     </Compile>
     <Compile Include="FormCadServico.designer.cs">
       <DependentUpon>FormCadServico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadVeic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadVeic.Designer.cs">
+      <DependentUpon>FormCadVeic.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCadViagem.cs">
       <SubType>Form</SubType>
@@ -335,11 +347,17 @@
     <EmbeddedResource Include="FormCadLogin.resx">
       <DependentUpon>FormCadLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCadModelo.resx">
+      <DependentUpon>FormCadModelo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCadPessoa.resx">
       <DependentUpon>FormCadPessoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadServico.resx">
       <DependentUpon>FormCadServico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadVeic.resx">
+      <DependentUpon>FormCadVeic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadViagem.resx">
       <DependentUpon>FormCadViagem.cs</DependentUpon>

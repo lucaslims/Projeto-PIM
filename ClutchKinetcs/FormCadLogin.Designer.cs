@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtCepCadCli = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.txtNomeCadCli = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.txtSenha = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.txtLogin = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.lblNomeCadCli = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblCepCadCli = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.gbFuncionarioLog = new System.Windows.Forms.GroupBox();
@@ -38,49 +38,51 @@
             this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Adicionar = new System.Windows.Forms.DataGridViewImageColumn();
             this.gbGeralCadCli = new System.Windows.Forms.GroupBox();
-            this.bunifuMetroTextbox1 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dplTipoPermissao = new Bunifu.Framework.UI.BunifuDropdown();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtSenha2 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.gbFuncionarioLog.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbGeralCadCli.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtCepCadCli
+            // txtSenha
             // 
-            this.txtCepCadCli.BorderColorFocused = System.Drawing.Color.Maroon;
-            this.txtCepCadCli.BorderColorIdle = System.Drawing.Color.White;
-            this.txtCepCadCli.BorderColorMouseHover = System.Drawing.Color.DarkGray;
-            this.txtCepCadCli.BorderThickness = 3;
-            this.txtCepCadCli.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCepCadCli.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCepCadCli.ForeColor = System.Drawing.Color.White;
-            this.txtCepCadCli.isPassword = false;
-            this.txtCepCadCli.Location = new System.Drawing.Point(90, 109);
-            this.txtCepCadCli.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCepCadCli.Name = "txtCepCadCli";
-            this.txtCepCadCli.Size = new System.Drawing.Size(439, 45);
-            this.txtCepCadCli.TabIndex = 16;
-            this.txtCepCadCli.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSenha.BorderColorFocused = System.Drawing.Color.Maroon;
+            this.txtSenha.BorderColorIdle = System.Drawing.Color.White;
+            this.txtSenha.BorderColorMouseHover = System.Drawing.Color.DarkGray;
+            this.txtSenha.BorderThickness = 3;
+            this.txtSenha.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSenha.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha.ForeColor = System.Drawing.Color.White;
+            this.txtSenha.isPassword = false;
+            this.txtSenha.Location = new System.Drawing.Point(90, 109);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Size = new System.Drawing.Size(439, 45);
+            this.txtSenha.TabIndex = 16;
+            this.txtSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSenha.OnValueChanged += new System.EventHandler(this.txtSenha_OnValueChanged);
             // 
-            // txtNomeCadCli
+            // txtLogin
             // 
-            this.txtNomeCadCli.BorderColorFocused = System.Drawing.Color.Maroon;
-            this.txtNomeCadCli.BorderColorIdle = System.Drawing.Color.White;
-            this.txtNomeCadCli.BorderColorMouseHover = System.Drawing.Color.DarkGray;
-            this.txtNomeCadCli.BorderThickness = 3;
-            this.txtNomeCadCli.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNomeCadCli.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeCadCli.ForeColor = System.Drawing.Color.White;
-            this.txtNomeCadCli.isPassword = false;
-            this.txtNomeCadCli.Location = new System.Drawing.Point(87, 42);
-            this.txtNomeCadCli.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNomeCadCli.Name = "txtNomeCadCli";
-            this.txtNomeCadCli.Size = new System.Drawing.Size(442, 44);
-            this.txtNomeCadCli.TabIndex = 15;
-            this.txtNomeCadCli.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtLogin.BorderColorFocused = System.Drawing.Color.Maroon;
+            this.txtLogin.BorderColorIdle = System.Drawing.Color.White;
+            this.txtLogin.BorderColorMouseHover = System.Drawing.Color.DarkGray;
+            this.txtLogin.BorderThickness = 3;
+            this.txtLogin.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtLogin.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLogin.ForeColor = System.Drawing.Color.White;
+            this.txtLogin.isPassword = false;
+            this.txtLogin.Location = new System.Drawing.Point(87, 42);
+            this.txtLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLogin.Name = "txtLogin";
+            this.txtLogin.Size = new System.Drawing.Size(442, 44);
+            this.txtLogin.TabIndex = 15;
+            this.txtLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // lblNomeCadCli
             // 
@@ -111,7 +113,7 @@
             this.gbFuncionarioLog.ForeColor = System.Drawing.Color.White;
             this.gbFuncionarioLog.Location = new System.Drawing.Point(15, 311);
             this.gbFuncionarioLog.Name = "gbFuncionarioLog";
-            this.gbFuncionarioLog.Size = new System.Drawing.Size(522, 277);
+            this.gbFuncionarioLog.Size = new System.Drawing.Size(529, 277);
             this.gbFuncionarioLog.TabIndex = 47;
             this.gbFuncionarioLog.TabStop = false;
             this.gbFuncionarioLog.Text = "Dados do Funcionario:";
@@ -151,11 +153,11 @@
             // 
             // gbGeralCadCli
             // 
-            this.gbGeralCadCli.Controls.Add(this.bunifuMetroTextbox1);
+            this.gbGeralCadCli.Controls.Add(this.txtSenha2);
             this.gbGeralCadCli.Controls.Add(this.bunifuCustomLabel1);
             this.gbGeralCadCli.Controls.Add(this.groupBox2);
-            this.gbGeralCadCli.Controls.Add(this.txtCepCadCli);
-            this.gbGeralCadCli.Controls.Add(this.txtNomeCadCli);
+            this.gbGeralCadCli.Controls.Add(this.txtSenha);
+            this.gbGeralCadCli.Controls.Add(this.txtLogin);
             this.gbGeralCadCli.Controls.Add(this.lblNomeCadCli);
             this.gbGeralCadCli.Controls.Add(this.lblCepCadCli);
             this.gbGeralCadCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -166,23 +168,6 @@
             this.gbGeralCadCli.TabIndex = 46;
             this.gbGeralCadCli.TabStop = false;
             this.gbGeralCadCli.Text = "Login de Usuário";
-            // 
-            // bunifuMetroTextbox1
-            // 
-            this.bunifuMetroTextbox1.BorderColorFocused = System.Drawing.Color.Maroon;
-            this.bunifuMetroTextbox1.BorderColorIdle = System.Drawing.Color.White;
-            this.bunifuMetroTextbox1.BorderColorMouseHover = System.Drawing.Color.DarkGray;
-            this.bunifuMetroTextbox1.BorderThickness = 3;
-            this.bunifuMetroTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMetroTextbox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMetroTextbox1.ForeColor = System.Drawing.Color.White;
-            this.bunifuMetroTextbox1.isPassword = false;
-            this.bunifuMetroTextbox1.Location = new System.Drawing.Point(159, 175);
-            this.bunifuMetroTextbox1.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextbox1.Name = "bunifuMetroTextbox1";
-            this.bunifuMetroTextbox1.Size = new System.Drawing.Size(370, 45);
-            this.bunifuMetroTextbox1.TabIndex = 38;
-            this.bunifuMetroTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCustomLabel1
             // 
@@ -224,12 +209,40 @@
             this.dplTipoPermissao.Size = new System.Drawing.Size(297, 25);
             this.dplTipoPermissao.TabIndex = 3;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(658, 435);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(118, 51);
+            this.button1.TabIndex = 48;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtSenha2
+            // 
+            this.txtSenha2.BorderColorFocused = System.Drawing.Color.Maroon;
+            this.txtSenha2.BorderColorIdle = System.Drawing.Color.White;
+            this.txtSenha2.BorderColorMouseHover = System.Drawing.Color.DarkGray;
+            this.txtSenha2.BorderThickness = 3;
+            this.txtSenha2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSenha2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha2.ForeColor = System.Drawing.Color.White;
+            this.txtSenha2.isPassword = false;
+            this.txtSenha2.Location = new System.Drawing.Point(164, 175);
+            this.txtSenha2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSenha2.Name = "txtSenha2";
+            this.txtSenha2.Size = new System.Drawing.Size(439, 45);
+            this.txtSenha2.TabIndex = 38;
+            this.txtSenha2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
             // FormCadLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(918, 600);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.gbFuncionarioLog);
             this.Controls.Add(this.gbGeralCadCli);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -247,8 +260,8 @@
 
         #endregion
 
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtCepCadCli;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtNomeCadCli;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtSenha;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtLogin;
         private Bunifu.Framework.UI.BunifuCustomLabel lblNomeCadCli;
         private Bunifu.Framework.UI.BunifuCustomLabel lblCepCadCli;
         private System.Windows.Forms.GroupBox gbFuncionarioLog;
@@ -259,7 +272,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Funcionario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cargo;
         private System.Windows.Forms.DataGridViewImageColumn Adicionar;
-        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private System.Windows.Forms.Button button1;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtSenha2;
     }
 }

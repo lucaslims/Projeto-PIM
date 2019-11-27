@@ -13,7 +13,7 @@ namespace ClutchKinetcs
 {
     public partial class CaixaDialogoPersonalizada : Form
     {
-        clsGlobal global = new clsGlobal();
+        static clsGlobal global = new clsGlobal();
         public CaixaDialogoPersonalizada()
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace ClutchKinetcs
         private void NewFormLogin()
         {
             //abrindo o form menu principal
-            FormLogin frmLogin = new FormLogin();
+            FormLogin frmLogin = new FormLogin(global);
             //Ocuta o form
             this.Hide();
             //Muda a Opacidade do form menu principal para 0

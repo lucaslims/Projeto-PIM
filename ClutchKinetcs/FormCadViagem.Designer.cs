@@ -29,8 +29,16 @@
         private void InitializeComponent()
         {
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Motorista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValidadeCnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoriaCnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AddMotorista = new System.Windows.Forms.DataGridViewImageColumn();
             this.gbMotoViag = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Veiculo = new System.Windows.Forms.DataGridViewImageColumn();
             this.doubleBitmapControl1 = new BunifuAnimatorNS.DoubleBitmapControl();
             this.gbVeiculoLoc = new System.Windows.Forms.GroupBox();
             this.txtComplCadCli = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -40,14 +48,6 @@
             this.lblCompCadCli = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.gbGeralCadViag = new System.Windows.Forms.GroupBox();
             this.lblRuaCadCli = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.Motorista = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ValidadeCnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CategoriaCnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AddMotorista = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Veiculo = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.gbMotoViag.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -68,6 +68,45 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(545, 277);
             this.dataGridView2.TabIndex = 0;
+            // 
+            // Motorista
+            // 
+            this.Motorista.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Motorista.HeaderText = "Motorista";
+            this.Motorista.Name = "Motorista";
+            this.Motorista.ReadOnly = true;
+            this.Motorista.Width = 119;
+            // 
+            // cnh
+            // 
+            this.cnh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cnh.HeaderText = "CNH";
+            this.cnh.Name = "cnh";
+            this.cnh.ReadOnly = true;
+            this.cnh.Width = 79;
+            // 
+            // ValidadeCnh
+            // 
+            this.ValidadeCnh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ValidadeCnh.HeaderText = "Val.";
+            this.ValidadeCnh.Name = "ValidadeCnh";
+            this.ValidadeCnh.ReadOnly = true;
+            this.ValidadeCnh.Width = 71;
+            // 
+            // CategoriaCnh
+            // 
+            this.CategoriaCnh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.CategoriaCnh.HeaderText = "Cat.";
+            this.CategoriaCnh.Name = "CategoriaCnh";
+            this.CategoriaCnh.ReadOnly = true;
+            this.CategoriaCnh.Width = 71;
+            // 
+            // AddMotorista
+            // 
+            this.AddMotorista.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.AddMotorista.HeaderText = "";
+            this.AddMotorista.Name = "AddMotorista";
+            this.AddMotorista.Width = 21;
             // 
             // gbMotoViag
             // 
@@ -93,6 +132,27 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(384, 189);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // Nome
+            // 
+            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.Width = 91;
+            // 
+            // Tipo
+            // 
+            this.Tipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.Width = 77;
+            // 
+            // Veiculo
+            // 
+            this.Veiculo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Veiculo.HeaderText = "";
+            this.Veiculo.Name = "Veiculo";
+            this.Veiculo.Width = 21;
             // 
             // doubleBitmapControl1
             // 
@@ -216,66 +276,6 @@
             this.lblRuaCadCli.TabIndex = 3;
             this.lblRuaCadCli.Text = "Destino";
             // 
-            // Motorista
-            // 
-            this.Motorista.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Motorista.HeaderText = "Motorista";
-            this.Motorista.Name = "Motorista";
-            this.Motorista.ReadOnly = true;
-            this.Motorista.Width = 119;
-            // 
-            // cnh
-            // 
-            this.cnh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cnh.HeaderText = "CNH";
-            this.cnh.Name = "cnh";
-            this.cnh.ReadOnly = true;
-            this.cnh.Width = 79;
-            // 
-            // ValidadeCnh
-            // 
-            this.ValidadeCnh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ValidadeCnh.HeaderText = "Val.";
-            this.ValidadeCnh.Name = "ValidadeCnh";
-            this.ValidadeCnh.ReadOnly = true;
-            this.ValidadeCnh.Width = 71;
-            // 
-            // CategoriaCnh
-            // 
-            this.CategoriaCnh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.CategoriaCnh.HeaderText = "Cat.";
-            this.CategoriaCnh.Name = "CategoriaCnh";
-            this.CategoriaCnh.ReadOnly = true;
-            this.CategoriaCnh.Width = 71;
-            // 
-            // AddMotorista
-            // 
-            this.AddMotorista.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.AddMotorista.HeaderText = "";
-            this.AddMotorista.Name = "AddMotorista";
-            this.AddMotorista.Width = 21;
-            // 
-            // Nome
-            // 
-            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.Width = 91;
-            // 
-            // Tipo
-            // 
-            this.Tipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.Name = "Tipo";
-            this.Tipo.Width = 77;
-            // 
-            // Veiculo
-            // 
-            this.Veiculo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Veiculo.HeaderText = "";
-            this.Veiculo.Name = "Veiculo";
-            this.Veiculo.Width = 21;
-            // 
             // FormCadViagem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,6 +289,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormCadViagem";
             this.Text = "FormCadViagem";
+            this.Load += new System.EventHandler(this.FormCadViagem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.gbMotoViag.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

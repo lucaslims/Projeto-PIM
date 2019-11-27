@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAL;
+using Control;
+using Model;
 
 namespace ClutchKinetcs
 {
@@ -16,6 +19,8 @@ namespace ClutchKinetcs
         int X = 0;
         int Y = 0;
 
+        static clsGlobal varglob = new clsGlobal();
+         
         private void pnlOpcSW_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left) return;
@@ -30,7 +35,7 @@ namespace ClutchKinetcs
             this.Top = Y + MousePosition.Y;
         }
 
-        FormLogin frmLogin = new FormLogin();
+        FormLogin frmLogin = new FormLogin(varglob);
         clsLogin pessoaLogin = new clsLogin();
         clsPessoa pessoaLogada = new clsPessoa();
 

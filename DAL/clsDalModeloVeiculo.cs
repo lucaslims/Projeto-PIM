@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Control;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
+using System.Data;
+
 namespace DAL
 {
     public class clsDalModeloVeiculo : SqlHelper
@@ -26,6 +28,47 @@ namespace DAL
                     ExecutarComandoSqlServer(insertModelo, conServer);
                 else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(insertModelo, conMySql);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public bool inserModeloProcedure(MySqlConnection conMySql, SqlConnection conServer, List<string> dadosViagem)
+        {
+            try
+            {
+                if (varGlob.BdConexao == "SqlServer")
+                {
+                    SqlCommand cmd = new SqlCommand("CADASTRAR_MODELO", conServer);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@V_Model_descricao", dadosViagem[0]);
+                    cmd.Parameters.AddWithValue("@V_Tipo_descricao", dadosViagem[1]);
+                    cmd.Parameters.AddWithValue("@V_Marca_descricao", dadosViagem[1]);
+
+
+                    ExecutarComandoProcSqlServer(cmd);
+                }
+                else if (varGlob.BdConexao == "MySql")
+                {
+                    MySqlCommand cmd = new MySqlCommand("CADASTRAR_MODELO", conMySql);
+                    cmd.Parameters.AddWithValue("@V_Model_descricao", dadosViagem[0]);
+                    cmd.Parameters.AddWithValue("@V_Tipo_descricao", dadosViagem[1]);
+                    cmd.Parameters.AddWithValue("@V_Marca_descricao", dadosViagem[1]);
+
+                    ExecutarComandoProcSqlMySql(cmd);
+                }
+                else 
+                {
+                    MySqlCommand cmd = new MySqlCommand("CADASTRAR_MODELO", conMySql);
+                    cmd.Parameters.AddWithValue("@V_Model_descricao", dadosViagem[0]);
+                    cmd.Parameters.AddWithValue("@V_Tipo_descricao", dadosViagem[1]);
+                    cmd.Parameters.AddWithValue("@V_Marca_descricao", dadosViagem[1]);
+
+                    ExecutarComandoProcSqlMySql(cmd);
+                }
 
                 return true;
             }

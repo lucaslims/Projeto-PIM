@@ -32,7 +32,6 @@
             this.btnConsultarAbastKm = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnDeletarAbastKm = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnAtualizarAbastKm = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnCadastrarKm = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnRelatorio = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnCadastrarAbast = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnDeletar = new Bunifu.Framework.UI.BunifuTileButton();
@@ -106,26 +105,6 @@
             this.btnAtualizarAbastKm.TabIndex = 71;
             this.btnAtualizarAbastKm.Tag = "Teste";
             // 
-            // btnCadastrarKm
-            // 
-            this.btnCadastrarKm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCadastrarKm.color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCadastrarKm.colorActive = System.Drawing.Color.Maroon;
-            this.btnCadastrarKm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCadastrarKm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrarKm.ForeColor = System.Drawing.Color.White;
-            this.btnCadastrarKm.Image = ((System.Drawing.Image)(resources.GetObject("btnCadastrarKm.Image")));
-            this.btnCadastrarKm.ImagePosition = 16;
-            this.btnCadastrarKm.ImageZoom = 60;
-            this.btnCadastrarKm.LabelPosition = 24;
-            this.btnCadastrarKm.LabelText = "Cadastrar Kilometragem";
-            this.btnCadastrarKm.Location = new System.Drawing.Point(81, 233);
-            this.btnCadastrarKm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnCadastrarKm.Name = "btnCadastrarKm";
-            this.btnCadastrarKm.Size = new System.Drawing.Size(208, 25);
-            this.btnCadastrarKm.TabIndex = 70;
-            this.btnCadastrarKm.Tag = "Teste";
-            // 
             // btnRelatorio
             // 
             this.btnRelatorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -158,13 +137,14 @@
             this.btnCadastrarAbast.ImagePosition = 16;
             this.btnCadastrarAbast.ImageZoom = 60;
             this.btnCadastrarAbast.LabelPosition = 24;
-            this.btnCadastrarAbast.LabelText = "Cadastrar Abastecimento";
+            this.btnCadastrarAbast.LabelText = "Cadastrar Abast. e Km";
             this.btnCadastrarAbast.Location = new System.Drawing.Point(81, 192);
             this.btnCadastrarAbast.Margin = new System.Windows.Forms.Padding(6);
             this.btnCadastrarAbast.Name = "btnCadastrarAbast";
             this.btnCadastrarAbast.Size = new System.Drawing.Size(208, 30);
             this.btnCadastrarAbast.TabIndex = 68;
             this.btnCadastrarAbast.Tag = "Teste";
+            this.btnCadastrarAbast.Click += new System.EventHandler(this.btnCadastrarAbast_Click);
             // 
             // btnDeletar
             // 
@@ -185,6 +165,7 @@
             this.btnDeletar.Size = new System.Drawing.Size(241, 31);
             this.btnDeletar.TabIndex = 67;
             this.btnDeletar.Tag = "Teste";
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
             // btnAtualizar
             // 
@@ -205,6 +186,7 @@
             this.btnAtualizar.Size = new System.Drawing.Size(241, 31);
             this.btnAtualizar.TabIndex = 66;
             this.btnAtualizar.Tag = "Teste";
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // btnConsulta
             // 
@@ -225,6 +207,7 @@
             this.btnConsulta.Size = new System.Drawing.Size(241, 32);
             this.btnConsulta.TabIndex = 65;
             this.btnConsulta.Tag = "Teste";
+            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
             // btnCadastro
             // 
@@ -245,6 +228,7 @@
             this.btnCadastro.Size = new System.Drawing.Size(241, 32);
             this.btnCadastro.TabIndex = 64;
             this.btnCadastro.Tag = "Teste";
+            this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
             // 
             // bunifuCustomLabel1
             // 
@@ -309,7 +293,6 @@
             this.Controls.Add(this.btnConsultarAbastKm);
             this.Controls.Add(this.btnDeletarAbastKm);
             this.Controls.Add(this.btnAtualizarAbastKm);
-            this.Controls.Add(this.btnCadastrarKm);
             this.Controls.Add(this.btnRelatorio);
             this.Controls.Add(this.btnCadastrarAbast);
             this.Controls.Add(this.btnDeletar);
@@ -334,7 +317,6 @@
         private Bunifu.Framework.UI.BunifuTileButton btnConsultarAbastKm;
         private Bunifu.Framework.UI.BunifuTileButton btnDeletarAbastKm;
         private Bunifu.Framework.UI.BunifuTileButton btnAtualizarAbastKm;
-        private Bunifu.Framework.UI.BunifuTileButton btnCadastrarKm;
         private Bunifu.Framework.UI.BunifuTileButton btnRelatorio;
         private Bunifu.Framework.UI.BunifuTileButton btnCadastrarAbast;
         private Bunifu.Framework.UI.BunifuTileButton btnDeletar;

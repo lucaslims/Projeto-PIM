@@ -46,7 +46,7 @@ namespace ClutchKinetcs
 
         private void BtnConsulta_Click(object sender, EventArgs e)
         {
-
+           
         }
 
     }

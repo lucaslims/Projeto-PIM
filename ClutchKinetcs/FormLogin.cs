@@ -36,9 +36,10 @@ namespace ClutchKinetcs
             this.Top = Y + MousePosition.Y;
         }
 
-        public FormLogin()
+        public FormLogin(clsGlobal cls)
         {
             InitializeComponent();
+            this.varGlob = cls;
             this.MouseDown += new MouseEventHandler(PnlOpcSW_MouseDown);
             this.MouseMove += new MouseEventHandler(PnlOpcSW_MouseMove);
         }

@@ -34,6 +34,7 @@
             this.txtTaxaExtra = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.txtComplCadCli = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.txtTempLoc = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.txtDataLoc = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.txtNumLoc = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.lblNomeCadCli = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblCepCadCli = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -43,15 +44,14 @@
             this.doubleBitmapControl1 = new BunifuAnimatorNS.DoubleBitmapControl();
             this.gbVeiculoLoc = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtDataLoc = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Veiculo = new System.Windows.Forms.DataGridViewImageColumn();
             this.gbClienteLoc = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Adicionar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Veiculo = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBox2.SuspendLayout();
             this.gbGeralCadLoc.SuspendLayout();
             this.gbVeiculoLoc.SuspendLayout();
@@ -105,7 +105,7 @@
             this.gbGeralCadLoc.ForeColor = System.Drawing.Color.White;
             this.gbGeralCadLoc.Location = new System.Drawing.Point(7, 6);
             this.gbGeralCadLoc.Name = "gbGeralCadLoc";
-            this.gbGeralCadLoc.Size = new System.Drawing.Size(465, 558);
+            this.gbGeralCadLoc.Size = new System.Drawing.Size(460, 522);
             this.gbGeralCadLoc.TabIndex = 43;
             this.gbGeralCadLoc.TabStop = false;
             this.gbGeralCadLoc.Text = "Locação";
@@ -160,6 +160,23 @@
             this.txtTempLoc.Size = new System.Drawing.Size(202, 25);
             this.txtTempLoc.TabIndex = 18;
             this.txtTempLoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // txtDataLoc
+            // 
+            this.txtDataLoc.BorderColorFocused = System.Drawing.Color.Maroon;
+            this.txtDataLoc.BorderColorIdle = System.Drawing.Color.White;
+            this.txtDataLoc.BorderColorMouseHover = System.Drawing.Color.DarkGray;
+            this.txtDataLoc.BorderThickness = 3;
+            this.txtDataLoc.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDataLoc.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataLoc.ForeColor = System.Drawing.Color.White;
+            this.txtDataLoc.isPassword = false;
+            this.txtDataLoc.Location = new System.Drawing.Point(146, 76);
+            this.txtDataLoc.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDataLoc.Name = "txtDataLoc";
+            this.txtDataLoc.Size = new System.Drawing.Size(204, 25);
+            this.txtDataLoc.TabIndex = 16;
+            this.txtDataLoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // txtNumLoc
             // 
@@ -267,22 +284,22 @@
             this.dataGridView1.Size = new System.Drawing.Size(380, 169);
             this.dataGridView1.TabIndex = 0;
             // 
-            // txtDataLoc
+            // Nome
             // 
-            this.txtDataLoc.BorderColorFocused = System.Drawing.Color.Maroon;
-            this.txtDataLoc.BorderColorIdle = System.Drawing.Color.White;
-            this.txtDataLoc.BorderColorMouseHover = System.Drawing.Color.DarkGray;
-            this.txtDataLoc.BorderThickness = 3;
-            this.txtDataLoc.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDataLoc.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDataLoc.ForeColor = System.Drawing.Color.White;
-            this.txtDataLoc.isPassword = false;
-            this.txtDataLoc.Location = new System.Drawing.Point(146, 76);
-            this.txtDataLoc.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDataLoc.Name = "txtDataLoc";
-            this.txtDataLoc.Size = new System.Drawing.Size(204, 25);
-            this.txtDataLoc.TabIndex = 16;
-            this.txtDataLoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.Width = 91;
+            // 
+            // Tipo
+            // 
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.Name = "Tipo";
+            // 
+            // Veiculo
+            // 
+            this.Veiculo.HeaderText = "Adicionar";
+            this.Veiculo.Name = "Veiculo";
             // 
             // gbClienteLoc
             // 
@@ -296,6 +313,7 @@
             this.gbClienteLoc.TabStop = false;
             this.gbClienteLoc.Text = "Cliente";
             this.gbClienteLoc.Visible = false;
+            this.gbClienteLoc.Enter += new System.EventHandler(this.gbClienteLoc_Enter);
             // 
             // dataGridView2
             // 
@@ -324,23 +342,6 @@
             // 
             this.Adicionar.HeaderText = "Adicionar";
             this.Adicionar.Name = "Adicionar";
-            // 
-            // Nome
-            // 
-            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.Width = 91;
-            // 
-            // Tipo
-            // 
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.Name = "Tipo";
-            // 
-            // Veiculo
-            // 
-            this.Veiculo.HeaderText = "Adicionar";
-            this.Veiculo.Name = "Veiculo";
             // 
             // FormCadLocacao
             // 

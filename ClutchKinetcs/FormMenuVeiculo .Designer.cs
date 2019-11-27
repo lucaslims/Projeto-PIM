@@ -37,11 +37,8 @@
             this.btnConsulta = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnAtualizar = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnDeletar = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnCadastrarTipo = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnRelatorio = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnCadastrarMarca = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnCadastrarModelo = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnCadastrarCor = new Bunifu.Framework.UI.BunifuTileButton();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,7 +131,7 @@
             this.btnConsulta.ImageZoom = 60;
             this.btnConsulta.LabelPosition = 30;
             this.btnConsulta.LabelText = "Consultar Cadastros";
-            this.btnConsulta.Location = new System.Drawing.Point(47, 343);
+            this.btnConsulta.Location = new System.Drawing.Point(47, 263);
             this.btnConsulta.Margin = new System.Windows.Forms.Padding(6);
             this.btnConsulta.Name = "btnConsulta";
             this.btnConsulta.Size = new System.Drawing.Size(241, 32);
@@ -155,12 +152,13 @@
             this.btnAtualizar.ImageZoom = 60;
             this.btnAtualizar.LabelPosition = 30;
             this.btnAtualizar.LabelText = "Atualizar Cadastros";
-            this.btnAtualizar.Location = new System.Drawing.Point(47, 387);
+            this.btnAtualizar.Location = new System.Drawing.Point(47, 307);
             this.btnAtualizar.Margin = new System.Windows.Forms.Padding(6);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(241, 31);
             this.btnAtualizar.TabIndex = 52;
             this.btnAtualizar.Tag = "Teste";
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // btnDeletar
             // 
@@ -175,33 +173,13 @@
             this.btnDeletar.ImageZoom = 60;
             this.btnDeletar.LabelPosition = 30;
             this.btnDeletar.LabelText = "Deletar Veiculo";
-            this.btnDeletar.Location = new System.Drawing.Point(47, 430);
+            this.btnDeletar.Location = new System.Drawing.Point(47, 350);
             this.btnDeletar.Margin = new System.Windows.Forms.Padding(6);
             this.btnDeletar.Name = "btnDeletar";
             this.btnDeletar.Size = new System.Drawing.Size(241, 31);
             this.btnDeletar.TabIndex = 53;
             this.btnDeletar.Tag = "Teste";
-            // 
-            // btnCadastrarTipo
-            // 
-            this.btnCadastrarTipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCadastrarTipo.color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCadastrarTipo.colorActive = System.Drawing.Color.Maroon;
-            this.btnCadastrarTipo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCadastrarTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrarTipo.ForeColor = System.Drawing.Color.White;
-            this.btnCadastrarTipo.Image = ((System.Drawing.Image)(resources.GetObject("btnCadastrarTipo.Image")));
-            this.btnCadastrarTipo.ImagePosition = 14;
-            this.btnCadastrarTipo.ImageZoom = 60;
-            this.btnCadastrarTipo.LabelPosition = 22;
-            this.btnCadastrarTipo.LabelText = "Cadastrar Tipo de Veiculos";
-            this.btnCadastrarTipo.Location = new System.Drawing.Point(80, 185);
-            this.btnCadastrarTipo.Margin = new System.Windows.Forms.Padding(6);
-            this.btnCadastrarTipo.Name = "btnCadastrarTipo";
-            this.btnCadastrarTipo.Size = new System.Drawing.Size(208, 30);
-            this.btnCadastrarTipo.TabIndex = 54;
-            this.btnCadastrarTipo.Tag = "Teste";
-            this.btnCadastrarTipo.Click += new System.EventHandler(this.BtnCadastrarTipo_Click);
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
             // btnRelatorio
             // 
@@ -223,26 +201,6 @@
             this.btnRelatorio.TabIndex = 55;
             this.btnRelatorio.Tag = "";
             // 
-            // btnCadastrarMarca
-            // 
-            this.btnCadastrarMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCadastrarMarca.color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCadastrarMarca.colorActive = System.Drawing.Color.Maroon;
-            this.btnCadastrarMarca.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCadastrarMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrarMarca.ForeColor = System.Drawing.Color.White;
-            this.btnCadastrarMarca.Image = ((System.Drawing.Image)(resources.GetObject("btnCadastrarMarca.Image")));
-            this.btnCadastrarMarca.ImagePosition = 14;
-            this.btnCadastrarMarca.ImageZoom = 60;
-            this.btnCadastrarMarca.LabelPosition = 22;
-            this.btnCadastrarMarca.LabelText = "Cadastrar Marca de Veiculos";
-            this.btnCadastrarMarca.Location = new System.Drawing.Point(80, 226);
-            this.btnCadastrarMarca.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnCadastrarMarca.Name = "btnCadastrarMarca";
-            this.btnCadastrarMarca.Size = new System.Drawing.Size(208, 30);
-            this.btnCadastrarMarca.TabIndex = 56;
-            this.btnCadastrarMarca.Tag = "Teste";
-            // 
             // btnCadastrarModelo
             // 
             this.btnCadastrarModelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -256,32 +214,13 @@
             this.btnCadastrarModelo.ImageZoom = 60;
             this.btnCadastrarModelo.LabelPosition = 22;
             this.btnCadastrarModelo.LabelText = "Cadastrar Modelo de Veiculos";
-            this.btnCadastrarModelo.Location = new System.Drawing.Point(80, 265);
+            this.btnCadastrarModelo.Location = new System.Drawing.Point(80, 183);
             this.btnCadastrarModelo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCadastrarModelo.Name = "btnCadastrarModelo";
             this.btnCadastrarModelo.Size = new System.Drawing.Size(208, 30);
             this.btnCadastrarModelo.TabIndex = 57;
             this.btnCadastrarModelo.Tag = "Teste";
-            // 
-            // btnCadastrarCor
-            // 
-            this.btnCadastrarCor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCadastrarCor.color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCadastrarCor.colorActive = System.Drawing.Color.Maroon;
-            this.btnCadastrarCor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCadastrarCor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrarCor.ForeColor = System.Drawing.Color.White;
-            this.btnCadastrarCor.Image = ((System.Drawing.Image)(resources.GetObject("btnCadastrarCor.Image")));
-            this.btnCadastrarCor.ImagePosition = 14;
-            this.btnCadastrarCor.ImageZoom = 60;
-            this.btnCadastrarCor.LabelPosition = 22;
-            this.btnCadastrarCor.LabelText = "Cadastrar Cores de Veiculos";
-            this.btnCadastrarCor.Location = new System.Drawing.Point(80, 303);
-            this.btnCadastrarCor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCadastrarCor.Name = "btnCadastrarCor";
-            this.btnCadastrarCor.Size = new System.Drawing.Size(208, 30);
-            this.btnCadastrarCor.TabIndex = 58;
-            this.btnCadastrarCor.Tag = "Teste";
+            this.btnCadastrarModelo.Click += new System.EventHandler(this.btnCadastrarModelo_Click);
             // 
             // FormMenuVeiculo
             // 
@@ -289,11 +228,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(290, 550);
-            this.Controls.Add(this.btnCadastrarCor);
             this.Controls.Add(this.btnCadastrarModelo);
-            this.Controls.Add(this.btnCadastrarMarca);
             this.Controls.Add(this.btnRelatorio);
-            this.Controls.Add(this.btnCadastrarTipo);
             this.Controls.Add(this.btnDeletar);
             this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.btnConsulta);
@@ -323,10 +259,7 @@
         private Bunifu.Framework.UI.BunifuTileButton btnConsulta;
         private Bunifu.Framework.UI.BunifuTileButton btnAtualizar;
         private Bunifu.Framework.UI.BunifuTileButton btnDeletar;
-        private Bunifu.Framework.UI.BunifuTileButton btnCadastrarTipo;
         private Bunifu.Framework.UI.BunifuTileButton btnRelatorio;
-        private Bunifu.Framework.UI.BunifuTileButton btnCadastrarMarca;
         private Bunifu.Framework.UI.BunifuTileButton btnCadastrarModelo;
-        private Bunifu.Framework.UI.BunifuTileButton btnCadastrarCor;
     }
 }
