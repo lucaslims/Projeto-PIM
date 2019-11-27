@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using Control;
+using System.Data;
 
 namespace DAL
 {
@@ -31,6 +32,62 @@ namespace DAL
                     ExecutarComandoSqlServer(inserirveiculo, conServer);
                 else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(inserirveiculo, conMySql);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public bool insertVeiculoProcedure(MySqlConnection conMySql, SqlConnection conServer, List<string> dadosVeiculo)
+        {
+            try
+            {
+               
+                if (varGlob.BdConexao == "SqlServer")
+                {
+                    SqlCommand cmd = new SqlCommand("CADASTRAR_VEICULO", conServer);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@V_Veic_placa", dadosVeiculo[0]);
+                    cmd.Parameters.AddWithValue("@V_Veic_chassi", dadosVeiculo[1]);
+                    cmd.Parameters.AddWithValue("@V_Veic_descricao", dadosVeiculo[2]);
+                    cmd.Parameters.AddWithValue("@V_Cor_descricao", dadosVeiculo[3]);
+                    cmd.Parameters.AddWithValue("@V_Model_descricao", dadosVeiculo[4]);
+                    cmd.Parameters.AddWithValue("@V_Status_descricao", dadosVeiculo[5]);
+                    cmd.Parameters.AddWithValue("@v_Emp_cnpj", Convert.ToInt32(dadosVeiculo[6]));
+                   
+
+                    ExecutarComandoProcSqlServer(cmd);
+                }
+                else if (varGlob.BdConexao == "MySql")
+                {
+                    MySqlCommand cmd = new MySqlCommand("CADASTRAR_VEICULO", conMySql);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@V_Veic_placa", dadosVeiculo[0]);
+                    cmd.Parameters.AddWithValue("@V_Veic_chassi", dadosVeiculo[1]);
+                    cmd.Parameters.AddWithValue("@V_Veic_descricao", dadosVeiculo[2]);
+                    cmd.Parameters.AddWithValue("@V_Cor_descricao", dadosVeiculo[3]);
+                    cmd.Parameters.AddWithValue("@V_Model_descricao", dadosVeiculo[4]);
+                    cmd.Parameters.AddWithValue("@V_Status_descricao", dadosVeiculo[5]);
+                    cmd.Parameters.AddWithValue("@v_Emp_cnpj", Convert.ToInt32(dadosVeiculo[6]));
+
+
+                    ExecutarComandoProcSqlMySql(cmd);
+                }
+                else
+                {
+                    MySqlCommand cmd = new MySqlCommand("CADASTRAR_VEICULO", conMySql);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@V_Veic_placa", dadosVeiculo[0]);
+                    cmd.Parameters.AddWithValue("@V_Veic_chassi", dadosVeiculo[1]);
+                    cmd.Parameters.AddWithValue("@V_Veic_descricao", dadosVeiculo[2]);
+                    cmd.Parameters.AddWithValue("@V_Cor_descricao", dadosVeiculo[3]);
+                    cmd.Parameters.AddWithValue("@V_Model_descricao", dadosVeiculo[4]);
+                    cmd.Parameters.AddWithValue("@V_Status_descricao", dadosVeiculo[5]);
+                    cmd.Parameters.AddWithValue("@v_Emp_cnpj", Convert.ToInt32(dadosVeiculo[6]));
+                    ExecutarComandoProcSqlMySql(cmd);
+                }
 
                 return true;
             }

@@ -43,6 +43,7 @@
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtQuantPed = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.button1 = new System.Windows.Forms.Button();
             this.gbFuncionarioLog.SuspendLayout();
             this.gbGeralCadServ.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -264,16 +265,28 @@
             this.bunifuCustomLabel4.TabIndex = 21;
             this.bunifuCustomLabel4.Text = "Quantidade:";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(664, 512);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(102, 50);
+            this.button1.TabIndex = 49;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormCadServico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(918, 600);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.gbGeralCadServ);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormCadServico";
             this.Text = "FormCadServico";
+            this.Load += new System.EventHandler(this.FormCadServico_Load);
             this.gbFuncionarioLog.ResumeLayout(false);
             this.gbFuncionarioLog.PerformLayout();
             this.gbGeralCadServ.ResumeLayout(false);
@@ -301,5 +314,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtQuantPed;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
+        private System.Windows.Forms.Button button1;
     }
 }

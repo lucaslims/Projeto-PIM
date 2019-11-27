@@ -189,7 +189,7 @@ namespace ClutchKinetcs
         private void NewFormLogin()
         {
             //abrindo o form menu principal
-            FormLogin frmLogin = new FormLogin();
+            FormLogin frmLogin = new FormLogin(varGlob);
             //Ocuta o form
             this.Hide();
             //Muda a Opacidade do form menu principal para 0

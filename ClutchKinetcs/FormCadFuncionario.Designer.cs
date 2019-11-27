@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbPessoaFisicaCadCli = new System.Windows.Forms.GroupBox();
+            this.bunifuMetroTextbox1 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.txtIdPessFisCadCli = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.lblCpfPessFisiCadCli = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblIdPessFisiCadCli = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -57,7 +58,7 @@
             this.lblEmailCadCli = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblCompCadCli = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblUfCadCli = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuMetroTextbox1 = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.button1 = new System.Windows.Forms.Button();
             this.gbPessoaFisicaCadCli.SuspendLayout();
             this.gbGeralCadCli.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +77,23 @@
             this.gbPessoaFisicaCadCli.TabIndex = 45;
             this.gbPessoaFisicaCadCli.TabStop = false;
             this.gbPessoaFisicaCadCli.Text = "Dados do Funcionario:";
+            // 
+            // bunifuMetroTextbox1
+            // 
+            this.bunifuMetroTextbox1.BorderColorFocused = System.Drawing.Color.Maroon;
+            this.bunifuMetroTextbox1.BorderColorIdle = System.Drawing.Color.White;
+            this.bunifuMetroTextbox1.BorderColorMouseHover = System.Drawing.Color.DarkGray;
+            this.bunifuMetroTextbox1.BorderThickness = 3;
+            this.bunifuMetroTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuMetroTextbox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuMetroTextbox1.ForeColor = System.Drawing.Color.White;
+            this.bunifuMetroTextbox1.isPassword = false;
+            this.bunifuMetroTextbox1.Location = new System.Drawing.Point(75, 73);
+            this.bunifuMetroTextbox1.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuMetroTextbox1.Name = "bunifuMetroTextbox1";
+            this.bunifuMetroTextbox1.Size = new System.Drawing.Size(143, 33);
+            this.bunifuMetroTextbox1.TabIndex = 31;
+            this.bunifuMetroTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // txtIdPessFisCadCli
             // 
@@ -485,22 +503,15 @@
             this.lblUfCadCli.TabIndex = 7;
             this.lblUfCadCli.Text = "Estado:";
             // 
-            // bunifuMetroTextbox1
+            // button1
             // 
-            this.bunifuMetroTextbox1.BorderColorFocused = System.Drawing.Color.Maroon;
-            this.bunifuMetroTextbox1.BorderColorIdle = System.Drawing.Color.White;
-            this.bunifuMetroTextbox1.BorderColorMouseHover = System.Drawing.Color.DarkGray;
-            this.bunifuMetroTextbox1.BorderThickness = 3;
-            this.bunifuMetroTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMetroTextbox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMetroTextbox1.ForeColor = System.Drawing.Color.White;
-            this.bunifuMetroTextbox1.isPassword = false;
-            this.bunifuMetroTextbox1.Location = new System.Drawing.Point(75, 73);
-            this.bunifuMetroTextbox1.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextbox1.Name = "bunifuMetroTextbox1";
-            this.bunifuMetroTextbox1.Size = new System.Drawing.Size(143, 33);
-            this.bunifuMetroTextbox1.TabIndex = 31;
-            this.bunifuMetroTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.button1.Location = new System.Drawing.Point(693, 351);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 46;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormCadFuncionario
             // 
@@ -508,6 +519,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(918, 600);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.gbPessoaFisicaCadCli);
             this.Controls.Add(this.gbGeralCadCli);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -553,5 +565,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lblCompCadCli;
         private Bunifu.Framework.UI.BunifuCustomLabel lblUfCadCli;
         private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox1;
+        private System.Windows.Forms.Button button1;
     }
 }

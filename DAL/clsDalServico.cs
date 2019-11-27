@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using Control;
-
+using System.Data;
 
 namespace DAL
 {
@@ -29,6 +29,47 @@ namespace DAL
                 else if (varGlob.BdConexao == "MySql")
                     ExecutarComandoMySql(insertServico, conMySql);
                 
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public bool insertProcedureServico(MySqlConnection conMySql, SqlConnection conServer, List<string> dadosServico)
+        {
+            try
+            {
+                if (varGlob.BdConexao == "SqlServer")
+                {
+                    SqlCommand cmd = new SqlCommand("CADASTRAR_SERVICO", conServer);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@S_TOTAL_ESTACIONAMENTOS", Convert.ToDouble( dadosServico[0]));
+                    cmd.Parameters.AddWithValue("@S_TOTAL_PEDAGIOS", Convert.ToDouble(dadosServico[1]));
+                  
+
+                    ExecutarComandoProcSqlServer(cmd);
+                }
+                else if (varGlob.BdConexao == "MySql")
+                {
+                    MySqlCommand cmd = new MySqlCommand("CADASTRAR_SERVICO", conMySql);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@S_TOTAL_ESTACIONAMENTOS", Convert.ToDouble(dadosServico[0]));
+                    cmd.Parameters.AddWithValue("@S_TOTAL_PEDAGIOS", Convert.ToDouble(dadosServico[1]));
+
+                    ExecutarComandoProcSqlMySql(cmd);
+                }
+                else
+                {
+                    MySqlCommand cmd = new MySqlCommand("CADASTRAR_SERVICO", conMySql);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@S_TOTAL_ESTACIONAMENTOS", Convert.ToDouble(dadosServico[0]));
+                    cmd.Parameters.AddWithValue("@S_TOTAL_PEDAGIOS", Convert.ToDouble(dadosServico[1]));
+
+                    ExecutarComandoProcSqlMySql(cmd);
+                }
+
+
                 return true;
             }
             catch (Exception ex)

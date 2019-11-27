@@ -101,6 +101,7 @@
             this.btnAtualizar.Size = new System.Drawing.Size(241, 31);
             this.btnAtualizar.TabIndex = 65;
             this.btnAtualizar.Tag = "Teste";
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // btnConsulta
             // 
@@ -121,6 +122,7 @@
             this.btnConsulta.Size = new System.Drawing.Size(241, 32);
             this.btnConsulta.TabIndex = 64;
             this.btnConsulta.Tag = "Teste";
+            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
             // btnCadastro
             // 
@@ -141,6 +143,7 @@
             this.btnCadastro.Size = new System.Drawing.Size(241, 32);
             this.btnCadastro.TabIndex = 63;
             this.btnCadastro.Tag = "Teste";
+            this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
             // 
             // bunifuCustomLabel1
             // 
