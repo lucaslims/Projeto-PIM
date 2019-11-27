@@ -12,6 +12,7 @@ namespace ClutchKinetcs
 {
     public partial class FormMenuPessoa : Form
     {
+        private FormMenuPrincipal formMenuPrincipal;
         FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
         public FormMenuPessoa(FormMenuPrincipal frmAnt)
         {
@@ -49,5 +50,9 @@ namespace ClutchKinetcs
            
         }
 
+        private void FormMenuPessoa_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

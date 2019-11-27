@@ -224,6 +224,7 @@
             this.btnCadastro.Size = new System.Drawing.Size(241, 32);
             this.btnCadastro.TabIndex = 64;
             this.btnCadastro.Tag = "Teste";
+            this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
             // 
             // bunifuCustomLabel1
             // 
@@ -278,6 +279,7 @@
             this.btnFecharMenuOpc.Name = "btnFecharMenuOpc";
             this.btnFecharMenuOpc.Size = new System.Drawing.Size(23, 25);
             this.btnFecharMenuOpc.TabIndex = 60;
+            this.btnFecharMenuOpc.Click += new System.EventHandler(this.btnFecharMenuOpc_Click);
             // 
             // FormMenuFuncionario
             // 

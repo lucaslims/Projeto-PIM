@@ -329,6 +329,7 @@
             this.Name = "FormMenuPessoa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormMenuOpcoes";
+            this.Load += new System.EventHandler(this.FormMenuPessoa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

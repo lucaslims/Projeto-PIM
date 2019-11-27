@@ -102,8 +102,7 @@ namespace ClutchKinetcs
                 {
                     if (_opc != 4)
                         _comboBox.Items.Add(row.Field<string>("DESCRICAO"));
-                    else
-                        _comboBox.Items.Add(row.Field<string>("CNPJ"));
+                   
 
                 }
 

@@ -55,7 +55,7 @@ namespace DAL
                     cmd.Parameters.AddWithValue("@V_Cor_descricao", dadosVeiculo[3]);
                     cmd.Parameters.AddWithValue("@V_Model_descricao", dadosVeiculo[4]);
                     cmd.Parameters.AddWithValue("@V_Status_descricao", dadosVeiculo[5]);
-                    cmd.Parameters.AddWithValue("@v_Emp_cnpj", Convert.ToInt32(dadosVeiculo[6]));
+                    cmd.Parameters.AddWithValue("@v_Emp_cnpj", Convert.ToInt64(dadosVeiculo[6]));
                    
 
                     ExecutarComandoProcSqlServer(cmd);
@@ -70,7 +70,7 @@ namespace DAL
                     cmd.Parameters.AddWithValue("@V_Cor_descricao", dadosVeiculo[3]);
                     cmd.Parameters.AddWithValue("@V_Model_descricao", dadosVeiculo[4]);
                     cmd.Parameters.AddWithValue("@V_Status_descricao", dadosVeiculo[5]);
-                    cmd.Parameters.AddWithValue("@v_Emp_cnpj", Convert.ToInt32(dadosVeiculo[6]));
+                    cmd.Parameters.AddWithValue("@v_Emp_cnpj", Convert.ToInt64(dadosVeiculo[6]));
 
 
                     ExecutarComandoProcSqlMySql(cmd);
@@ -85,7 +85,7 @@ namespace DAL
                     cmd.Parameters.AddWithValue("@V_Cor_descricao", dadosVeiculo[3]);
                     cmd.Parameters.AddWithValue("@V_Model_descricao", dadosVeiculo[4]);
                     cmd.Parameters.AddWithValue("@V_Status_descricao", dadosVeiculo[5]);
-                    cmd.Parameters.AddWithValue("@v_Emp_cnpj", Convert.ToInt32(dadosVeiculo[6]));
+                    cmd.Parameters.AddWithValue("@v_Emp_cnpj", Convert.ToInt64(dadosVeiculo[6]));
                     ExecutarComandoProcSqlMySql(cmd);
                 }
 
