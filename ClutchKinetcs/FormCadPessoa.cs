@@ -104,5 +104,27 @@ namespace ClutchKinetcs
         {
 
         }
+
+        private void switchPfPjCadPessoa_OnValueChange(object sender, EventArgs e)
+        {
+            if (gbPessoaFisicaCadCli.Enabled == true)
+            {
+                gbPessoaJuridicaCadCli.Enabled = true;
+                gbPessoaFisicaCadCli.Enabled = false;
+
+                txtCpfPessFisCadCli.Text = string.Empty;
+                txtDtNascPessFisCadCli.Text = string.Empty;
+                txtRgPessFisCadCli.Text = string.Empty;
+            }
+            else
+            {
+                gbPessoaJuridicaCadCli.Enabled = false;
+                gbPessoaFisicaCadCli.Enabled = true;
+
+                txtCnpjPessJurCadCli.Text = string.Empty;
+                txtInscEstadualPessJurCadCli.Text = string.Empty;
+                txtInscMunicipalPessJurCadCli.Text = string.Empty;
+            }
+        }
     }
 }
