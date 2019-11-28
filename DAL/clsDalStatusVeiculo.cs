@@ -9,11 +9,11 @@ using Control;
 
 namespace DAL
 {
-    class clsDalStatus :SqlHelper
+    public class clsDalStatusVeiculo :SqlHelper
     {
         clsGlobal varGlob = new clsGlobal();
 
-        public bool InsertStatus(MySqlConnection conMySql, SqlConnection conServer, clsStatusVeiculo objStatus)
+        public bool InsertStatusVeiculo(MySqlConnection conMySql, SqlConnection conServer, clsStatusVeiculo objStatus)
         {
             string insertStatus = "insert into TB_CD_STATUS_VEICULO (ID,DESCRICAO) " +
                                   " values (" + objStatus.Id_statusveiculo + ", " +
@@ -34,7 +34,7 @@ namespace DAL
                 throw ex;
             }
         }
-        public bool UpdateStatus(MySqlConnection conMySql, SqlConnection conServer, clsStatusVeiculo objStatus)
+        public bool UpdateStatusVeiculo(MySqlConnection conMySql, SqlConnection conServer, clsStatusVeiculo objStatus)
         {
             string atualizarStatus = "update TB_CD_STATUS_VEICULO set DESCRICAO = '" + objStatus.Desc_statusveiculo + " where id = " + objStatus.Id_statusveiculo + " ;";
             try
@@ -52,7 +52,7 @@ namespace DAL
             }
 
         }
-        public bool DeleteStatus(MySqlConnection conMySql, SqlConnection conServer, clsStatusVeiculo objStatus)
+        public bool DeleteStatusVeiculo(MySqlConnection conMySql, SqlConnection conServer, clsStatusVeiculo objStatus)
         {
             string deletarStatus = "delete from TB_CD_STATUS_VEICULO where ID = " + objStatus.Id_statusveiculo + " ;";
             try
@@ -69,7 +69,7 @@ namespace DAL
                 throw ex;
             }
         }
-        public clsStatusVeiculo SelectStatus(MySqlConnection conMySql, SqlConnection conServer, clsStatusVeiculo objStatus)
+        public clsStatusVeiculo SelectStatusVeiculo(MySqlConnection conMySql, SqlConnection conServer, clsStatusVeiculo objStatus)
         {
             string buscarStatus = "select * from TB_CD_STATUS_VEICULO where ID=" + objStatus.Id_statusveiculo;
 
@@ -125,7 +125,7 @@ namespace DAL
                 throw ex;
             }
         } */
-        public List<clsStatusVeiculo> ListarStatus(MySqlConnection conMySql, SqlConnection conServer)
+        public List<clsStatusVeiculo> ListarStatusVeiculo(MySqlConnection conMySql, SqlConnection conServer)
         {
             string BuscarTodosStatus = "select * from TB_CD_STATUS_VEICULO";
             List<clsStatusVeiculo> listaStatus = new List<clsStatusVeiculo>();

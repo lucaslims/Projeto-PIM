@@ -15,9 +15,9 @@ using MySql.Data.MySqlClient;
 
 namespace ClutchKinetcs
 {
-    public partial class FormCadLocacao : Form
+    public partial class FormCadModelo : Form
     {
-        public FormCadLocacao()
+        public FormCadModelo()
         {
             InitializeComponent();
         }
@@ -27,12 +27,7 @@ namespace ClutchKinetcs
         clsGlobal varGlob = new clsGlobal();
         clsConexao clsConn = new clsConexao();
 
-        private void gbClienteLoc_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gbGeralCadLoc_Enter(object sender, EventArgs e)
+        private void txtIDVeiculo_OnValueChanged(object sender, EventArgs e)
         {
 
         }
@@ -45,27 +40,24 @@ namespace ClutchKinetcs
             List<string> dadosServico = new List<string>();
             try
             {
-                dadosServico.Add(txtDataLoc.Text);
-                dadosServico.Add(txtTempLoc.Text);
-                dadosServico.Add(txtCusto.Text);
-                dadosServico.Add(txtTaxaExtra.Text);
-                dadosServico.Add(cmbVeiculo.Text);
-                dadosServico.Add(cmbPessoa.Text);
-                 dadosServico.Add(cmbSeguro.Text);
-
+                dadosServico.Add(txtModelo.Text);
+                dadosServico.Add(cmbMarca.Text);
+                dadosServico.Add(cmbTipo.Text);
+                dadosServico.Add(txtStatus.Text);
+               
 
 
 
                 varGlob.InsereLog();
 
-                clsDalLocacao dalservico = new clsDalLocacao();
+                clsDalModeloVeiculo dalservico = new clsDalModeloVeiculo();
 
                 connMySql.Open();
                 connSqlServer.Open();
                 try
                 {
 
-                    dalservico.inserTLocacaoProcedure(connMySql, connSqlServer, dadosServico);
+                    dalservico.inserModeloProcedure(connMySql, connSqlServer, dadosServico);
 
                     connMySql.Close();
                     connSqlServer.Close();
@@ -96,33 +88,21 @@ namespace ClutchKinetcs
                 if (_opc == 1)
                 {
 
-                    query = "select PLACA from TB_CD_VEICULO ORDER BY PLACA;";
+                    query = "select ID, DESCRICAO from TB_CD_VEICULO_MARCA ORDER BY DESCRICAO;";
                 }
                 else if (_opc == 2)
                 {
-                    query = "select NOME from TB_CD_PESSOA ORDER BY NOME;";
+                    query = "select DESCRICAO from TB_CD_VEICULO_TIPO ORDER BY DESCRICAO";
                 }
-                else if (_opc == 3)
-                {
-                    query = "select DESCRICAO from TB_SEGURO ORDER BY DESCRICAO;";
-                }
+                
 
                 dt = varGlob.RetornaDataTableMySql(query, connMySql);
                 _comboBox.Items.Clear();
                 foreach (DataRow row in dt.Rows)
                 {
-                    if (_opc == 1)
-                    {
-                        _comboBox.Items.Add(row.Field<string>("PLACA"));
-                    }
-                    else if (_opc == 2)
-                    {
-                        _comboBox.Items.Add(row.Field<string>("NOME"));
-                    }
-                    else 
-                    {
+                    if (_opc != 4)
                         _comboBox.Items.Add(row.Field<string>("DESCRICAO"));
-                    }
+                   
 
                 }
 
@@ -137,10 +117,8 @@ namespace ClutchKinetcs
 
         private void FormCadModelo_Load(object sender, EventArgs e)
         {
-            PreencherCombo(1, cmbVeiculo);
-            PreencherCombo(2, cmbPessoa);
-            PreencherCombo(3, cmbSeguro);
-           
+            PreencherCombo(1, cmbMarca);
+            PreencherCombo(2, cmbTipo);
         }
     }
 }

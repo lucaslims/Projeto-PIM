@@ -9,7 +9,7 @@ using Control;
 
 namespace DAL
 {
-    class clsDalGeral : SqlHelper
+    public class clsDalGeral : SqlHelper
     {
         clsGlobal varGlob = new clsGlobal();
 

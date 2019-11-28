@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using Control;
+using System.Data;
 
 namespace DAL
 {
@@ -38,7 +39,67 @@ namespace DAL
                     throw ex;
                 }
             }
-            public bool UpdateLocacao(MySqlConnection conMySql, SqlConnection conServer, clsLocacao objLocacao)
+        public bool inserTLocacaoProcedure(MySqlConnection conMySql, SqlConnection conServer, List<string> dadosLocacao)
+        {
+            try
+            {
+                if (varGlob.BdConexao == "SqlServer")
+                {
+                    SqlCommand cmd = new SqlCommand("CADASTRAR_LOCACAO", conServer);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@L_loca_Dtloc", Convert.ToDateTime(dadosLocacao[0]).ToString("yyyy-MM-dd"));
+
+                    cmd.Parameters.AddWithValue("@L_Loca_tempo", dadosLocacao[1]);
+                    cmd.Parameters.AddWithValue("@L_Loca_custo", dadosLocacao[2]);
+                    cmd.Parameters.AddWithValue("@L_loca_taxa", dadosLocacao[3]);
+                    cmd.Parameters.AddWithValue("@V_Seguro_desc", dadosLocacao[4]);
+                    cmd.Parameters.AddWithValue("@V_Pessoa_nome", dadosLocacao[5]);
+                    cmd.Parameters.AddWithValue("@V_Veiculo_placa", dadosLocacao[6]);
+             
+
+
+
+                    ExecutarComandoProcSqlServer(cmd);
+                }
+                else if (varGlob.BdConexao == "MySql")
+                {
+                    MySqlCommand cmd = new MySqlCommand("CADASTRAR_LOCACAO", conMySql);
+                    cmd.Parameters.AddWithValue("@L_loca_Dtloc", Convert.ToDateTime(dadosLocacao[0]).ToString("yyyy-MM-dd"));
+
+
+                    cmd.Parameters.AddWithValue("@L_Loca_tempo", dadosLocacao[1]);
+                    cmd.Parameters.AddWithValue("@L_Loca_custo", dadosLocacao[2]);
+                    cmd.Parameters.AddWithValue("@L_loca_taxa", dadosLocacao[3]);
+                    cmd.Parameters.AddWithValue("@V_Seguro_desc", dadosLocacao[4]);
+                    cmd.Parameters.AddWithValue("@V_Pessoa_nome", dadosLocacao[5]);
+                    cmd.Parameters.AddWithValue("@V_Veiculo_placa", dadosLocacao[6]);
+
+                    ExecutarComandoProcSqlMySql(cmd);
+                }
+                else
+                {
+                    MySqlCommand cmd = new MySqlCommand("CADASTRAR_LOCACAO", conMySql);
+                    cmd.Parameters.AddWithValue("@L_loca_Dtloc", Convert.ToDateTime(dadosLocacao[0]).ToString("yyyy-MM-dd"));
+
+                    cmd.Parameters.AddWithValue("@L_Loca_tempo", dadosLocacao[1]);
+                    cmd.Parameters.AddWithValue("@L_Loca_custo", dadosLocacao[2]);
+                    cmd.Parameters.AddWithValue("@L_loca_taxa", dadosLocacao[3]);
+                    cmd.Parameters.AddWithValue("@V_Seguro_desc", dadosLocacao[4]);
+                    cmd.Parameters.AddWithValue("@V_Pessoa_nome", dadosLocacao[5]);
+                    cmd.Parameters.AddWithValue("@V_Veiculo_placa", dadosLocacao[6]);
+
+                    ExecutarComandoProcSqlMySql(cmd);
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool UpdateLocacao(MySqlConnection conMySql, SqlConnection conServer, clsLocacao objLocacao)
             {
                 string atualizarLocacao = "update TB_NG_LOCACAO set ID = '" + objLocacao.Id_locacao + "', " +
                                                               " CHASSI = '" + objLocacao.Dt_loc + "', " +

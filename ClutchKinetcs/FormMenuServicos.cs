@@ -12,17 +12,54 @@ namespace ClutchKinetcs
 {
     public partial class FormMenuServicos : Form
     {
+        FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
         private FormMenuPrincipal formMenuPrincipal;
 
-        public FormMenuServicos()
+        public FormMenuServicos(FormMenuPrincipal frmAnt)
         {
             InitializeComponent();
+            this.menuPrincipal = frmAnt;
         }
 
-        public FormMenuServicos(FormMenuPrincipal formMenuPrincipal)
+     
+        private void btnCadastroServ_Click(object sender, EventArgs e)
         {
-            this.formMenuPrincipal = formMenuPrincipal;
-            InitializeComponent();
+            FormCadServico cadPessoa = new FormCadServico();
+            cadPessoa.TopLevel = false;
+            cadPessoa.FormBorderStyle = FormBorderStyle.None;
+            menuPrincipal.pnlPrincipal.Controls.Clear();
+            menuPrincipal.pnlPrincipal.Controls.Add(cadPessoa);
+            cadPessoa.Show();
+        }
+
+        private void btnConsultaServ_Click(object sender, EventArgs e)
+        {
+            FormConServico cadPessoa = new FormConServico();
+            cadPessoa.TopLevel = false;
+            cadPessoa.FormBorderStyle = FormBorderStyle.None;
+            menuPrincipal.pnlPrincipal.Controls.Clear();
+            menuPrincipal.pnlPrincipal.Controls.Add(cadPessoa);
+            cadPessoa.Show();
+        }
+
+        private void btnAtualizarServ_Click(object sender, EventArgs e)
+        {
+            FormAttServico cadPessoa = new FormAttServico();
+            cadPessoa.TopLevel = false;
+            cadPessoa.FormBorderStyle = FormBorderStyle.None;
+            menuPrincipal.pnlPrincipal.Controls.Clear();
+            menuPrincipal.pnlPrincipal.Controls.Add(cadPessoa);
+            cadPessoa.Show();
+        }
+
+        private void btnDeletarServ_Click(object sender, EventArgs e)
+        {
+            FormDelServico cadPessoa = new FormDelServico();
+            cadPessoa.TopLevel = false;
+            cadPessoa.FormBorderStyle = FormBorderStyle.None;
+            menuPrincipal.pnlPrincipal.Controls.Clear();
+            menuPrincipal.pnlPrincipal.Controls.Add(cadPessoa);
+            cadPessoa.Show();
 
         }
     }

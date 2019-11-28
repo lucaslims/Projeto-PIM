@@ -91,6 +91,7 @@
     <Compile Include="clsStatusVeiculo.cs" />
     <Compile Include="clsTelefone.cs" />
     <Compile Include="clsTipoPermissao.cs" />
+    <Compile Include="clsTipoPessoa.cs" />
     <Compile Include="clsTipoVeiculo.cs" />
     <Compile Include="clsVeiculo.cs" />
     <Compile Include="clsViagem.cs" />

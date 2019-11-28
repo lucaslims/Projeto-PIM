@@ -62,10 +62,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsDalCargo.cs" />
+    <Compile Include="clsDalCidade.cs" />
     <Compile Include="clsDalCnh.cs" />
     <Compile Include="clsDalCorVeiculo.cs" />
     <Compile Include="clsDalDepartamento.cs" />
     <Compile Include="clsDalEmail.cs" />
+    <Compile Include="clsDalEndereco.cs" />
     <Compile Include="clsDalEstado.cs" />
     <Compile Include="clsDalFuncionario.cs" />
     <Compile Include="clsDalGeral.cs" />
@@ -83,7 +85,7 @@
     <Compile Include="clsDalPessoaJuridica.cs" />
     <Compile Include="clsDalSeguro.cs" />
     <Compile Include="clsDalServico.cs" />
-    <Compile Include="clsDalStatus.cs" />
+    <Compile Include="clsDalStatusVeiculo.cs" />
     <Compile Include="clsDalTelefone.cs" />
     <Compile Include="clsDalTipoPermissao.cs" />
     <Compile Include="clsDalTipoPessoa.cs" />

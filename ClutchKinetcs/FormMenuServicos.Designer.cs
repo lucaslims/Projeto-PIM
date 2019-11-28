@@ -83,6 +83,7 @@
             this.btnDeletarServ.Size = new System.Drawing.Size(241, 31);
             this.btnDeletarServ.TabIndex = 81;
             this.btnDeletarServ.Tag = "Teste";
+            this.btnDeletarServ.Click += new System.EventHandler(this.btnDeletarServ_Click);
             // 
             // btnAtualizarServ
             // 
@@ -103,6 +104,7 @@
             this.btnAtualizarServ.Size = new System.Drawing.Size(241, 31);
             this.btnAtualizarServ.TabIndex = 80;
             this.btnAtualizarServ.Tag = "Teste";
+            this.btnAtualizarServ.Click += new System.EventHandler(this.btnAtualizarServ_Click);
             // 
             // btnConsultaServ
             // 
@@ -123,6 +125,7 @@
             this.btnConsultaServ.Size = new System.Drawing.Size(241, 32);
             this.btnConsultaServ.TabIndex = 79;
             this.btnConsultaServ.Tag = "Teste";
+            this.btnConsultaServ.Click += new System.EventHandler(this.btnConsultaServ_Click);
             // 
             // btnCadastroServ
             // 
@@ -143,6 +146,7 @@
             this.btnCadastroServ.Size = new System.Drawing.Size(241, 32);
             this.btnCadastroServ.TabIndex = 78;
             this.btnCadastroServ.Tag = "Teste";
+            this.btnCadastroServ.Click += new System.EventHandler(this.btnCadastroServ_Click);
             // 
             // bunifuCustomLabel1
             // 
@@ -258,7 +262,7 @@
             this.btnCadastroMultSin.TabIndex = 84;
             this.btnCadastroMultSin.Tag = "Teste";
             // 
-            // FormServicos
+            // FormMenuServicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -277,7 +281,7 @@
             this.Controls.Add(this.picBoxImg);
             this.Controls.Add(this.btnFecharMenuOpc);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormServicos";
+            this.Name = "FormMenuServicos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormServicos";
             ((System.ComponentModel.ISupportInitialize)(this.picBoxImg)).EndInit();

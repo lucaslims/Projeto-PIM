@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.gbMotoViag = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.doubleBitmapControl1 = new BunifuAnimatorNS.DoubleBitmapControl();
             this.gbVeiculoLoc = new System.Windows.Forms.GroupBox();
             this.txtComplCadCli = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -40,38 +38,24 @@
             this.lblCompCadCli = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.gbGeralCadViag = new System.Windows.Forms.GroupBox();
             this.lblRuaCadCli = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.Motorista = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ValidadeCnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CategoriaCnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AddMotorista = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Veiculo = new System.Windows.Forms.DataGridViewImageColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.gbMotoViag.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.gbVeiculoLoc.SuspendLayout();
             this.gbGeralCadViag.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Motorista,
-            this.cnh,
-            this.ValidadeCnh,
-            this.CategoriaCnh,
-            this.AddMotorista});
-            this.dataGridView2.Location = new System.Drawing.Point(6, 28);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(545, 277);
-            this.dataGridView2.TabIndex = 0;
-            // 
             // gbMotoViag
             // 
-            this.gbMotoViag.Controls.Add(this.dataGridView2);
+            this.gbMotoViag.Controls.Add(this.bunifuCustomLabel1);
+            this.gbMotoViag.Controls.Add(this.bunifuCustomLabel2);
+            this.gbMotoViag.Controls.Add(this.comboBox3);
+            this.gbMotoViag.Controls.Add(this.comboBox2);
+            this.gbMotoViag.Controls.Add(this.comboBox1);
+            this.gbMotoViag.Controls.Add(this.button1);
             this.gbMotoViag.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbMotoViag.ForeColor = System.Drawing.Color.White;
             this.gbMotoViag.Location = new System.Drawing.Point(15, 278);
@@ -81,18 +65,6 @@
             this.gbMotoViag.TabStop = false;
             this.gbMotoViag.Text = "Motorista";
             this.gbMotoViag.Visible = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nome,
-            this.Tipo,
-            this.Veiculo});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 56);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(384, 189);
-            this.dataGridView1.TabIndex = 0;
             // 
             // doubleBitmapControl1
             // 
@@ -105,7 +77,6 @@
             // 
             // gbVeiculoLoc
             // 
-            this.gbVeiculoLoc.Controls.Add(this.dataGridView1);
             this.gbVeiculoLoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbVeiculoLoc.ForeColor = System.Drawing.Color.White;
             this.gbVeiculoLoc.Location = new System.Drawing.Point(495, 21);
@@ -216,65 +187,61 @@
             this.lblRuaCadCli.TabIndex = 3;
             this.lblRuaCadCli.Text = "Destino";
             // 
-            // Motorista
+            // button1
             // 
-            this.Motorista.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Motorista.HeaderText = "Motorista";
-            this.Motorista.Name = "Motorista";
-            this.Motorista.ReadOnly = true;
-            this.Motorista.Width = 119;
+            this.button1.Location = new System.Drawing.Point(244, 256);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 55);
+            this.button1.TabIndex = 52;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // cnh
+            // comboBox1
             // 
-            this.cnh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cnh.HeaderText = "CNH";
-            this.cnh.Name = "cnh";
-            this.cnh.ReadOnly = true;
-            this.cnh.Width = 79;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(194, 28);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 32);
+            this.comboBox1.TabIndex = 53;
             // 
-            // ValidadeCnh
+            // comboBox2
             // 
-            this.ValidadeCnh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ValidadeCnh.HeaderText = "Val.";
-            this.ValidadeCnh.Name = "ValidadeCnh";
-            this.ValidadeCnh.ReadOnly = true;
-            this.ValidadeCnh.Width = 71;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(194, 83);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 32);
+            this.comboBox2.TabIndex = 54;
             // 
-            // CategoriaCnh
+            // comboBox3
             // 
-            this.CategoriaCnh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.CategoriaCnh.HeaderText = "Cat.";
-            this.CategoriaCnh.Name = "CategoriaCnh";
-            this.CategoriaCnh.ReadOnly = true;
-            this.CategoriaCnh.Width = 71;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(194, 145);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 32);
+            this.comboBox3.TabIndex = 55;
             // 
-            // AddMotorista
+            // bunifuCustomLabel1
             // 
-            this.AddMotorista.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.AddMotorista.HeaderText = "";
-            this.AddMotorista.Name = "AddMotorista";
-            this.AddMotorista.Width = 21;
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(6, 89);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(171, 20);
+            this.bunifuCustomLabel1.TabIndex = 21;
+            this.bunifuCustomLabel1.Text = "Combustivel Viagem";
             // 
-            // Nome
+            // bunifuCustomLabel2
             // 
-            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.Width = 91;
-            // 
-            // Tipo
-            // 
-            this.Tipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.Name = "Tipo";
-            this.Tipo.Width = 77;
-            // 
-            // Veiculo
-            // 
-            this.Veiculo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Veiculo.HeaderText = "";
-            this.Veiculo.Name = "Veiculo";
-            this.Veiculo.Width = 21;
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(6, 151);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(171, 20);
+            this.bunifuCustomLabel2.TabIndex = 22;
+            this.bunifuCustomLabel2.Text = "Combustivel Viagem";
             // 
             // FormCadViagem
             // 
@@ -289,10 +256,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormCadViagem";
             this.Text = "FormCadViagem";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.Load += new System.EventHandler(this.FormCadViagem_Load);
             this.gbMotoViag.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.gbVeiculoLoc.ResumeLayout(false);
+            this.gbMotoViag.PerformLayout();
             this.gbGeralCadViag.ResumeLayout(false);
             this.gbGeralCadViag.PerformLayout();
             this.ResumeLayout(false);
@@ -300,10 +266,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.GroupBox gbMotoViag;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private BunifuAnimatorNS.DoubleBitmapControl doubleBitmapControl1;
         private System.Windows.Forms.GroupBox gbVeiculoLoc;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtComplCadCli;
@@ -313,13 +276,11 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lblCompCadCli;
         private System.Windows.Forms.GroupBox gbGeralCadViag;
         private Bunifu.Framework.UI.BunifuCustomLabel lblRuaCadCli;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Motorista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cnh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ValidadeCnh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CategoriaCnh;
-        private System.Windows.Forms.DataGridViewImageColumn AddMotorista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
-        private System.Windows.Forms.DataGridViewImageColumn Veiculo;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

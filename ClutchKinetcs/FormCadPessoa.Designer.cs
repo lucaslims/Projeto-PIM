@@ -40,9 +40,9 @@
             this.lblRgPessFisiCadCli = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblCpfPessFisiCadCli = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dplTipoPessoa = new Bunifu.Framework.UI.BunifuDropdown();
+            this.cBoxTipoPessoa = new Bunifu.Framework.UI.BunifuDropdown();
             this.lblPessJuridicaInscMunicipalCadCli = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.dplStatusClienteCadCli = new Bunifu.Framework.UI.BunifuDropdown();
+            this.cBoxStatusClienteCadCli = new Bunifu.Framework.UI.BunifuDropdown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblPfCadPessoa = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnVoltarMenuPcp = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -78,6 +78,7 @@
             this.gbGeralCadCli = new System.Windows.Forms.GroupBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.gbPessoaFisicaCadCli.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -210,7 +211,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dplTipoPessoa);
+            this.groupBox2.Controls.Add(this.cBoxTipoPessoa);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(278, 475);
@@ -221,20 +222,20 @@
             this.groupBox2.Text = "Tipo Pessoa:";
             this.groupBox2.Visible = false;
             // 
-            // dplTipoPessoa
+            // cBoxTipoPessoa
             // 
-            this.dplTipoPessoa.BackColor = System.Drawing.Color.Transparent;
-            this.dplTipoPessoa.BorderRadius = 3;
-            this.dplTipoPessoa.ForeColor = System.Drawing.Color.Black;
-            this.dplTipoPessoa.Items = new string[0];
-            this.dplTipoPessoa.Location = new System.Drawing.Point(12, 31);
-            this.dplTipoPessoa.Margin = new System.Windows.Forms.Padding(6);
-            this.dplTipoPessoa.Name = "dplTipoPessoa";
-            this.dplTipoPessoa.NomalColor = System.Drawing.Color.White;
-            this.dplTipoPessoa.onHoverColor = System.Drawing.Color.Maroon;
-            this.dplTipoPessoa.selectedIndex = -1;
-            this.dplTipoPessoa.Size = new System.Drawing.Size(144, 25);
-            this.dplTipoPessoa.TabIndex = 3;
+            this.cBoxTipoPessoa.BackColor = System.Drawing.Color.Transparent;
+            this.cBoxTipoPessoa.BorderRadius = 3;
+            this.cBoxTipoPessoa.ForeColor = System.Drawing.Color.Black;
+            this.cBoxTipoPessoa.Items = new string[0];
+            this.cBoxTipoPessoa.Location = new System.Drawing.Point(12, 31);
+            this.cBoxTipoPessoa.Margin = new System.Windows.Forms.Padding(6);
+            this.cBoxTipoPessoa.Name = "cBoxTipoPessoa";
+            this.cBoxTipoPessoa.NomalColor = System.Drawing.Color.White;
+            this.cBoxTipoPessoa.onHoverColor = System.Drawing.Color.Maroon;
+            this.cBoxTipoPessoa.selectedIndex = -1;
+            this.cBoxTipoPessoa.Size = new System.Drawing.Size(144, 25);
+            this.cBoxTipoPessoa.TabIndex = 3;
             // 
             // lblPessJuridicaInscMunicipalCadCli
             // 
@@ -247,20 +248,20 @@
             this.lblPessJuridicaInscMunicipalCadCli.TabIndex = 3;
             this.lblPessJuridicaInscMunicipalCadCli.Text = "Inscrição Municipal:";
             // 
-            // dplStatusClienteCadCli
+            // cBoxStatusClienteCadCli
             // 
-            this.dplStatusClienteCadCli.BackColor = System.Drawing.Color.DimGray;
-            this.dplStatusClienteCadCli.BorderRadius = 3;
-            this.dplStatusClienteCadCli.ForeColor = System.Drawing.Color.Black;
-            this.dplStatusClienteCadCli.Items = new string[0];
-            this.dplStatusClienteCadCli.Location = new System.Drawing.Point(108, 476);
-            this.dplStatusClienteCadCli.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
-            this.dplStatusClienteCadCli.Name = "dplStatusClienteCadCli";
-            this.dplStatusClienteCadCli.NomalColor = System.Drawing.Color.White;
-            this.dplStatusClienteCadCli.onHoverColor = System.Drawing.Color.Maroon;
-            this.dplStatusClienteCadCli.selectedIndex = -1;
-            this.dplStatusClienteCadCli.Size = new System.Drawing.Size(144, 26);
-            this.dplStatusClienteCadCli.TabIndex = 29;
+            this.cBoxStatusClienteCadCli.BackColor = System.Drawing.Color.DimGray;
+            this.cBoxStatusClienteCadCli.BorderRadius = 3;
+            this.cBoxStatusClienteCadCli.ForeColor = System.Drawing.Color.Black;
+            this.cBoxStatusClienteCadCli.Items = new string[0];
+            this.cBoxStatusClienteCadCli.Location = new System.Drawing.Point(108, 476);
+            this.cBoxStatusClienteCadCli.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
+            this.cBoxStatusClienteCadCli.Name = "cBoxStatusClienteCadCli";
+            this.cBoxStatusClienteCadCli.NomalColor = System.Drawing.Color.White;
+            this.cBoxStatusClienteCadCli.onHoverColor = System.Drawing.Color.Maroon;
+            this.cBoxStatusClienteCadCli.selectedIndex = -1;
+            this.cBoxStatusClienteCadCli.Size = new System.Drawing.Size(144, 26);
+            this.cBoxStatusClienteCadCli.TabIndex = 29;
             // 
             // groupBox1
             // 
@@ -726,7 +727,7 @@
             // gbGeralCadCli
             // 
             this.gbGeralCadCli.Controls.Add(this.groupBox2);
-            this.gbGeralCadCli.Controls.Add(this.dplStatusClienteCadCli);
+            this.gbGeralCadCli.Controls.Add(this.cBoxStatusClienteCadCli);
             this.gbGeralCadCli.Controls.Add(this.txtNumCadCli);
             this.gbGeralCadCli.Controls.Add(this.txtTelefoneCadCli);
             this.gbGeralCadCli.Controls.Add(this.txtCelularCadCli);
@@ -774,6 +775,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1586, 319);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(161, 23);
+            this.button2.TabIndex = 43;
+            this.button2.Text = "Cadastro com procedure";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // FormCadPessoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -781,6 +792,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(918, 600);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.gbPessoaFisicaCadCli);
             this.Controls.Add(this.groupBox1);
@@ -817,9 +829,9 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lblRgPessFisiCadCli;
         private Bunifu.Framework.UI.BunifuCustomLabel lblCpfPessFisiCadCli;
         private System.Windows.Forms.GroupBox groupBox2;
-        private Bunifu.Framework.UI.BunifuDropdown dplTipoPessoa;
+        private Bunifu.Framework.UI.BunifuDropdown cBoxTipoPessoa;
         private Bunifu.Framework.UI.BunifuCustomLabel lblPessJuridicaInscMunicipalCadCli;
-        private Bunifu.Framework.UI.BunifuDropdown dplStatusClienteCadCli;
+        private Bunifu.Framework.UI.BunifuDropdown cBoxStatusClienteCadCli;
         private System.Windows.Forms.GroupBox groupBox1;
         private Bunifu.Framework.UI.BunifuCustomLabel lblPfCadPessoa;
         private Bunifu.Framework.UI.BunifuThinButton2 btnVoltarMenuPcp;
@@ -855,5 +867,6 @@
         private System.Windows.Forms.GroupBox gbGeralCadCli;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using Control;
 using System.Data.SqlClient;
+using System.Data;
+
 namespace DAL
 {
     public class clsDalFuncionario:SqlHelper
@@ -26,6 +28,48 @@ namespace DAL
                     ExecutarComandoMySql(inserirFuncionario, conMySql);
 
                 return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public bool inserModeloProcedure(MySqlConnection conMySql, SqlConnection conServer, List<string> dadosViagem)
+        {
+            try
+            {
+                if (varGlob.BdConexao == "SqlServer")
+                {
+                    SqlCommand cmd = new SqlCommand("CADASTRO_FUNCIONARIO", conServer);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@P_nome", dadosViagem[0]);
+                    cmd.Parameters.AddWithValue("@F_Desc_descricao", dadosViagem[1]);
+                    cmd.Parameters.AddWithValue("@F_Cargo_descricao", dadosViagem[1]);
+
+
+                    ExecutarComandoProcSqlServer(cmd);
+                }
+                else if (varGlob.BdConexao == "MySql")
+                {
+                    MySqlCommand cmd = new MySqlCommand("CADASTRO_FUNCIONARIO", conMySql);
+                    cmd.Parameters.AddWithValue("@P_nome", dadosViagem[0]);
+                    cmd.Parameters.AddWithValue("@F_Desc_descricao", dadosViagem[1]);
+                    cmd.Parameters.AddWithValue("@F_Cargo_descricao", dadosViagem[1]);
+
+                    ExecutarComandoProcSqlMySql(cmd);
+                }
+                else
+                {
+                    MySqlCommand cmd = new MySqlCommand("CADASTRO_FUNCIONARIO", conMySql);
+                    cmd.Parameters.AddWithValue("@P_nome", dadosViagem[0]);
+                    cmd.Parameters.AddWithValue("@F_Desc_descricao", dadosViagem[1]);
+                    cmd.Parameters.AddWithValue("@F_Cargo_descricao", dadosViagem[1]);
+
+                    ExecutarComandoProcSqlMySql(cmd);
+                }
+
+                return true;
+
             }
             catch (Exception ex)
             {

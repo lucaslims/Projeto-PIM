@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAL;
+using Control;
+using Model;
 
 namespace ClutchKinetcs
 {
@@ -16,6 +19,8 @@ namespace ClutchKinetcs
         int X = 0;
         int Y = 0;
 
+        static clsGlobal varglob = new clsGlobal();
+         
         private void pnlOpcSW_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left) return;
@@ -30,7 +35,7 @@ namespace ClutchKinetcs
             this.Top = Y + MousePosition.Y;
         }
 
-        FormLogin frmLogin = new FormLogin();
+        FormLogin frmLogin = new FormLogin(varglob);
         clsLogin pessoaLogin = new clsLogin();
         clsPessoa pessoaLogada = new clsPessoa();
 
@@ -116,6 +121,23 @@ namespace ClutchKinetcs
             }
 
             lblNomeUser.Text = pessoaLogada.Nome;
+
+
+            // Create the ToolTip and associate with the Form container.
+            ToolTip toolTip1 = new ToolTip();
+
+            // Set up the delays for the ToolTip.
+            toolTip1.AutoPopDelay = 5000;
+            toolTip1.InitialDelay = 1000;
+            toolTip1.ReshowDelay = 500;
+            // Force the ToolTip text to be displayed whether or not the form is active.
+            toolTip1.ShowAlways = true;
+
+            // Set up the ToolTip text for the Button and Checkbox.
+            toolTip1.SetToolTip(this.btnPessoas, "Gerenciamento de Pessoas");
+            toolTip1.SetToolTip(this.btnVeiculos, "Gerenciamento de Veiculos");
+
+
         }
 
         private void TimerHora_Tick(object sender, EventArgs e)
@@ -267,6 +289,11 @@ namespace ClutchKinetcs
             floLayPnlMenSegundario.Controls.Add(menuViagem);
             //exibe o menu de opções
             menuViagem.Show();
+        }
+
+        private void pnlOpcSW_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            TrocaBotoesMaximizeNormalWinState();
         }
     }
 }

@@ -102,6 +102,19 @@ namespace Control
                 throw ex;
             }
         }
+        public void ExecutarComandoProcSqlMySql(MySqlCommand comando)
+        {
+            try
+            {
+                MySqlCommand cmd = comando;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public int ExecutarComandoRetornoMySql(string comando, MySqlConnection con)
         {
             try
@@ -311,6 +324,19 @@ namespace Control
             try
             {
                 SqlCommand cmd = new SqlCommand(comando, con);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public void ExecutarComandoProcSqlServer(SqlCommand comando)
+        {
+            try
+            {
+                SqlCommand cmd = comando;
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)

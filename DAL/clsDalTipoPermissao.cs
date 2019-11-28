@@ -9,7 +9,7 @@ using Control;
 
 namespace DAL
 {
-    class clsDalTipoPermissao : SqlHelper
+    public class clsDalTipoPermissao : SqlHelper
     {
         clsGlobal varGlob = new clsGlobal();
 

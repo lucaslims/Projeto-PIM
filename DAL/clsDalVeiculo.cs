@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using Control;
+using System.Data;
 
 namespace DAL
 {
@@ -18,10 +19,11 @@ namespace DAL
                                   " values (" + objVeiculo.Id + ", " + //ver com o Lucas sobre o campo
                                           "'" + objVeiculo.Placa_vec + "', " +
                                           "'" + objVeiculo.Chassi_vec + "', " +
-                                          "'"+ objVeiculo.Descricao + "'," +
+                                          "'" + objVeiculo.Descricao + "'," +
                                                 objVeiculo.Corveiculo.Id_cor +","+
-                                                objVeiculo.Marcaveiculo.Id_marca+","+
-                                                objVeiculo.Tipoveiculo.Id_tipoveiculo +","+
+                                                objVeiculo.Marcaveiculo.Id_marca+"," +
+                                                objVeiculo.Marcaveiculo.Modeloveiculo.Id_modelo + "," +
+                                                objVeiculo.Marcaveiculo.Tipoveiculo.Id_tipoveiculo +","+
                                                 objVeiculo.Statusveiculo.Id_statusveiculo +"); ";
 
             try
@@ -38,6 +40,62 @@ namespace DAL
                 throw ex;
             }
         }
+        public bool insertVeiculoProcedure(MySqlConnection conMySql, SqlConnection conServer, List<string> dadosVeiculo)
+        {
+            try
+            {
+               
+                if (varGlob.BdConexao == "SqlServer")
+                {
+                    SqlCommand cmd = new SqlCommand("CADASTRAR_VEICULO", conServer);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@V_Veic_placa", dadosVeiculo[0]);
+                    cmd.Parameters.AddWithValue("@V_Veic_chassi", dadosVeiculo[1]);
+                    cmd.Parameters.AddWithValue("@V_Veic_descricao", dadosVeiculo[2]);
+                    cmd.Parameters.AddWithValue("@V_Cor_descricao", dadosVeiculo[3]);
+                    cmd.Parameters.AddWithValue("@V_Model_descricao", dadosVeiculo[4]);
+                    cmd.Parameters.AddWithValue("@V_Status_descricao", dadosVeiculo[5]);
+                    cmd.Parameters.AddWithValue("@v_Emp_cnpj", Convert.ToInt64(dadosVeiculo[6]));
+                   
+
+                    ExecutarComandoProcSqlServer(cmd);
+                }
+                else if (varGlob.BdConexao == "MySql")
+                {
+                    MySqlCommand cmd = new MySqlCommand("CADASTRAR_VEICULO", conMySql);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@V_Veic_placa", dadosVeiculo[0]);
+                    cmd.Parameters.AddWithValue("@V_Veic_chassi", dadosVeiculo[1]);
+                    cmd.Parameters.AddWithValue("@V_Veic_descricao", dadosVeiculo[2]);
+                    cmd.Parameters.AddWithValue("@V_Cor_descricao", dadosVeiculo[3]);
+                    cmd.Parameters.AddWithValue("@V_Model_descricao", dadosVeiculo[4]);
+                    cmd.Parameters.AddWithValue("@V_Status_descricao", dadosVeiculo[5]);
+                    cmd.Parameters.AddWithValue("@v_Emp_cnpj", Convert.ToInt64(dadosVeiculo[6]));
+
+
+                    ExecutarComandoProcSqlMySql(cmd);
+                }
+                else
+                {
+                    MySqlCommand cmd = new MySqlCommand("CADASTRAR_VEICULO", conMySql);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@V_Veic_placa", dadosVeiculo[0]);
+                    cmd.Parameters.AddWithValue("@V_Veic_chassi", dadosVeiculo[1]);
+                    cmd.Parameters.AddWithValue("@V_Veic_descricao", dadosVeiculo[2]);
+                    cmd.Parameters.AddWithValue("@V_Cor_descricao", dadosVeiculo[3]);
+                    cmd.Parameters.AddWithValue("@V_Model_descricao", dadosVeiculo[4]);
+                    cmd.Parameters.AddWithValue("@V_Status_descricao", dadosVeiculo[5]);
+                    cmd.Parameters.AddWithValue("@v_Emp_cnpj", Convert.ToInt64(dadosVeiculo[6]));
+                    ExecutarComandoProcSqlMySql(cmd);
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public bool UpdateVeic(MySqlConnection conMySql, SqlConnection conServer, clsVeiculo objVeiculo)
         {
             string atualizarVeiculo = "update TB_CD_VEICULO set PLACA = '" + objVeiculo.Placa_vec + "', " + //CONFEERIR METODO
@@ -45,8 +103,8 @@ namespace DAL
                                                           " DESCRICAO = '" + objVeiculo.Descricao + "', " +
                                                           " COR_ID = " + objVeiculo.Corveiculo .Id_cor+ ", " +
                                                           " MARCA_ID = " + objVeiculo.Marcaveiculo.Id_marca + ", " +
-                                                          " MODELO_ID = " + objVeiculo.Modeloveiculo.Id_modelo + ", " +
-                                                          " TIPO_ID = " + objVeiculo.Tipoveiculo.Id_tipoveiculo + ", " +
+                                                          " MODELO_ID = " + objVeiculo.Marcaveiculo.Modeloveiculo.Id_modelo + ", " +
+                                                          " TIPO_ID = " + objVeiculo.Marcaveiculo.Tipoveiculo.Id_tipoveiculo + ", " +
                                                           " STATUS_ID = " + objVeiculo.Statusveiculo.Id_statusveiculo + ", " +
                                                           " where ID = " + objVeiculo.Id + " ;";//ver com o Lucas ID
             try
@@ -98,8 +156,8 @@ namespace DAL
                     objVeiculo.Corveiculo.Id_cor = Convert.ToInt32(dr[4].ToString());
                     objVeiculo.Chassi_vec = Convert.ToInt32(dr[5].ToString());
                     objVeiculo.Marcaveiculo.Id_marca = Convert.ToInt32(dr[6].ToString());
-                    objVeiculo.Modeloveiculo.Id_modelo = Convert.ToInt32(dr[7].ToString());
-                    objVeiculo.Tipoveiculo.Id_tipoveiculo = Convert.ToInt32(dr[8].ToString());
+                    objVeiculo.Marcaveiculo.Modeloveiculo.Id_modelo = Convert.ToInt32(dr[7].ToString());
+                    objVeiculo.Marcaveiculo.Tipoveiculo.Id_tipoveiculo = Convert.ToInt32(dr[8].ToString());
                     objVeiculo.Statusveiculo.Id_statusveiculo = Convert.ToInt32(dr[9].ToString());
                 }
                 else if (varGlob.BdConexao == "MySql")
@@ -113,8 +171,8 @@ namespace DAL
                     objVeiculo.Corveiculo.Id_cor = Convert.ToInt32(dr[4].ToString());
                     objVeiculo.Chassi_vec = Convert.ToInt32(dr[5].ToString());
                     objVeiculo.Marcaveiculo.Id_marca = Convert.ToInt32(dr[6].ToString());
-                    objVeiculo.Modeloveiculo.Id_modelo = Convert.ToInt32(dr[7].ToString());
-                    objVeiculo.Tipoveiculo.Id_tipoveiculo = Convert.ToInt32(dr[8].ToString());
+                    objVeiculo.Marcaveiculo.Modeloveiculo.Id_modelo = Convert.ToInt32(dr[7].ToString());
+                    objVeiculo.Marcaveiculo.Tipoveiculo.Id_tipoveiculo = Convert.ToInt32(dr[8].ToString());
                     objVeiculo.Statusveiculo.Id_statusveiculo = Convert.ToInt32(dr[9].ToString());
                 }
 
@@ -144,8 +202,8 @@ namespace DAL
                         objVeiculo.Corveiculo.Id_cor = Convert.ToInt32(dr[4].ToString());
                         objVeiculo.Chassi_vec = Convert.ToInt32(dr[5].ToString());
                         objVeiculo.Marcaveiculo.Id_marca = Convert.ToInt32(dr[6].ToString());
-                        objVeiculo.Modeloveiculo.Id_modelo = Convert.ToInt32(dr[7].ToString());
-                        objVeiculo.Tipoveiculo.Id_tipoveiculo = Convert.ToInt32(dr[8].ToString());
+                        objVeiculo.Marcaveiculo.Modeloveiculo.Id_modelo = Convert.ToInt32(dr[7].ToString());
+                        objVeiculo.Marcaveiculo.Tipoveiculo.Id_tipoveiculo = Convert.ToInt32(dr[8].ToString());
                         objVeiculo.Statusveiculo.Id_statusveiculo = Convert.ToInt32(dr[9].ToString());
                         listaVeiculos.Add(objVeiculo);
                     }
@@ -163,8 +221,8 @@ namespace DAL
                         objVeiculo.Corveiculo.Id_cor = Convert.ToInt32(dr[4].ToString());
                         objVeiculo.Chassi_vec = Convert.ToInt32(dr[5].ToString());
                         objVeiculo.Marcaveiculo.Id_marca = Convert.ToInt32(dr[6].ToString());
-                        objVeiculo.Modeloveiculo.Id_modelo = Convert.ToInt32(dr[7].ToString());
-                        objVeiculo.Tipoveiculo.Id_tipoveiculo = Convert.ToInt32(dr[8].ToString());
+                        objVeiculo.Marcaveiculo.Modeloveiculo.Id_modelo = Convert.ToInt32(dr[7].ToString());
+                        objVeiculo.Marcaveiculo.Tipoveiculo.Id_tipoveiculo = Convert.ToInt32(dr[8].ToString());
                         objVeiculo.Statusveiculo.Id_statusveiculo = Convert.ToInt32(dr[9].ToString());
                         listaVeiculos.Add(objVeiculo);
                     }

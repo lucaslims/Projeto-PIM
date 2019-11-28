@@ -13,17 +13,43 @@ namespace ClutchKinetcs
     public partial class FormMenuLocacao : Form
     {
         private FormMenuPrincipal formMenuPrincipal;
-
-        public FormMenuLocacao()
+        FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
+        public FormMenuLocacao(FormMenuPrincipal frmAnt)
         {
+            this.menuPrincipal = frmAnt;
             InitializeComponent();
         }
 
-        public FormMenuLocacao(FormMenuPrincipal formMenuPrincipal)
-        {
-            this.formMenuPrincipal = formMenuPrincipal;
-            InitializeComponent();
+       
 
+        private void btnCadastro_Click(object sender, EventArgs e)
+        {
+            FormCadLocacao cadPessoa = new FormCadLocacao();
+            cadPessoa.TopLevel = false;
+            cadPessoa.FormBorderStyle = FormBorderStyle.None;
+            menuPrincipal.pnlPrincipal.Controls.Clear();
+            menuPrincipal.pnlPrincipal.Controls.Add(cadPessoa);
+            cadPessoa.Show();
+        }
+
+        private void btnConsulta_Click(object sender, EventArgs e)
+        {
+            FormConLocacao cadPessoa = new FormConLocacao();
+            cadPessoa.TopLevel = false;
+            cadPessoa.FormBorderStyle = FormBorderStyle.None;
+            menuPrincipal.pnlPrincipal.Controls.Clear();
+            menuPrincipal.pnlPrincipal.Controls.Add(cadPessoa);
+            cadPessoa.Show();
+        }
+
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            FormAttLocacao cadPessoa = new FormAttLocacao();
+            cadPessoa.TopLevel = false;
+            cadPessoa.FormBorderStyle = FormBorderStyle.None;
+            menuPrincipal.pnlPrincipal.Controls.Clear();
+            menuPrincipal.pnlPrincipal.Controls.Add(cadPessoa);
+            cadPessoa.Show();
         }
     }
 }
