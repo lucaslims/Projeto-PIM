@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbVeiculoLoc = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Placa = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,7 +40,6 @@
             this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Veiculo = new System.Windows.Forms.DataGridViewImageColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gbVeiculoLoc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +55,16 @@
             this.gbVeiculoLoc.Size = new System.Drawing.Size(882, 509);
             this.gbVeiculoLoc.TabIndex = 51;
             this.gbVeiculoLoc.TabStop = false;
-            this.gbVeiculoLoc.Text = "ConsultaVeiculo";
+            this.gbVeiculoLoc.Text = "Consultar Veiculo";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(0, 512);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(879, 64);
+            this.groupBox1.TabIndex = 52;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
             // 
             // dataGridView1
             // 
@@ -139,15 +148,6 @@
             this.Veiculo.HeaderText = "";
             this.Veiculo.Name = "Veiculo";
             this.Veiculo.Width = 21;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(0, 512);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(879, 64);
-            this.groupBox1.TabIndex = 52;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // FormConVeiculo
             // 

@@ -48,7 +48,7 @@
             this.gbServico.Size = new System.Drawing.Size(878, 553);
             this.gbServico.TabIndex = 50;
             this.gbServico.TabStop = false;
-            this.gbServico.Text = "Atualizar Serviço";
+            this.gbServico.Text = "Consultar Viagens";
             // 
             // dataGridView1
             // 

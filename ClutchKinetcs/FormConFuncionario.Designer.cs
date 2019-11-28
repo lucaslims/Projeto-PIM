@@ -54,7 +54,7 @@
             this.gbConsultaFuncionario.Size = new System.Drawing.Size(888, 516);
             this.gbConsultaFuncionario.TabIndex = 55;
             this.gbConsultaFuncionario.TabStop = false;
-            this.gbConsultaFuncionario.Text = "Consultar funcionário";
+            this.gbConsultaFuncionario.Text = "Consultar Funcionário";
             // 
             // dataGridView1
             // 
