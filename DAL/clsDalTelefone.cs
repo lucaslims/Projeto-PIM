@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 using Control;
 namespace DAL
 {
-    public class clsDalTelefone :SqlHelper
+    class clsDalTelefone :SqlHelper
     {
         clsGlobal varGlob = new clsGlobal();
 

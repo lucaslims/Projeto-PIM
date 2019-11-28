@@ -37,6 +37,7 @@
             this.Seguro_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pessoa_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Veiculo_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Adicionar = new System.Windows.Forms.DataGridViewImageColumn();
             this.gbLocacao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +52,7 @@
             this.gbLocacao.Size = new System.Drawing.Size(878, 553);
             this.gbLocacao.TabIndex = 50;
             this.gbLocacao.TabStop = false;
-            this.gbLocacao.Text = "Consultar Locacao";
+            this.gbLocacao.Text = "Editar Locacao";
             // 
             // dataGridView1
             // 
@@ -63,7 +64,8 @@
             this.Taxa_Extra,
             this.Seguro_ID,
             this.Pessoa_ID,
-            this.Veiculo_ID});
+            this.Veiculo_ID,
+            this.Adicionar});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 25);
             this.dataGridView1.Name = "dataGridView1";
@@ -75,7 +77,7 @@
             this.DataLocacao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.DataLocacao.HeaderText = "Data Locacao";
             this.DataLocacao.Name = "DataLocacao";
-            this.DataLocacao.Width = 161;
+            this.DataLocacao.Width = 147;
             // 
             // TempoLocacao
             // 
@@ -119,6 +121,13 @@
             this.Veiculo_ID.Name = "Veiculo_ID";
             this.Veiculo_ID.Width = 136;
             // 
+            // Adicionar
+            // 
+            this.Adicionar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Adicionar.HeaderText = "Adicionar";
+            this.Adicionar.Name = "Adicionar";
+            this.Adicionar.Width = 105;
+            // 
             // FormConLocacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -146,5 +155,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Seguro_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Pessoa_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Veiculo_ID;
+        private System.Windows.Forms.DataGridViewImageColumn Adicionar;
     }
 }

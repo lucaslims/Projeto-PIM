@@ -162,7 +162,6 @@
             this.btnAtualizar.Size = new System.Drawing.Size(241, 31);
             this.btnAtualizar.TabIndex = 52;
             this.btnAtualizar.Tag = "Teste";
-            this.btnAtualizar.Click += new System.EventHandler(this.BtnAtualizar_Click);
             // 
             // btnDeletar
             // 
@@ -183,7 +182,6 @@
             this.btnDeletar.Size = new System.Drawing.Size(241, 31);
             this.btnDeletar.TabIndex = 53;
             this.btnDeletar.Tag = "Teste";
-            this.btnDeletar.Click += new System.EventHandler(this.BtnDeletar_Click);
             // 
             // btnCadastrarTipo
             // 
@@ -204,7 +202,6 @@
             this.btnCadastrarTipo.Size = new System.Drawing.Size(208, 30);
             this.btnCadastrarTipo.TabIndex = 54;
             this.btnCadastrarTipo.Tag = "Teste";
-            this.btnCadastrarTipo.Click += new System.EventHandler(this.BtnCadastrarTipo_Click);
             // 
             // btnRelatorio
             // 
@@ -266,7 +263,6 @@
             this.btnAtualizarLogin.Size = new System.Drawing.Size(208, 25);
             this.btnAtualizarLogin.TabIndex = 57;
             this.btnAtualizarLogin.Tag = "Teste";
-            this.btnAtualizarLogin.Click += new System.EventHandler(this.BtnAtualizarLogin_Click);
             // 
             // btnDeletarLogin
             // 
@@ -287,7 +283,6 @@
             this.btnDeletarLogin.Size = new System.Drawing.Size(208, 25);
             this.btnDeletarLogin.TabIndex = 58;
             this.btnDeletarLogin.Tag = "Teste";
-            this.btnDeletarLogin.Click += new System.EventHandler(this.BtnDeletarLogin_Click);
             // 
             // btnConsultarLogin
             // 
@@ -308,7 +303,6 @@
             this.btnConsultarLogin.Size = new System.Drawing.Size(208, 25);
             this.btnConsultarLogin.TabIndex = 59;
             this.btnConsultarLogin.Tag = "Teste";
-            this.btnConsultarLogin.Click += new System.EventHandler(this.BtnConsultarLogin_Click);
             // 
             // FormMenuPessoa
             // 
