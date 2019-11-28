@@ -62,6 +62,7 @@ namespace ClutchKinetcs
                 dadosPessoa.Add(txtRuaCadCli.Text);
                 dadosPessoa.Add(txtNumCadCli.Text);
                 dadosPessoa.Add(txtComplCadCli.Text);
+                dadosPessoa.Add(txtBairroCadCli.Text);
                 dadosPessoa.Add(txtCidadeCadCli.Text); //tem q passar id cidade arrumar
                 dadosPessoa.Add(txtEmailCadCli.Text);
                 dadosPessoa.Add("55");//ddi
@@ -102,6 +103,28 @@ namespace ClutchKinetcs
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void switchPfPjCadPessoa_OnValueChange(object sender, EventArgs e)
+        {
+            if (gbPessoaFisicaCadCli.Enabled == true)
+            {
+                gbPessoaJuridicaCadCli.Enabled = true;
+                gbPessoaFisicaCadCli.Enabled = false;
+
+                txtCpfPessFisCadCli.Text = string.Empty;
+                txtDtNascPessFisCadCli.Text = string.Empty;
+                txtRgPessFisCadCli.Text = string.Empty;
+            }
+            else
+            {
+                gbPessoaJuridicaCadCli.Enabled = false;
+                gbPessoaFisicaCadCli.Enabled = true;
+
+                txtCnpjPessJurCadCli.Text = string.Empty;
+                txtInscEstadualPessJurCadCli.Text = string.Empty;
+                txtInscMunicipalPessJurCadCli.Text = string.Empty;
+            }
         }
     }
 }

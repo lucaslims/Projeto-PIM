@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using Control;
 using System.Data.SqlClient;
-using System.Data;
-
 namespace DAL
 {
     public class clsDalFuncionario:SqlHelper
@@ -33,49 +31,63 @@ namespace DAL
             {
                 throw ex;
             }
-        }
-        public bool inserModeloProcedure(MySqlConnection conMySql, SqlConnection conServer, List<string> dadosViagem)
+        }/*
+        public bool insertProcedureFuncionario(MySqlConnection conMySql, SqlConnection conServer, List<string> dadosViagem)
         {
             try
             {
                 if (varGlob.BdConexao == "SqlServer")
                 {
-                    SqlCommand cmd = new SqlCommand("CADASTRO_FUNCIONARIO", conServer);
+                    SqlCommand cmd = new SqlCommand("CADASTRAR_PESSOA_PF", conServer);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@P_nome", dadosViagem[0]);
-                    cmd.Parameters.AddWithValue("@F_Desc_descricao", dadosViagem[1]);
-                    cmd.Parameters.AddWithValue("@F_Cargo_descricao", dadosViagem[1]);
-
+                    cmd.Parameters.AddWithValue("@P_status", dadosViagem[1]);
+                    cmd.Parameters.AddWithValue("@P_End_cep", dadosViagem[2]);
+                    cmd.Parameters.AddWithValue("@P_End_logra", dadosViagem[3]);
+                    cmd.Parameters.AddWithValue("@P_End_numero", dadosViagem[4]);
+                    cmd.Parameters.AddWithValue("@P_End_compl", dadosViagem[5]);
+                    cmd.Parameters.AddWithValue("@P_End_bairro", dadosViagem[6]);
+                    cmd.Parameters.AddWithValue("@P_End_cidade", dadosViagem[7]);
+                    cmd.Parameters.AddWithValue("@P_Ema_email", dadosViagem[8]);
+                    cmd.Parameters.AddWithValue("@P_Tel_ddi", dadosViagem[9]);
+                    cmd.Parameters.AddWithValue("@P_Tel_ddd", dadosViagem[10]);
+                    cmd.Parameters.AddWithValue("@P_Tel_numero", dadosViagem[11]);
+                    cmd.Parameters.AddWithValue("@P_PFi_cpf", dadosViagem[12]);
+                    cmd.Parameters.AddWithValue("@P_PFi_rg", dadosViagem[13]);
+                    cmd.Parameters.AddWithValue("@P_PFi_dt_nasc", Convert.ToDateTime(dadosViagem[14]).ToString("yyyy-MM-dd"));
 
                     ExecutarComandoProcSqlServer(cmd);
                 }
                 else if (varGlob.BdConexao == "MySql")
                 {
-                    MySqlCommand cmd = new MySqlCommand("CADASTRO_FUNCIONARIO", conMySql);
-                    cmd.Parameters.AddWithValue("@P_nome", dadosViagem[0]);
-                    cmd.Parameters.AddWithValue("@F_Desc_descricao", dadosViagem[1]);
-                    cmd.Parameters.AddWithValue("@F_Cargo_descricao", dadosViagem[1]);
-
-                    ExecutarComandoProcSqlMySql(cmd);
-                }
-                else
-                {
-                    MySqlCommand cmd = new MySqlCommand("CADASTRO_FUNCIONARIO", conMySql);
-                    cmd.Parameters.AddWithValue("@P_nome", dadosViagem[0]);
-                    cmd.Parameters.AddWithValue("@F_Desc_descricao", dadosViagem[1]);
-                    cmd.Parameters.AddWithValue("@F_Cargo_descricao", dadosViagem[1]);
+                    MySqlCommand cmd = new MySqlCommand("CADASTRAR_PESSOA_PF", conMySql);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@P_nome", dadosPessoa[0]);
+                    cmd.Parameters.AddWithValue("@P_status", dadosPessoa[1]);
+                    cmd.Parameters.AddWithValue("@P_End_cep", dadosPessoa[2]);
+                    cmd.Parameters.AddWithValue("@P_End_logra", dadosPessoa[3]);
+                    cmd.Parameters.AddWithValue("@P_End_numero", dadosPessoa[4]);
+                    cmd.Parameters.AddWithValue("@P_End_compl", dadosPessoa[5]);
+                    cmd.Parameters.AddWithValue("@P_End_bairro", dadosPessoa[6]);
+                    cmd.Parameters.AddWithValue("@P_End_cidade", dadosPessoa[7]);
+                    cmd.Parameters.AddWithValue("@P_Ema_email", dadosPessoa[8]);
+                    cmd.Parameters.AddWithValue("@P_Tel_ddi", dadosPessoa[9]);
+                    cmd.Parameters.AddWithValue("@P_Tel_ddd", dadosPessoa[10]);
+                    cmd.Parameters.AddWithValue("@P_Tel_numero", dadosPessoa[11]);
+                    cmd.Parameters.AddWithValue("@P_PFi_cpf", dadosPessoa[12]);
+                    cmd.Parameters.AddWithValue("@P_PFi_rg", dadosPessoa[13].ToString());
+                    cmd.Parameters.AddWithValue("@P_PFi_dt_nasc", Convert.ToDateTime(dadosPessoa[14]).ToString("yyyy-MM-dd"));
 
                     ExecutarComandoProcSqlMySql(cmd);
                 }
 
                 return true;
-
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-        }
+        }*/
         public bool UpdateFuncionario(MySqlConnection conMySql, SqlConnection conServer, clsFuncionario objFunc)
         {
             string atualizarFuncionario = "update TB_CD_FUNCIONARIO set ID_PESSOA = '" + objFunc.Pessoa.Id + "' , " +

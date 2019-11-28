@@ -49,14 +49,14 @@ namespace ClutchKinetcs
 
                 varGlob.InsereLog();
 
-                clsDalVeiculo dalservico = new clsDalVeiculo();
+                clsDalServico dalservico = new clsDalServico();
 
                 connMySql.Open();
                 connSqlServer.Open();
                 try
                 {
 
-                    dalservico.insertVeiculoProcedure(connMySql, connSqlServer, dadosServico);
+                    dalservico.insertProcedureServico(connMySql, connSqlServer, dadosServico);
 
                     connMySql.Close();
                     connSqlServer.Close();
@@ -91,16 +91,16 @@ namespace ClutchKinetcs
                 }
                 else if (_opc == 2)
                 {
-                    query = "select DESCRICAO from TB_CD_VEICULO_MODELO ORDER BY DESCRICAO;";
+                    query = "select DESCRICAO from TB_CD_VEICULO_MODELO ORDER BY DESCRICAO";
                 }
                 else if (_opc== 3)
                 {
-                    query = "select DESCRICAO from TB_CD_VEICULO_MODELO ORDER BY DESCRICAO;";
+                    query = "select DESCRICAO from TB_CD_VEICULO_MODELO ORDER BY DESCRICAO";
 
                 }
                 else if (_opc == 4)
                 {
-                    query = "select CNPJ from TB_CD_PESSOA_JURIDICA ORDER BY CNPJ;";
+                    query = "select CNPJ from TB_CD_PESSOA_JURIDICA ORDER BY CNPJ";
                   
                 }
 
@@ -112,7 +112,7 @@ namespace ClutchKinetcs
                     if(_opc != 4) 
                     _comboBox.Items.Add(row.Field<string>("DESCRICAO"));
                     else
-                        _comboBox.Items.Add(row.Field<Int64>("CNPJ"));
+                        _comboBox.Items.Add(row.Field<string>("CNPJ"));
 
                 }
 

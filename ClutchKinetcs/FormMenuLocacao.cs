@@ -14,13 +14,17 @@ namespace ClutchKinetcs
     {
         private FormMenuPrincipal formMenuPrincipal;
         FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
-        public FormMenuLocacao(FormMenuPrincipal frmAnt)
+        public FormMenuLocacao()
         {
-            this.menuPrincipal = frmAnt;
             InitializeComponent();
         }
 
-       
+        public FormMenuLocacao(FormMenuPrincipal formMenuPrincipal)
+        {
+            this.formMenuPrincipal = formMenuPrincipal;
+            InitializeComponent();
+
+        }
 
         private void btnCadastro_Click(object sender, EventArgs e)
         {

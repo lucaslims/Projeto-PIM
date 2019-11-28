@@ -12,7 +12,6 @@ namespace ClutchKinetcs
 {
     public partial class FormMenuPessoa : Form
     {
-        private FormMenuPrincipal formMenuPrincipal;
         FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
         public FormMenuPessoa(FormMenuPrincipal frmAnt)
         {
@@ -50,7 +49,32 @@ namespace ClutchKinetcs
            
         }
 
-        private void FormMenuPessoa_Load(object sender, EventArgs e)
+        private void btnConsultarLogin_Click(object sender, EventArgs e)
+        {
+            FormConLogin conLogin = new FormConLogin();
+            conLogin.TopLevel = false;
+            conLogin.FormBorderStyle = FormBorderStyle.None;
+            menuPrincipal.pnlPrincipal.Controls.Clear();
+            menuPrincipal.pnlPrincipal.Controls.Add(conLogin);
+            conLogin.Show();
+        }
+
+        private void btnDeletar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeletarLogin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAtualizarLogin_Click(object sender, EventArgs e)
         {
 
         }

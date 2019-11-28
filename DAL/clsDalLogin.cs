@@ -36,51 +36,6 @@ namespace DAL
                 throw ex;
             }
         }
-        public bool insertLoginProcedure(MySqlConnection conMySql, SqlConnection conServer, List<string> dadosViagem)
-        {
-            try
-            {
-                if (varGlob.BdConexao == "SqlServer")
-                {
-                    SqlCommand cmd = new SqlCommand("CADASTRAR_LOGIN", conServer);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@L_Pessoa_nome", dadosViagem[0]);
-                    cmd.Parameters.AddWithValue("@L_Veic_login", dadosViagem[1]);
-                    cmd.Parameters.AddWithValue("@lVeic_Senha", dadosViagem[2]);
-                    cmd.Parameters.AddWithValue("@V_Tipo_descricao", dadosViagem[3]);
-
-
-                    ExecutarComandoProcSqlServer(cmd);
-                }
-                else if (varGlob.BdConexao == "MySql")  
-                {
-                    MySqlCommand cmd = new MySqlCommand("CADASTRAR_LOGIN", conMySql);
-                    cmd.Parameters.AddWithValue("@L_Pessoa_nome", dadosViagem[0]);
-                    cmd.Parameters.AddWithValue("@L_Veic_login", dadosViagem[1]);
-                    cmd.Parameters.AddWithValue("@lVeic_Senha", dadosViagem[2]);
-                    cmd.Parameters.AddWithValue("@V_Tipo_descricao", dadosViagem[3]);
-
-                    ExecutarComandoProcSqlMySql(cmd);
-                }
-                else
-                {
-                    MySqlCommand cmd = new MySqlCommand("CADASTRAR_LOGIN", conMySql);
-                    cmd.Parameters.AddWithValue("@L_Pessoa_nome", dadosViagem[0]);
-                    cmd.Parameters.AddWithValue("@L_Veic_login", dadosViagem[1]);
-                    cmd.Parameters.AddWithValue("@lVeic_Senha", dadosViagem[2]);
-                    cmd.Parameters.AddWithValue("@V_Tipo_descricao", dadosViagem[3]);
-
-                    ExecutarComandoProcSqlMySql(cmd);
-                }
-                return true;
-            }
-
-
-            catch (Exception ex)
-            {   
-                throw ex;
-            }
-        }
         public bool UpdateLogin(MySqlConnection conMySql, SqlConnection conServer, clsLogin objLogin)
         {
             string atualizarLogin = "update tb_cd_login set login = '" + objLogin.Nome_login + "' , " +

@@ -324,6 +324,7 @@
             this.switchPfPjCadPessoa.Size = new System.Drawing.Size(43, 25);
             this.switchPfPjCadPessoa.TabIndex = 19;
             this.switchPfPjCadPessoa.Value = true;
+            this.switchPfPjCadPessoa.OnValueChange += new System.EventHandler(this.switchPfPjCadPessoa_OnValueChange);
             // 
             // lblPjCadPessoa
             // 
@@ -597,6 +598,7 @@
             this.gbPessoaJuridicaCadCli.Controls.Add(this.lblPessJuridicaInscEstadualCadCli);
             this.gbPessoaJuridicaCadCli.Controls.Add(this.lblPessJuridicaInscMunicipalCadCli);
             this.gbPessoaJuridicaCadCli.Controls.Add(this.lblPessJuridicaCnpjCadCli);
+            this.gbPessoaJuridicaCadCli.Enabled = false;
             this.gbPessoaJuridicaCadCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbPessoaJuridicaCadCli.ForeColor = System.Drawing.Color.White;
             this.gbPessoaJuridicaCadCli.Location = new System.Drawing.Point(501, 81);
@@ -605,7 +607,6 @@
             this.gbPessoaJuridicaCadCli.TabIndex = 39;
             this.gbPessoaJuridicaCadCli.TabStop = false;
             this.gbPessoaJuridicaCadCli.Text = "Pessoa Juridica:";
-            this.gbPessoaJuridicaCadCli.Visible = false;
             // 
             // txtInscEstadualPessJurCadCli
             // 

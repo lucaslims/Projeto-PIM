@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.gbFuncionarioLog = new System.Windows.Forms.GroupBox();
-            this.cmbTipo = new System.Windows.Forms.ComboBox();
-            this.cmbMarca = new System.Windows.Forms.ComboBox();
             this.txtStatus = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtModelo = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -38,6 +36,8 @@
             this.lblCepCadCli = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtMarca = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.button1 = new System.Windows.Forms.Button();
+            this.cmbMarca = new System.Windows.Forms.ComboBox();
+            this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.gbFuncionarioLog.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,22 +59,6 @@
             this.gbFuncionarioLog.TabIndex = 50;
             this.gbFuncionarioLog.TabStop = false;
             this.gbFuncionarioLog.Text = "Dados do veiculo";
-            // 
-            // cmbTipo
-            // 
-            this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Location = new System.Drawing.Point(154, 172);
-            this.cmbTipo.Name = "cmbTipo";
-            this.cmbTipo.Size = new System.Drawing.Size(121, 32);
-            this.cmbTipo.TabIndex = 64;
-            // 
-            // cmbMarca
-            // 
-            this.cmbMarca.FormattingEnabled = true;
-            this.cmbMarca.Location = new System.Drawing.Point(136, 115);
-            this.cmbMarca.Name = "cmbMarca";
-            this.cmbMarca.Size = new System.Drawing.Size(121, 32);
-            this.cmbMarca.TabIndex = 63;
             // 
             // txtStatus
             // 
@@ -157,13 +141,29 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(505, 434);
+            this.button1.Location = new System.Drawing.Point(505, 435);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(144, 55);
             this.button1.TabIndex = 51;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cmbMarca
+            // 
+            this.cmbMarca.FormattingEnabled = true;
+            this.cmbMarca.Location = new System.Drawing.Point(136, 115);
+            this.cmbMarca.Name = "cmbMarca";
+            this.cmbMarca.Size = new System.Drawing.Size(121, 32);
+            this.cmbMarca.TabIndex = 63;
+            // 
+            // cmbTipo
+            // 
+            this.cmbTipo.FormattingEnabled = true;
+            this.cmbTipo.Location = new System.Drawing.Point(154, 172);
+            this.cmbTipo.Name = "cmbTipo";
+            this.cmbTipo.Size = new System.Drawing.Size(121, 32);
+            this.cmbTipo.TabIndex = 64;
             // 
             // FormCadModelo
             // 
@@ -175,7 +175,7 @@
             this.Controls.Add(this.gbFuncionarioLog);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormCadModelo";
-            this.Text = " ";
+            this.Text = "FormCadModelo";
             this.Load += new System.EventHandler(this.FormCadModelo_Load);
             this.gbFuncionarioLog.ResumeLayout(false);
             this.gbFuncionarioLog.PerformLayout();

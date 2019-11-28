@@ -38,18 +38,15 @@
             this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Adicionar = new System.Windows.Forms.DataGridViewImageColumn();
             this.gbGeralCadCli = new System.Windows.Forms.GroupBox();
-            this.txtSenha2 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cmbTipoVeicu = new System.Windows.Forms.ComboBox();
+            this.dplTipoPermissao = new Bunifu.Framework.UI.BunifuDropdown();
             this.button1 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbFunc = new System.Windows.Forms.ComboBox();
+            this.txtSenha2 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.gbFuncionarioLog.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbGeralCadCli.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtSenha
@@ -62,12 +59,13 @@
             this.txtSenha.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.ForeColor = System.Drawing.Color.White;
             this.txtSenha.isPassword = false;
-            this.txtSenha.Location = new System.Drawing.Point(165, 167);
+            this.txtSenha.Location = new System.Drawing.Point(90, 109);
             this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(439, 45);
             this.txtSenha.TabIndex = 16;
             this.txtSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSenha.OnValueChanged += new System.EventHandler(this.txtSenha_OnValueChanged);
             // 
             // txtLogin
             // 
@@ -79,7 +77,7 @@
             this.txtLogin.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogin.ForeColor = System.Drawing.Color.White;
             this.txtLogin.isPassword = false;
-            this.txtLogin.Location = new System.Drawing.Point(162, 115);
+            this.txtLogin.Location = new System.Drawing.Point(87, 42);
             this.txtLogin.Margin = new System.Windows.Forms.Padding(4);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(442, 44);
@@ -91,7 +89,7 @@
             this.lblNomeCadCli.AutoSize = true;
             this.lblNomeCadCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomeCadCli.ForeColor = System.Drawing.Color.White;
-            this.lblNomeCadCli.Location = new System.Drawing.Point(17, 115);
+            this.lblNomeCadCli.Location = new System.Drawing.Point(17, 54);
             this.lblNomeCadCli.Name = "lblNomeCadCli";
             this.lblNomeCadCli.Size = new System.Drawing.Size(58, 20);
             this.lblNomeCadCli.TabIndex = 1;
@@ -102,7 +100,7 @@
             this.lblCepCadCli.AutoSize = true;
             this.lblCepCadCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCepCadCli.ForeColor = System.Drawing.Color.White;
-            this.lblCepCadCli.Location = new System.Drawing.Point(17, 192);
+            this.lblCepCadCli.Location = new System.Drawing.Point(16, 124);
             this.lblCepCadCli.Name = "lblCepCadCli";
             this.lblCepCadCli.Size = new System.Drawing.Size(66, 20);
             this.lblCepCadCli.TabIndex = 2;
@@ -155,7 +153,6 @@
             // 
             // gbGeralCadCli
             // 
-            this.gbGeralCadCli.Controls.Add(this.groupBox1);
             this.gbGeralCadCli.Controls.Add(this.txtSenha2);
             this.gbGeralCadCli.Controls.Add(this.bunifuCustomLabel1);
             this.gbGeralCadCli.Controls.Add(this.groupBox2);
@@ -172,29 +169,12 @@
             this.gbGeralCadCli.TabStop = false;
             this.gbGeralCadCli.Text = "Login de Usuário";
             // 
-            // txtSenha2
-            // 
-            this.txtSenha2.BorderColorFocused = System.Drawing.Color.Maroon;
-            this.txtSenha2.BorderColorIdle = System.Drawing.Color.White;
-            this.txtSenha2.BorderColorMouseHover = System.Drawing.Color.DarkGray;
-            this.txtSenha2.BorderThickness = 3;
-            this.txtSenha2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSenha2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha2.ForeColor = System.Drawing.Color.White;
-            this.txtSenha2.isPassword = false;
-            this.txtSenha2.Location = new System.Drawing.Point(165, 220);
-            this.txtSenha2.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSenha2.Name = "txtSenha2";
-            this.txtSenha2.Size = new System.Drawing.Size(439, 45);
-            this.txtSenha2.TabIndex = 38;
-            this.txtSenha2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
             // bunifuCustomLabel1
             // 
             this.bunifuCustomLabel1.AutoSize = true;
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(17, 233);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(16, 189);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(141, 20);
             this.bunifuCustomLabel1.TabIndex = 37;
@@ -202,7 +182,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.cmbTipoVeicu);
+            this.groupBox2.Controls.Add(this.dplTipoPermissao);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(567, 28);
@@ -211,15 +191,23 @@
             this.groupBox2.TabIndex = 36;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Permissão";
+            this.groupBox2.Visible = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // cmbTipoVeicu
+            // dplTipoPermissao
             // 
-            this.cmbTipoVeicu.FormattingEnabled = true;
-            this.cmbTipoVeicu.Location = new System.Drawing.Point(27, 28);
-            this.cmbTipoVeicu.Name = "cmbTipoVeicu";
-            this.cmbTipoVeicu.Size = new System.Drawing.Size(121, 32);
-            this.cmbTipoVeicu.TabIndex = 39;
+            this.dplTipoPermissao.BackColor = System.Drawing.Color.Transparent;
+            this.dplTipoPermissao.BorderRadius = 3;
+            this.dplTipoPermissao.ForeColor = System.Drawing.Color.Black;
+            this.dplTipoPermissao.Items = new string[0];
+            this.dplTipoPermissao.Location = new System.Drawing.Point(12, 31);
+            this.dplTipoPermissao.Margin = new System.Windows.Forms.Padding(6);
+            this.dplTipoPermissao.Name = "dplTipoPermissao";
+            this.dplTipoPermissao.NomalColor = System.Drawing.Color.White;
+            this.dplTipoPermissao.onHoverColor = System.Drawing.Color.Maroon;
+            this.dplTipoPermissao.selectedIndex = -1;
+            this.dplTipoPermissao.Size = new System.Drawing.Size(297, 25);
+            this.dplTipoPermissao.TabIndex = 3;
             // 
             // button1
             // 
@@ -231,25 +219,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // groupBox1
+            // txtSenha2
             // 
-            this.groupBox1.Controls.Add(this.cmbFunc);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(72, 35);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(318, 73);
-            this.groupBox1.TabIndex = 40;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Permissão";
-            // 
-            // cmbFunc
-            // 
-            this.cmbFunc.FormattingEnabled = true;
-            this.cmbFunc.Location = new System.Drawing.Point(27, 28);
-            this.cmbFunc.Name = "cmbFunc";
-            this.cmbFunc.Size = new System.Drawing.Size(121, 32);
-            this.cmbFunc.TabIndex = 39;
+            this.txtSenha2.BorderColorFocused = System.Drawing.Color.Maroon;
+            this.txtSenha2.BorderColorIdle = System.Drawing.Color.White;
+            this.txtSenha2.BorderColorMouseHover = System.Drawing.Color.DarkGray;
+            this.txtSenha2.BorderThickness = 3;
+            this.txtSenha2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSenha2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha2.ForeColor = System.Drawing.Color.White;
+            this.txtSenha2.isPassword = false;
+            this.txtSenha2.Location = new System.Drawing.Point(164, 175);
+            this.txtSenha2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSenha2.Name = "txtSenha2";
+            this.txtSenha2.Size = new System.Drawing.Size(439, 45);
+            this.txtSenha2.TabIndex = 38;
+            this.txtSenha2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // FormCadLogin
             // 
@@ -269,7 +254,6 @@
             this.gbGeralCadCli.ResumeLayout(false);
             this.gbGeralCadCli.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -283,6 +267,7 @@
         private System.Windows.Forms.GroupBox gbFuncionarioLog;
         private System.Windows.Forms.GroupBox gbGeralCadCli;
         private System.Windows.Forms.GroupBox groupBox2;
+        private Bunifu.Framework.UI.BunifuDropdown dplTipoPermissao;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Funcionario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cargo;
@@ -290,8 +275,5 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private System.Windows.Forms.Button button1;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtSenha2;
-        private System.Windows.Forms.ComboBox cmbTipoVeicu;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cmbFunc;
     }
 }

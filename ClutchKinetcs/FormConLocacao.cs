@@ -16,5 +16,10 @@ namespace ClutchKinetcs
         {
             InitializeComponent();
         }
+
+        private void gbLocacao_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
