@@ -38,16 +38,6 @@
             this.lblTaxaExtra = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblCompCadCli = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.doubleBitmapControl1 = new BunifuAnimatorNS.DoubleBitmapControl();
-            this.gbVeiculoLoc = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Veiculo = new System.Windows.Forms.DataGridViewImageColumn();
-            this.gbClienteLoc = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Adicionar = new System.Windows.Forms.DataGridViewImageColumn();
             this.cmbPessoa = new System.Windows.Forms.ComboBox();
             this.cmbVeiculo = new System.Windows.Forms.ComboBox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -56,10 +46,6 @@
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cmbSeguro = new System.Windows.Forms.ComboBox();
             this.gbGeralCadLoc.SuspendLayout();
-            this.gbVeiculoLoc.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.gbClienteLoc.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // gbGeralCadLoc
@@ -210,89 +196,6 @@
             this.doubleBitmapControl1.Text = "doubleBitmapControl1";
             this.doubleBitmapControl1.Visible = false;
             // 
-            // gbVeiculoLoc
-            // 
-            this.gbVeiculoLoc.Controls.Add(this.dataGridView1);
-            this.gbVeiculoLoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbVeiculoLoc.ForeColor = System.Drawing.Color.White;
-            this.gbVeiculoLoc.Location = new System.Drawing.Point(489, 6);
-            this.gbVeiculoLoc.Name = "gbVeiculoLoc";
-            this.gbVeiculoLoc.Size = new System.Drawing.Size(396, 242);
-            this.gbVeiculoLoc.TabIndex = 45;
-            this.gbVeiculoLoc.TabStop = false;
-            this.gbVeiculoLoc.Text = "Veiculo";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nome,
-            this.Tipo,
-            this.Veiculo});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 56);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(380, 169);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // Nome
-            // 
-            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.Width = 91;
-            // 
-            // Tipo
-            // 
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.Name = "Tipo";
-            // 
-            // Veiculo
-            // 
-            this.Veiculo.HeaderText = "Adicionar";
-            this.Veiculo.Name = "Veiculo";
-            // 
-            // gbClienteLoc
-            // 
-            this.gbClienteLoc.Controls.Add(this.dataGridView2);
-            this.gbClienteLoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbClienteLoc.ForeColor = System.Drawing.Color.White;
-            this.gbClienteLoc.Location = new System.Drawing.Point(489, 262);
-            this.gbClienteLoc.Name = "gbClienteLoc";
-            this.gbClienteLoc.Size = new System.Drawing.Size(406, 274);
-            this.gbClienteLoc.TabIndex = 44;
-            this.gbClienteLoc.TabStop = false;
-            this.gbClienteLoc.Text = "Cliente";
-            this.gbClienteLoc.Visible = false;
-            this.gbClienteLoc.Enter += new System.EventHandler(this.gbClienteLoc_Enter);
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Cliente,
-            this.Tipo_Cliente,
-            this.Adicionar});
-            this.dataGridView2.Location = new System.Drawing.Point(6, 55);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(390, 211);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // Cliente
-            // 
-            this.Cliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Cliente.HeaderText = "Cliente";
-            this.Cliente.Name = "Cliente";
-            // 
-            // Tipo_Cliente
-            // 
-            this.Tipo_Cliente.HeaderText = "Tipo Cliente";
-            this.Tipo_Cliente.Name = "Tipo_Cliente";
-            // 
-            // Adicionar
-            // 
-            this.Adicionar.HeaderText = "Adicionar";
-            this.Adicionar.Name = "Adicionar";
-            // 
             // cmbPessoa
             // 
             this.cmbPessoa.FormattingEnabled = true;
@@ -367,18 +270,12 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(902, 561);
             this.Controls.Add(this.gbGeralCadLoc);
-            this.Controls.Add(this.gbClienteLoc);
             this.Controls.Add(this.doubleBitmapControl1);
-            this.Controls.Add(this.gbVeiculoLoc);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormCadLocacao";
             this.Text = "FormCadLocacao";
             this.gbGeralCadLoc.ResumeLayout(false);
             this.gbGeralCadLoc.PerformLayout();
-            this.gbVeiculoLoc.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.gbClienteLoc.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -393,17 +290,7 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lblTaxaExtra;
         private Bunifu.Framework.UI.BunifuCustomLabel lblCompCadCli;
         private BunifuAnimatorNS.DoubleBitmapControl doubleBitmapControl1;
-        private System.Windows.Forms.GroupBox gbVeiculoLoc;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtDataLoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
-        private System.Windows.Forms.DataGridViewImageColumn Veiculo;
-        private System.Windows.Forms.GroupBox gbClienteLoc;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo_Cliente;
-        private System.Windows.Forms.DataGridViewImageColumn Adicionar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cmbPessoa;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;

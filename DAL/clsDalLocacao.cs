@@ -52,9 +52,9 @@ namespace DAL
                     cmd.Parameters.AddWithValue("@L_Loca_tempo", dadosLocacao[1]);
                     cmd.Parameters.AddWithValue("@L_Loca_custo", dadosLocacao[2]);
                     cmd.Parameters.AddWithValue("@L_loca_taxa", dadosLocacao[3]);
-                    cmd.Parameters.AddWithValue("@V_Seguro_desc", dadosLocacao[2]);
-                    cmd.Parameters.AddWithValue("@V_Pessoa_nome", dadosLocacao[3]);
-                    cmd.Parameters.AddWithValue("@V_Veiculo_placa", dadosLocacao[2]);
+                    cmd.Parameters.AddWithValue("@V_Seguro_desc", dadosLocacao[4]);
+                    cmd.Parameters.AddWithValue("@V_Pessoa_nome", dadosLocacao[5]);
+                    cmd.Parameters.AddWithValue("@V_Veiculo_placa", dadosLocacao[6]);
              
 
 
@@ -63,28 +63,30 @@ namespace DAL
                 }
                 else if (varGlob.BdConexao == "MySql")
                 {
-                    MySqlCommand cmd = new MySqlCommand("CADASTRAR_MODELO", conMySql);
+                    MySqlCommand cmd = new MySqlCommand("CADASTRAR_LOCACAO", conMySql);
                     cmd.Parameters.AddWithValue("@L_loca_Dtloc", Convert.ToDateTime(dadosLocacao[0]).ToString("yyyy-MM-dd"));
+
 
                     cmd.Parameters.AddWithValue("@L_Loca_tempo", dadosLocacao[1]);
                     cmd.Parameters.AddWithValue("@L_Loca_custo", dadosLocacao[2]);
                     cmd.Parameters.AddWithValue("@L_loca_taxa", dadosLocacao[3]);
-                    cmd.Parameters.AddWithValue("@V_Seguro_desc", dadosLocacao[2]);
-                    cmd.Parameters.AddWithValue("@V_Pessoa_nome", dadosLocacao[3]);
-                    cmd.Parameters.AddWithValue("@V_Veiculo_placa", dadosLocacao[2]);
+                    cmd.Parameters.AddWithValue("@V_Seguro_desc", dadosLocacao[4]);
+                    cmd.Parameters.AddWithValue("@V_Pessoa_nome", dadosLocacao[5]);
+                    cmd.Parameters.AddWithValue("@V_Veiculo_placa", dadosLocacao[6]);
 
                     ExecutarComandoProcSqlMySql(cmd);
                 }
                 else
                 {
-                    MySqlCommand cmd = new MySqlCommand("CADASTRAR_MODELO", conMySql);
+                    MySqlCommand cmd = new MySqlCommand("CADASTRAR_LOCACAO", conMySql);
                     cmd.Parameters.AddWithValue("@L_loca_Dtloc", Convert.ToDateTime(dadosLocacao[0]).ToString("yyyy-MM-dd"));
+
                     cmd.Parameters.AddWithValue("@L_Loca_tempo", dadosLocacao[1]);
                     cmd.Parameters.AddWithValue("@L_Loca_custo", dadosLocacao[2]);
                     cmd.Parameters.AddWithValue("@L_loca_taxa", dadosLocacao[3]);
-                    cmd.Parameters.AddWithValue("@V_Seguro_desc", dadosLocacao[2]);
-                    cmd.Parameters.AddWithValue("@V_Pessoa_nome", dadosLocacao[3]);
-                    cmd.Parameters.AddWithValue("@V_Veiculo_placa", dadosLocacao[2]);
+                    cmd.Parameters.AddWithValue("@V_Seguro_desc", dadosLocacao[4]);
+                    cmd.Parameters.AddWithValue("@V_Pessoa_nome", dadosLocacao[5]);
+                    cmd.Parameters.AddWithValue("@V_Veiculo_placa", dadosLocacao[6]);
 
                     ExecutarComandoProcSqlMySql(cmd);
                 }

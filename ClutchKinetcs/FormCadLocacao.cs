@@ -49,9 +49,9 @@ namespace ClutchKinetcs
                 dadosServico.Add(txtTempLoc.Text);
                 dadosServico.Add(txtCusto.Text);
                 dadosServico.Add(txtTaxaExtra.Text);
-                dadosServico.Add(cmbPessoa.Text);
                 dadosServico.Add(cmbVeiculo.Text);
-                dadosServico.Add(cmbSeguro.Text);
+                dadosServico.Add(cmbPessoa.Text);
+                 dadosServico.Add(cmbSeguro.Text);
 
 
 
@@ -96,11 +96,11 @@ namespace ClutchKinetcs
                 if (_opc == 1)
                 {
 
-                    query = "select ID, PLACA from TB_CD_VEICULO ORDER BY PLACA;";
+                    query = "select PLACA from TB_CD_VEICULO ORDER BY PLACA;";
                 }
                 else if (_opc == 2)
                 {
-                    query = "select NOME from TB_CD_PESSOA ORDER BY NOM;E";
+                    query = "select NOME from TB_CD_PESSOA ORDER BY NOME;";
                 }
                 else if (_opc == 3)
                 {
@@ -112,12 +112,17 @@ namespace ClutchKinetcs
                 foreach (DataRow row in dt.Rows)
                 {
                     if (_opc == 1)
+                    {
                         _comboBox.Items.Add(row.Field<string>("PLACA"));
-                    else if(_opc==2)
+                    }
+                    else if (_opc == 2)
+                    {
                         _comboBox.Items.Add(row.Field<string>("NOME"));
-                    else if(_opc==3)
+                    }
+                    else 
+                    {
                         _comboBox.Items.Add(row.Field<string>("DESCRICAO"));
-
+                    }
 
                 }
 

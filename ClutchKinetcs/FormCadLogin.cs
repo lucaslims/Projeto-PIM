@@ -23,8 +23,8 @@ namespace ClutchKinetcs
         }
         MySqlConnection connMySql;
         SqlConnection connSqlServer;
+        DataTable dt;
         clsGlobal varGlob = new clsGlobal();
-
 
         private void groupBox2_Enter(object sender, EventArgs e)
         {
@@ -33,7 +33,7 @@ namespace ClutchKinetcs
 
         private void FormCadLogin_Load(object sender, EventArgs e)
         {
-            //teste
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -44,9 +44,11 @@ namespace ClutchKinetcs
             List<string> dadosServico = new List<string>();
             try
             {
+                dadosServico.Add(cmbFunc.Text);
                 dadosServico.Add(txtLogin.Text);
                 dadosServico.Add(txtSenha.Text);
-           //     dadosServico.Add(txtTotalEst.Text);
+                dadosServico.Add(cmbTipoVeicu.Text);
+               
              //   dadosServico.Add(txtTotalPed.Text);
                // dadosServico.Add(txtTotalEst.Text);
               
@@ -56,21 +58,21 @@ namespace ClutchKinetcs
 
                 varGlob.InsereLog();
 
-                clsDalServico dalservico = new clsDalServico();
+                clsDalLogin dalservico = new clsDalLogin();
 
                 connMySql.Open();
                 connSqlServer.Open();
                 try
                 {
 
-                    dalservico.insertProcedureServico(connMySql, connSqlServer, dadosServico);
+                    dalservico.insertLoginProcedure(connMySql, connSqlServer, dadosServico);
 
                     connMySql.Close();
                     connSqlServer.Close();
                     MessageBox.Show("Cadastro realizado com sucesso!!");
                 }
 
-                catch (Exception ex) { MessageBox.Show("registro não encontrado! erro: " + ex.Message); }
+                catch (Exception ex) { MessageBox.Show("registro não encontrado! erro: " + ex.Message); } 
                 finally
                 {
                     connMySql.Close();
@@ -81,9 +83,55 @@ namespace ClutchKinetcs
 
         }
 
-        private void txtSenha_OnValueChanged(object sender, EventArgs e)
+        private void PreencherCombo(int _opc, ComboBox _comboBox)
         {
+            try
+            {
+                string query = "";
+                connMySql = clsConexao.GetConexaoMySql();
+                connSqlServer = clsConexao.GetConexaoSqlServer();
 
+
+                varGlob.AbrirConexaoMySql(connMySql);
+                if (_opc == 1)
+                {
+
+                    query = "select DESCRICAO from TB_CD_TIPO_PERMISSAO ORDER BY DESCRICAO;";
+                }
+                if (_opc == 4)
+                {
+
+                    query = "select NOME from TB_CD_PESSOA ORDER BY NOME;";
+                }
+
+
+
+                dt = varGlob.RetornaDataTableMySql(query, connMySql);
+                _comboBox.Items.Clear();
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (_opc != 4)
+                        _comboBox.Items.Add(row.Field<string>("DESCRICAO"));
+                    else
+                        _comboBox.Items.Add(row.Field<string>("NOME"));
+
+                }
+
+                if (_comboBox.Items.Count > 0)
+                    _comboBox.SelectedIndex = 0;
+
+
+            }
+            catch (Exception ex) { MessageBox.Show("Erro: " + ex, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            finally { varGlob.FecharConexaoMySql(connMySql); }
+        }
+
+        private void FormCadModelo_Load(object sender, EventArgs e)
+        {
+            PreencherCombo(4, cmbFunc);
+            PreencherCombo(1, cmbTipoVeicu);
+           
+          
         }
     }
 }

@@ -175,7 +175,7 @@
             this.Controls.Add(this.gbFuncionarioLog);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormCadModelo";
-            this.Text = "FormCadModelo";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.FormCadModelo_Load);
             this.gbFuncionarioLog.ResumeLayout(false);
             this.gbFuncionarioLog.PerformLayout();
