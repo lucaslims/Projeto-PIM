@@ -92,7 +92,7 @@ namespace ClutchKinetcs
                 {
                     query = "select NOME from TB_CD_PESSOA ORDER BY NOME;";
                 }
-                else 
+                else if (_opc == 3)
                 {
                     query = "select DESCRICAO from TB_SEGURO ORDER BY DESCRICAO;";
                 }
