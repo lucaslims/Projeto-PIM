@@ -39,9 +39,13 @@
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Veiculo = new System.Windows.Forms.DataGridViewImageColumn();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.cmbMotorista = new System.Windows.Forms.ComboBox();
+            this.cmbPlaca = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.doubleBitmapControl1 = new BunifuAnimatorNS.DoubleBitmapControl();
             this.gbVeiculoLoc = new System.Windows.Forms.GroupBox();
-            this.txtComplCadCli = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.txtCombustivel = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.txtDestino = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.txtOrigemVia = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.lblCepCadCli = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -51,6 +55,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.gbMotoViag.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.gbMotoViag.SuspendLayout();
             this.gbVeiculoLoc.SuspendLayout();
             this.gbGeralCadViag.SuspendLayout();
             this.SuspendLayout();
@@ -111,15 +117,54 @@
             // gbMotoViag
             // 
             this.gbMotoViag.Controls.Add(this.dataGridView2);
+            this.gbMotoViag.Controls.Add(this.bunifuCustomLabel1);
+            this.gbMotoViag.Controls.Add(this.cmbMotorista);
+            this.gbMotoViag.Controls.Add(this.button1);
             this.gbMotoViag.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbMotoViag.ForeColor = System.Drawing.Color.White;
             this.gbMotoViag.Location = new System.Drawing.Point(15, 278);
             this.gbMotoViag.Name = "gbMotoViag";
-            this.gbMotoViag.Size = new System.Drawing.Size(556, 311);
+            this.gbMotoViag.Size = new System.Drawing.Size(465, 311);
             this.gbMotoViag.TabIndex = 49;
             this.gbMotoViag.TabStop = false;
             this.gbMotoViag.Text = "Motorista";
-            this.gbMotoViag.Visible = false;
+            // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(6, 89);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(171, 20);
+            this.bunifuCustomLabel1.TabIndex = 21;
+            this.bunifuCustomLabel1.Text = "Combustivel Viagem";
+            // 
+            // cmbMotorista
+            // 
+            this.cmbMotorista.FormattingEnabled = true;
+            this.cmbMotorista.Location = new System.Drawing.Point(194, 83);
+            this.cmbMotorista.Name = "cmbMotorista";
+            this.cmbMotorista.Size = new System.Drawing.Size(121, 32);
+            this.cmbMotorista.TabIndex = 54;
+            // 
+            // cmbPlaca
+            // 
+            this.cmbPlaca.FormattingEnabled = true;
+            this.cmbPlaca.Location = new System.Drawing.Point(79, 56);
+            this.cmbPlaca.Name = "cmbPlaca";
+            this.cmbPlaca.Size = new System.Drawing.Size(252, 32);
+            this.cmbPlaca.TabIndex = 53;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(169, 178);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 55);
+            this.button1.TabIndex = 52;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
@@ -166,6 +211,8 @@
             // gbVeiculoLoc
             // 
             this.gbVeiculoLoc.Controls.Add(this.dataGridView1);
+            this.gbVeiculoLoc.Controls.Add(this.bunifuCustomLabel3);
+            this.gbVeiculoLoc.Controls.Add(this.cmbPlaca);
             this.gbVeiculoLoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbVeiculoLoc.ForeColor = System.Drawing.Color.White;
             this.gbVeiculoLoc.Location = new System.Drawing.Point(495, 21);
@@ -175,22 +222,22 @@
             this.gbVeiculoLoc.TabStop = false;
             this.gbVeiculoLoc.Text = "Veiculo";
             // 
-            // txtComplCadCli
+            // txtCombustivel
             // 
-            this.txtComplCadCli.BorderColorFocused = System.Drawing.Color.Maroon;
-            this.txtComplCadCli.BorderColorIdle = System.Drawing.Color.White;
-            this.txtComplCadCli.BorderColorMouseHover = System.Drawing.Color.DarkGray;
-            this.txtComplCadCli.BorderThickness = 3;
-            this.txtComplCadCli.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtComplCadCli.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtComplCadCli.ForeColor = System.Drawing.Color.White;
-            this.txtComplCadCli.isPassword = false;
-            this.txtComplCadCli.Location = new System.Drawing.Point(184, 188);
-            this.txtComplCadCli.Margin = new System.Windows.Forms.Padding(4);
-            this.txtComplCadCli.Name = "txtComplCadCli";
-            this.txtComplCadCli.Size = new System.Drawing.Size(264, 37);
-            this.txtComplCadCli.TabIndex = 20;
-            this.txtComplCadCli.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtCombustivel.BorderColorFocused = System.Drawing.Color.Maroon;
+            this.txtCombustivel.BorderColorIdle = System.Drawing.Color.White;
+            this.txtCombustivel.BorderColorMouseHover = System.Drawing.Color.DarkGray;
+            this.txtCombustivel.BorderThickness = 3;
+            this.txtCombustivel.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCombustivel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCombustivel.ForeColor = System.Drawing.Color.White;
+            this.txtCombustivel.isPassword = false;
+            this.txtCombustivel.Location = new System.Drawing.Point(184, 188);
+            this.txtCombustivel.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCombustivel.Name = "txtCombustivel";
+            this.txtCombustivel.Size = new System.Drawing.Size(264, 37);
+            this.txtCombustivel.TabIndex = 20;
+            this.txtCombustivel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // txtDestino
             // 
@@ -250,7 +297,7 @@
             // 
             // gbGeralCadViag
             // 
-            this.gbGeralCadViag.Controls.Add(this.txtComplCadCli);
+            this.gbGeralCadViag.Controls.Add(this.txtCombustivel);
             this.gbGeralCadViag.Controls.Add(this.txtDestino);
             this.gbGeralCadViag.Controls.Add(this.txtOrigemVia);
             this.gbGeralCadViag.Controls.Add(this.lblCepCadCli);
@@ -276,6 +323,17 @@
             this.lblRuaCadCli.TabIndex = 3;
             this.lblRuaCadCli.Text = "Destino";
             // 
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.AutoSize = true;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(6, 62);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(58, 20);
+            this.bunifuCustomLabel3.TabIndex = 21;
+            this.bunifuCustomLabel3.Text = "Placa:";
+            // 
             // FormCadViagem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,6 +352,9 @@
             this.gbMotoViag.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.gbVeiculoLoc.ResumeLayout(false);
+            this.gbMotoViag.PerformLayout();
+            this.gbVeiculoLoc.ResumeLayout(false);
+            this.gbVeiculoLoc.PerformLayout();
             this.gbGeralCadViag.ResumeLayout(false);
             this.gbGeralCadViag.PerformLayout();
             this.ResumeLayout(false);
@@ -307,7 +368,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private BunifuAnimatorNS.DoubleBitmapControl doubleBitmapControl1;
         private System.Windows.Forms.GroupBox gbVeiculoLoc;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtComplCadCli;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtCombustivel;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtDestino;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtOrigemVia;
         private Bunifu.Framework.UI.BunifuCustomLabel lblCepCadCli;
@@ -322,5 +383,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewImageColumn Veiculo;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private System.Windows.Forms.ComboBox cmbMotorista;
+        private System.Windows.Forms.ComboBox cmbPlaca;
+        private System.Windows.Forms.Button button1;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
     }
 }

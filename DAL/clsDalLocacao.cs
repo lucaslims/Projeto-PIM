@@ -83,6 +83,30 @@ namespace DAL
                     cmd.Parameters.AddWithValue("@P_PFi_cpf", dadosPessoa[12]);
                     cmd.Parameters.AddWithValue("@P_PFi_rg", dadosPessoa[13].ToString());
                     cmd.Parameters.AddWithValue("@P_PFi_dt_nasc", Convert.ToDateTime(dadosPessoa[14]).ToString("yyyy-MM-dd"));
+                    MySqlCommand cmd = new MySqlCommand("CADASTRAR_LOCACAO", conMySql);
+                    cmd.Parameters.AddWithValue("@L_loca_Dtloc", Convert.ToDateTime(dadosLocacao[0]).ToString("yyyy-MM-dd"));
+
+
+                    cmd.Parameters.AddWithValue("@L_Loca_tempo", dadosLocacao[1]);
+                    cmd.Parameters.AddWithValue("@L_Loca_custo", dadosLocacao[2]);
+                    cmd.Parameters.AddWithValue("@L_loca_taxa", dadosLocacao[3]);
+                    cmd.Parameters.AddWithValue("@V_Seguro_desc", dadosLocacao[4]);
+                    cmd.Parameters.AddWithValue("@V_Pessoa_nome", dadosLocacao[5]);
+                    cmd.Parameters.AddWithValue("@V_Veiculo_placa", dadosLocacao[6]);
+
+                    ExecutarComandoProcSqlMySql(cmd);
+                }
+                else
+                {
+                    MySqlCommand cmd = new MySqlCommand("CADASTRAR_LOCACAO", conMySql);
+                    cmd.Parameters.AddWithValue("@L_loca_Dtloc", Convert.ToDateTime(dadosLocacao[0]).ToString("yyyy-MM-dd"));
+
+                    cmd.Parameters.AddWithValue("@L_Loca_tempo", Convert.ToInt16( dadosLocacao[1]));
+                    cmd.Parameters.AddWithValue("@L_Loca_custo", Convert.ToDouble(dadosLocacao[2]));
+                    cmd.Parameters.AddWithValue("@L_loca_taxa", Convert.ToDouble(dadosLocacao[3]));
+                    cmd.Parameters.AddWithValue("@V_Seguro_desc",dadosLocacao[4]);
+                    cmd.Parameters.AddWithValue("@V_Pessoa_nome", dadosLocacao[5]);
+                    cmd.Parameters.AddWithValue("@V_Veiculo_placa", dadosLocacao[6]);
 
                     ExecutarComandoProcSqlMySql(cmd);
                 }
