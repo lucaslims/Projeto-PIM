@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbVeiculoLoc = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Placa = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,7 +40,6 @@
             this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Veiculo = new System.Windows.Forms.DataGridViewImageColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gbVeiculoLoc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -50,12 +50,21 @@
             this.gbVeiculoLoc.Controls.Add(this.dataGridView1);
             this.gbVeiculoLoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbVeiculoLoc.ForeColor = System.Drawing.Color.White;
-            this.gbVeiculoLoc.Location = new System.Drawing.Point(24, 12);
+            this.gbVeiculoLoc.Location = new System.Drawing.Point(12, 74);
             this.gbVeiculoLoc.Name = "gbVeiculoLoc";
-            this.gbVeiculoLoc.Size = new System.Drawing.Size(882, 509);
+            this.gbVeiculoLoc.Size = new System.Drawing.Size(894, 514);
             this.gbVeiculoLoc.TabIndex = 51;
             this.gbVeiculoLoc.TabStop = false;
             this.gbVeiculoLoc.Text = "ConsultaVeiculo";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(0, 512);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(879, 64);
+            this.groupBox1.TabIndex = 52;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
             // 
             // dataGridView1
             // 
@@ -73,7 +82,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 25);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(876, 481);
+            this.dataGridView1.Size = new System.Drawing.Size(888, 486);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AtualizarData);
             // 
@@ -139,15 +148,6 @@
             this.Veiculo.HeaderText = "";
             this.Veiculo.Name = "Veiculo";
             this.Veiculo.Width = 21;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(0, 512);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(879, 64);
-            this.groupBox1.TabIndex = 52;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // FormConVeiculo
             // 

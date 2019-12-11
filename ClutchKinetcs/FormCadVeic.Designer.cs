@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.gbFuncionarioLog = new System.Windows.Forms.GroupBox();
+            this.cmbEmp = new System.Windows.Forms.ComboBox();
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.cmbCor = new System.Windows.Forms.ComboBox();
+            this.cmbModelo = new System.Windows.Forms.ComboBox();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtDesc = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.txtChassi = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.txtPlca = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.lblCepCadCli = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.cmbModelo = new System.Windows.Forms.ComboBox();
-            this.cmbCor = new System.Windows.Forms.ComboBox();
-            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.cmbStatus = new System.Windows.Forms.ComboBox();
-            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.cmbEmp = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.gbFuncionarioLog.SuspendLayout();
             this.SuspendLayout();
@@ -67,10 +67,97 @@
             this.gbFuncionarioLog.ForeColor = System.Drawing.Color.White;
             this.gbFuncionarioLog.Location = new System.Drawing.Point(29, 34);
             this.gbFuncionarioLog.Name = "gbFuncionarioLog";
-            this.gbFuncionarioLog.Size = new System.Drawing.Size(649, 419);
+            this.gbFuncionarioLog.Size = new System.Drawing.Size(492, 419);
             this.gbFuncionarioLog.TabIndex = 50;
             this.gbFuncionarioLog.TabStop = false;
             this.gbFuncionarioLog.Text = "Dados do veiculo";
+            // 
+            // cmbEmp
+            // 
+            this.cmbEmp.FormattingEnabled = true;
+            this.cmbEmp.Location = new System.Drawing.Point(110, 360);
+            this.cmbEmp.Name = "cmbEmp";
+            this.cmbEmp.Size = new System.Drawing.Size(208, 32);
+            this.cmbEmp.TabIndex = 66;
+            // 
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.AutoSize = true;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(15, 366);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(80, 20);
+            this.bunifuCustomLabel3.TabIndex = 65;
+            this.bunifuCustomLabel3.Text = "Empresa";
+            // 
+            // cmbStatus
+            // 
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Location = new System.Drawing.Point(110, 305);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(168, 32);
+            this.cmbStatus.TabIndex = 64;
+            // 
+            // bunifuCustomLabel6
+            // 
+            this.bunifuCustomLabel6.AutoSize = true;
+            this.bunifuCustomLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(15, 311);
+            this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
+            this.bunifuCustomLabel6.Size = new System.Drawing.Size(62, 20);
+            this.bunifuCustomLabel6.TabIndex = 63;
+            this.bunifuCustomLabel6.Text = "Status";
+            // 
+            // bunifuCustomLabel5
+            // 
+            this.bunifuCustomLabel5.AutoSize = true;
+            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(15, 250);
+            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
+            this.bunifuCustomLabel5.Size = new System.Drawing.Size(67, 20);
+            this.bunifuCustomLabel5.TabIndex = 62;
+            this.bunifuCustomLabel5.Text = "Modelo";
+            // 
+            // bunifuCustomLabel4
+            // 
+            this.bunifuCustomLabel4.AutoSize = true;
+            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(15, 199);
+            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(37, 20);
+            this.bunifuCustomLabel4.TabIndex = 61;
+            this.bunifuCustomLabel4.Text = "Cor";
+            // 
+            // cmbCor
+            // 
+            this.cmbCor.FormattingEnabled = true;
+            this.cmbCor.Location = new System.Drawing.Point(110, 193);
+            this.cmbCor.Name = "cmbCor";
+            this.cmbCor.Size = new System.Drawing.Size(168, 32);
+            this.cmbCor.TabIndex = 59;
+            // 
+            // cmbModelo
+            // 
+            this.cmbModelo.FormattingEnabled = true;
+            this.cmbModelo.Location = new System.Drawing.Point(110, 244);
+            this.cmbModelo.Name = "cmbModelo";
+            this.cmbModelo.Size = new System.Drawing.Size(208, 32);
+            this.cmbModelo.TabIndex = 58;
+            // 
+            // bunifuCustomLabel2
+            // 
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(6, 148);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(89, 20);
+            this.bunifuCustomLabel2.TabIndex = 57;
+            this.bunifuCustomLabel2.Text = "Descrição";
             // 
             // txtDesc
             // 
@@ -79,7 +166,7 @@
             this.txtDesc.BorderColorMouseHover = System.Drawing.Color.DarkGray;
             this.txtDesc.BorderThickness = 3;
             this.txtDesc.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDesc.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDesc.ForeColor = System.Drawing.Color.White;
             this.txtDesc.isPassword = false;
             this.txtDesc.Location = new System.Drawing.Point(102, 148);
@@ -97,7 +184,7 @@
             this.txtChassi.BorderColorMouseHover = System.Drawing.Color.DarkGray;
             this.txtChassi.BorderThickness = 3;
             this.txtChassi.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtChassi.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChassi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChassi.ForeColor = System.Drawing.Color.White;
             this.txtChassi.isPassword = false;
             this.txtChassi.Location = new System.Drawing.Point(102, 103);
@@ -114,7 +201,7 @@
             this.txtPlca.BorderColorMouseHover = System.Drawing.Color.DarkGray;
             this.txtPlca.BorderThickness = 3;
             this.txtPlca.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPlca.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPlca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPlca.ForeColor = System.Drawing.Color.White;
             this.txtPlca.isPassword = false;
             this.txtPlca.Location = new System.Drawing.Point(102, 50);
@@ -146,96 +233,9 @@
             this.bunifuCustomLabel1.TabIndex = 17;
             this.bunifuCustomLabel1.Text = "Placa:";
             // 
-            // bunifuCustomLabel2
-            // 
-            this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(6, 148);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(89, 20);
-            this.bunifuCustomLabel2.TabIndex = 57;
-            this.bunifuCustomLabel2.Text = "Descrição";
-            // 
-            // cmbModelo
-            // 
-            this.cmbModelo.FormattingEnabled = true;
-            this.cmbModelo.Location = new System.Drawing.Point(110, 241);
-            this.cmbModelo.Name = "cmbModelo";
-            this.cmbModelo.Size = new System.Drawing.Size(121, 32);
-            this.cmbModelo.TabIndex = 58;
-            // 
-            // cmbCor
-            // 
-            this.cmbCor.FormattingEnabled = true;
-            this.cmbCor.Location = new System.Drawing.Point(110, 193);
-            this.cmbCor.Name = "cmbCor";
-            this.cmbCor.Size = new System.Drawing.Size(121, 32);
-            this.cmbCor.TabIndex = 59;
-            // 
-            // bunifuCustomLabel4
-            // 
-            this.bunifuCustomLabel4.AutoSize = true;
-            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(15, 203);
-            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(37, 20);
-            this.bunifuCustomLabel4.TabIndex = 61;
-            this.bunifuCustomLabel4.Text = "Cor";
-            // 
-            // bunifuCustomLabel5
-            // 
-            this.bunifuCustomLabel5.AutoSize = true;
-            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(12, 247);
-            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
-            this.bunifuCustomLabel5.Size = new System.Drawing.Size(67, 20);
-            this.bunifuCustomLabel5.TabIndex = 62;
-            this.bunifuCustomLabel5.Text = "Modelo";
-            // 
-            // bunifuCustomLabel6
-            // 
-            this.bunifuCustomLabel6.AutoSize = true;
-            this.bunifuCustomLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(15, 288);
-            this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
-            this.bunifuCustomLabel6.Size = new System.Drawing.Size(62, 20);
-            this.bunifuCustomLabel6.TabIndex = 63;
-            this.bunifuCustomLabel6.Text = "Status";
-            // 
-            // cmbStatus
-            // 
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Location = new System.Drawing.Point(110, 288);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(121, 32);
-            this.cmbStatus.TabIndex = 64;
-            // 
-            // bunifuCustomLabel3
-            // 
-            this.bunifuCustomLabel3.AutoSize = true;
-            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(17, 336);
-            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(80, 20);
-            this.bunifuCustomLabel3.TabIndex = 65;
-            this.bunifuCustomLabel3.Text = "Empresa";
-            // 
-            // cmbEmp
-            // 
-            this.cmbEmp.FormattingEnabled = true;
-            this.cmbEmp.Location = new System.Drawing.Point(110, 330);
-            this.cmbEmp.Name = "cmbEmp";
-            this.cmbEmp.Size = new System.Drawing.Size(121, 32);
-            this.cmbEmp.TabIndex = 66;
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(409, 474);
+            this.button1.Location = new System.Drawing.Point(540, 489);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(134, 36);
             this.button1.TabIndex = 67;
