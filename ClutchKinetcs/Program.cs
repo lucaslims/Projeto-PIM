@@ -17,9 +17,9 @@ namespace ClutchKinetcs
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormSplash());
+            //Application.Run(new FormSplash());
             //Application.Run(new FormLogin());
-            //Application.Run(new FormMenuPrincipal());
+            Application.Run(new FormMenuPrincipal());
         }
     }
 }
