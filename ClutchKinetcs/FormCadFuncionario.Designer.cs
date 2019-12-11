@@ -44,7 +44,7 @@
             // gbPessoaFisicaCadCli
             // 
             this.gbPessoaFisicaCadCli.Controls.Add(this.cmbCargo);
-//            this.gbPessoaFisicaCadCli.Controls.Add(this.lblCpfPessFisiCadCli);
+            this.gbPessoaFisicaCadCli.Controls.Add(this.lblCpfPessFisiCadCli);
             this.gbPessoaFisicaCadCli.Controls.Add(this.cmbDepartamento);
             this.gbPessoaFisicaCadCli.Controls.Add(this.lblIdPessFisiCadCli);
             this.gbPessoaFisicaCadCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

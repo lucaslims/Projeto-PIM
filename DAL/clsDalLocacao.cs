@@ -101,10 +101,10 @@ namespace DAL
                     MySqlCommand cmd = new MySqlCommand("CADASTRAR_LOCACAO", conMySql);
                     cmd.Parameters.AddWithValue("@L_loca_Dtloc", Convert.ToDateTime(dadosLocacao[0]).ToString("yyyy-MM-dd"));
 
-                    cmd.Parameters.AddWithValue("@L_Loca_tempo", Convert.ToInt16( dadosLocacao[1]));
-                    cmd.Parameters.AddWithValue("@L_Loca_custo", Convert.ToDouble(dadosLocacao[2]));
-                    cmd.Parameters.AddWithValue("@L_loca_taxa", Convert.ToDouble(dadosLocacao[3]));
-                    cmd.Parameters.AddWithValue("@V_Seguro_desc",dadosLocacao[4]);
+                    cmd.Parameters.AddWithValue("@L_Loca_tempo", dadosLocacao[1]);
+                    cmd.Parameters.AddWithValue("@L_Loca_custo", dadosLocacao[2]);
+                    cmd.Parameters.AddWithValue("@L_loca_taxa", dadosLocacao[3]);
+                    cmd.Parameters.AddWithValue("@V_Seguro_desc", dadosLocacao[4]);
                     cmd.Parameters.AddWithValue("@V_Pessoa_nome", dadosLocacao[5]);
                     cmd.Parameters.AddWithValue("@V_Veiculo_placa", dadosLocacao[6]);
 

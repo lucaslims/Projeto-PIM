@@ -18,13 +18,11 @@ namespace ClutchKinetcs
         {
             InitializeComponent();
         }
-     
         FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
-        
 
-        public FormMenuViagem(FormMenuPrincipal frmAnt)
+        public FormMenuViagem(FormMenuPrincipal formMenuPrincipal)
         {
-            this.menuPrincipal = frmAnt;
+            this.formMenuPrincipal = formMenuPrincipal;
             InitializeComponent();
 
         }
