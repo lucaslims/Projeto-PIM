@@ -31,6 +31,7 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.gbMotoViag = new System.Windows.Forms.GroupBox();
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,6 +40,8 @@
             this.cmbMotorista = new System.Windows.Forms.ComboBox();
             this.cmbPlaca = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+=======
+>>>>>>> parent of e000325... 11/12/19 19:30
 =======
 >>>>>>> parent of e000325... 11/12/19 19:30
             this.doubleBitmapControl1 = new BunifuAnimatorNS.DoubleBitmapControl();
@@ -50,6 +53,7 @@
             this.lblCompCadCli = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.gbGeralCadViag = new System.Windows.Forms.GroupBox();
             this.lblRuaCadCli = new Bunifu.Framework.UI.BunifuCustomLabel();
+<<<<<<< HEAD
 <<<<<<< HEAD
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,12 +68,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
 =======
+=======
+>>>>>>> parent of e000325... 11/12/19 19:30
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+<<<<<<< HEAD
+>>>>>>> parent of e000325... 11/12/19 19:30
+=======
 >>>>>>> parent of e000325... 11/12/19 19:30
             this.gbMotoViag.SuspendLayout();
             this.gbGeralCadViag.SuspendLayout();
@@ -107,6 +116,7 @@
             this.gbMotoViag.TabStop = false;
             this.gbMotoViag.Text = "Motorista";
             this.gbMotoViag.Visible = false;
+<<<<<<< HEAD
             // 
             // dataGridView1
             // 
@@ -119,6 +129,8 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(384, 189);
             this.dataGridView1.TabIndex = 0;
+=======
+>>>>>>> parent of e000325... 11/12/19 19:30
             // 
             // doubleBitmapControl1
             // 
@@ -132,9 +144,12 @@
             // gbVeiculoLoc
             // 
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.gbVeiculoLoc.Controls.Add(this.dataGridView1);
             this.gbVeiculoLoc.Controls.Add(this.bunifuCustomLabel3);
             this.gbVeiculoLoc.Controls.Add(this.cmbPlaca);
+=======
+>>>>>>> parent of e000325... 11/12/19 19:30
 =======
 >>>>>>> parent of e000325... 11/12/19 19:30
             this.gbVeiculoLoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -146,6 +161,7 @@
             this.gbVeiculoLoc.TabStop = false;
             this.gbVeiculoLoc.Text = "Veiculo";
             // 
+<<<<<<< HEAD
 <<<<<<< HEAD
             // txtCombustivel
             // 
@@ -165,6 +181,8 @@
             this.txtCombustivel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 =======
 >>>>>>> parent of e000325... 11/12/19 19:30
+=======
+>>>>>>> parent of e000325... 11/12/19 19:30
             // txtComplCadCli
             // 
             this.txtComplCadCli.BorderColorFocused = System.Drawing.Color.Maroon;
@@ -173,7 +191,11 @@
             this.txtComplCadCli.BorderThickness = 3;
             this.txtComplCadCli.Cursor = System.Windows.Forms.Cursors.IBeam;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.txtComplCadCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.txtComplCadCli.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> parent of e000325... 11/12/19 19:30
 =======
             this.txtComplCadCli.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 >>>>>>> parent of e000325... 11/12/19 19:30
@@ -318,6 +340,7 @@
             // bunifuCustomLabel2
             // 
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.White;
@@ -388,6 +411,8 @@
             this.AddMotorista.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.AddMotorista.Width = 21;
 =======
+=======
+>>>>>>> parent of e000325... 11/12/19 19:30
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.White;
@@ -396,6 +421,9 @@
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(171, 20);
             this.bunifuCustomLabel2.TabIndex = 22;
             this.bunifuCustomLabel2.Text = "Combustivel Viagem";
+<<<<<<< HEAD
+>>>>>>> parent of e000325... 11/12/19 19:30
+=======
 >>>>>>> parent of e000325... 11/12/19 19:30
             // 
             // FormCadViagem
@@ -414,8 +442,11 @@
             this.Load += new System.EventHandler(this.FormCadViagem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.gbMotoViag.ResumeLayout(false);
+<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.gbVeiculoLoc.ResumeLayout(false);
+=======
+>>>>>>> parent of e000325... 11/12/19 19:30
             this.gbMotoViag.PerformLayout();
             this.gbGeralCadViag.ResumeLayout(false);
             this.gbGeralCadViag.PerformLayout();
@@ -452,8 +483,11 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
 <<<<<<< HEAD
+<<<<<<< HEAD
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Veiculo;
+=======
+>>>>>>> parent of e000325... 11/12/19 19:30
 =======
 >>>>>>> parent of e000325... 11/12/19 19:30
     }
