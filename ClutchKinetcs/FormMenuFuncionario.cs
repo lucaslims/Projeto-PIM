@@ -24,5 +24,15 @@ namespace ClutchKinetcs
             this.formMenuPrincipal = formMenuPrincipal;
             InitializeComponent();
         }
+
+        private void btnConsulta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCadastro_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -48,7 +48,7 @@ namespace ClutchKinetcs
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            FormAttLocacao cadPessoa = new FormAttLocacao();
+            FormAttFuncionario cadPessoa = new FormAttFuncionario();
             cadPessoa.TopLevel = false;
             cadPessoa.FormBorderStyle = FormBorderStyle.None;
             menuPrincipal.pnlPrincipal.Controls.Clear();

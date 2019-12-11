@@ -2,11 +2,16 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Control;
+using DAL;
+using Model;
+using MySql.Data.MySqlClient;
 
 namespace ClutchKinetcs
 {
@@ -16,6 +21,11 @@ namespace ClutchKinetcs
         {
             InitializeComponent();
         }
+        MySqlConnection connMySql;
+        SqlConnection connSqlServer;
+        DataTable dt;
+        clsGlobal varGlob = new clsGlobal();
+        clsConexao clsConn = new clsConexao();
 
         private void gbClienteLoc_Enter(object sender, EventArgs e)
         {
