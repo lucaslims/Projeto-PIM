@@ -184,6 +184,7 @@
             this.btnAtualizar.Size = new System.Drawing.Size(241, 31);
             this.btnAtualizar.TabIndex = 66;
             this.btnAtualizar.Tag = "Teste";
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // btnConsulta
             // 

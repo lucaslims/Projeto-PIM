@@ -13,12 +13,13 @@ namespace ClutchKinetcs
     public partial class FormMenuServicos : Form
     {
         FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
-        private FormMenuPrincipal formMenuPrincipal;
+     
 
         public FormMenuServicos(FormMenuPrincipal frmAnt)
         {
-            InitializeComponent();
             this.menuPrincipal = frmAnt;
+            InitializeComponent();
+            
         }
 
      

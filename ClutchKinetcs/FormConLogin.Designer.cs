@@ -30,10 +30,6 @@
         {
             this.gbFuncionarioLog = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_PESSOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo_permissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Adicionar = new System.Windows.Forms.DataGridViewImageColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.gbFuncionarioLog.SuspendLayout();
@@ -55,44 +51,11 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Login,
-            this.ID_PESSOA,
-            this.Tipo_permissao,
-            this.Adicionar});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 25);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(760, 333);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // Login
-            // 
-            this.Login.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Login.HeaderText = "Login";
-            this.Login.Name = "Login";
-            this.Login.Width = 87;
-            // 
-            // ID_PESSOA
-            // 
-            this.ID_PESSOA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ID_PESSOA.HeaderText = "ID Pessoa";
-            this.ID_PESSOA.Name = "ID_PESSOA";
-            this.ID_PESSOA.Width = 117;
-            // 
-            // Tipo_permissao
-            // 
-            this.Tipo_permissao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Tipo_permissao.HeaderText = "Tipo de Permissão";
-            this.Tipo_permissao.Name = "Tipo_permissao";
-            this.Tipo_permissao.Width = 191;
-            // 
-            // Adicionar
-            // 
-            this.Adicionar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Adicionar.HeaderText = "Adicionar";
-            this.Adicionar.Name = "Adicionar";
-            this.Adicionar.Width = 105;
             // 
             // textBox1
             // 
@@ -123,6 +86,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormConLogin";
             this.Text = "FormConLogin";
+            this.Load += new System.EventHandler(this.FormConLogin_Load);
             this.gbFuncionarioLog.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -134,10 +98,6 @@
 
         private System.Windows.Forms.GroupBox gbFuncionarioLog;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Login;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_PESSOA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo_permissao;
-        private System.Windows.Forms.DataGridViewImageColumn Adicionar;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
     }

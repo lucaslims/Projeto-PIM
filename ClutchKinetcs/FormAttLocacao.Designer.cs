@@ -77,7 +77,7 @@
             this.DataLocacao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.DataLocacao.HeaderText = "Data Locacao";
             this.DataLocacao.Name = "DataLocacao";
-            this.DataLocacao.Width = 161;
+            this.DataLocacao.Width = 147;
             // 
             // TempoLocacao
             // 
@@ -138,6 +138,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAttLocacao";
             this.Text = "FormAttLocacao";
+            this.Load += new System.EventHandler(this.FormAttLocacao_Load);
             this.gbLocacao.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

@@ -2,11 +2,18 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Control;
+using DAL;
+using Model;
+using MySql.Data.MySqlClient;
+
+
 
 namespace ClutchKinetcs
 {
@@ -16,7 +23,11 @@ namespace ClutchKinetcs
         {
             InitializeComponent();
         }
-
+        MySqlConnection connMySql;
+        SqlConnection connSqlServer;
+        DataTable dt;
+        clsGlobal varGlob = new clsGlobal();
+        clsConexao clsConn = new clsConexao();
         private void gbClienteLoc_Enter(object sender, EventArgs e)
         {
 
@@ -40,8 +51,8 @@ namespace ClutchKinetcs
                 dadosServico.Add(txtCusto.Text);
                 dadosServico.Add(txtTaxaExtra.Text);
                 dadosServico.Add(cmbVeiculo.Text);
-                dadosServico.Add(cmbPessoa.Text);
-                 dadosServico.Add(cmbSeguro.Text);
+                //dadosServico.Add(cmbCliente.Text);
+                 dadosServico.Add(comboBox1.Text);
 
 
 
@@ -55,7 +66,7 @@ namespace ClutchKinetcs
                 try
                 {
 
-                    dalservico.inserTLocacaoProcedure(connMySql, connSqlServer, dadosServico);
+                   // dalservico.inserTLocacaoProcedure(connMySql, connSqlServer, dadosServico);
 
                     connMySql.Close();
                     connSqlServer.Close();
@@ -128,8 +139,8 @@ namespace ClutchKinetcs
         private void FormCadModelo_Load(object sender, EventArgs e)
         {
             PreencherCombo(1, cmbVeiculo);
-            PreencherCombo(2, cmbPessoa);
-            PreencherCombo(3, cmbSeguro);
+          //  PreencherCombo(2, cmbCliente);
+            PreencherCombo(3, comboBox1);
            
         }
     }

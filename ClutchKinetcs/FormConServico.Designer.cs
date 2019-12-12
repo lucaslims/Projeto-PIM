@@ -30,10 +30,6 @@
         {
             this.gbServico = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID_SERVICO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total_estacionamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total_Pedagio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Adicionar = new System.Windows.Forms.DataGridViewImageColumn();
             this.gbServico.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -53,44 +49,12 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_SERVICO,
-            this.Total_estacionamento,
-            this.Total_Pedagio,
-            this.Adicionar});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 25);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(872, 525);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // ID_SERVICO
-            // 
-            this.ID_SERVICO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ID_SERVICO.HeaderText = "ID_Servico";
-            this.ID_SERVICO.Name = "ID_SERVICO";
-            this.ID_SERVICO.Width = 135;
-            // 
-            // Total_estacionamento
-            // 
-            this.Total_estacionamento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Total_estacionamento.HeaderText = "Total estacionamento";
-            this.Total_estacionamento.Name = "Total_estacionamento";
-            this.Total_estacionamento.Width = 213;
-            // 
-            // Total_Pedagio
-            // 
-            this.Total_Pedagio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Total_Pedagio.HeaderText = "Total Pedagio";
-            this.Total_Pedagio.Name = "Total_Pedagio";
-            this.Total_Pedagio.Width = 150;
-            // 
-            // Adicionar
-            // 
-            this.Adicionar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Adicionar.HeaderText = "Adicionar";
-            this.Adicionar.Name = "Adicionar";
-            this.Adicionar.Width = 105;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // FormConServico
             // 
@@ -102,6 +66,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormConServico";
             this.Text = "FormConServico";
+            this.Load += new System.EventHandler(this.FormConServico_Load);
             this.gbServico.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -112,9 +77,5 @@
 
         private System.Windows.Forms.GroupBox gbServico;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_SERVICO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total_estacionamento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total_Pedagio;
-        private System.Windows.Forms.DataGridViewImageColumn Adicionar;
     }
 }
