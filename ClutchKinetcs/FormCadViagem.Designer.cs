@@ -410,9 +410,7 @@
             this.AddMotorista.Name = "AddMotorista";
             this.AddMotorista.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.AddMotorista.Width = 21;
-=======
-=======
->>>>>>> parent of e000325... 11/12/19 19:30
+
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.White;
@@ -421,10 +419,6 @@
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(171, 20);
             this.bunifuCustomLabel2.TabIndex = 22;
             this.bunifuCustomLabel2.Text = "Combustivel Viagem";
-<<<<<<< HEAD
->>>>>>> parent of e000325... 11/12/19 19:30
-=======
->>>>>>> parent of e000325... 11/12/19 19:30
             // 
             // FormCadViagem
             // 
@@ -442,11 +436,9 @@
             this.Load += new System.EventHandler(this.FormCadViagem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.gbMotoViag.ResumeLayout(false);
-<<<<<<< HEAD
+
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.gbVeiculoLoc.ResumeLayout(false);
-=======
->>>>>>> parent of e000325... 11/12/19 19:30
             this.gbMotoViag.PerformLayout();
             this.gbGeralCadViag.ResumeLayout(false);
             this.gbGeralCadViag.PerformLayout();
@@ -482,13 +474,8 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Veiculo;
-=======
->>>>>>> parent of e000325... 11/12/19 19:30
-=======
->>>>>>> parent of e000325... 11/12/19 19:30
     }
 }
