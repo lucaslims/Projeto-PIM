@@ -63,6 +63,7 @@
             // 
             this.Delete.HeaderText = "Deletar";
             this.Delete.Name = "Delete";
+            this.Delete.Text = "Deletar";
             // 
             // FormDelServico
             // 

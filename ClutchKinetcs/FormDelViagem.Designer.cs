@@ -47,9 +47,9 @@
             this.gbViagem.Controls.Add(this.dataGridView1);
             this.gbViagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbViagem.ForeColor = System.Drawing.Color.White;
-            this.gbViagem.Location = new System.Drawing.Point(35, -15);
+            this.gbViagem.Location = new System.Drawing.Point(32, 12);
             this.gbViagem.Name = "gbViagem";
-            this.gbViagem.Size = new System.Drawing.Size(878, 553);
+            this.gbViagem.Size = new System.Drawing.Size(878, 479);
             this.gbViagem.TabIndex = 51;
             this.gbViagem.TabStop = false;
             this.gbViagem.Text = "Deletar Viagem";
@@ -69,7 +69,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 25);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(872, 525);
+            this.dataGridView1.Size = new System.Drawing.Size(872, 451);
             this.dataGridView1.TabIndex = 0;
             // 
             // ID_VIAGEM
@@ -112,9 +112,9 @@
             // Adicionar
             // 
             this.Adicionar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Adicionar.HeaderText = "Adicionar";
+            this.Adicionar.HeaderText = "Deletar";
             this.Adicionar.Name = "Adicionar";
-            this.Adicionar.Width = 105;
+            this.Adicionar.Width = 82;
             // 
             // FormDelViagem
             // 

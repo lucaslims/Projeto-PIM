@@ -48,7 +48,7 @@
             this.gbFuncionarioLog.Size = new System.Drawing.Size(878, 553);
             this.gbFuncionarioLog.TabIndex = 49;
             this.gbFuncionarioLog.TabStop = false;
-            this.gbFuncionarioLog.Text = "Atualizar Login";
+            this.gbFuncionarioLog.Text = "Deletar Login";
             // 
             // dataGridView1
             // 

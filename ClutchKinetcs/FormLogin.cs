@@ -67,14 +67,10 @@ namespace ClutchKinetcs
                 user = txtUsuario.Text;
                 senha = txtSenha.Text;
 
-                clsPessoa pessoa = new clsPessoa();
-                clsTipoPermissao tipoPermissao = new clsTipoPermissao();
                 clsLogin login = new clsLogin();
 
-                login.Id_pessoa = pessoa;
                 login.Nome_login = user;
                 login.Senha_login = senha;
-                login.Id_tipo_permissao = tipoPermissao;
 
                 varGlob.InsereLog();
                 clsDalLogin dalLogin = new clsDalLogin();

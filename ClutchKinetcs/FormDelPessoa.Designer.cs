@@ -58,7 +58,7 @@
             this.gbDeletarPessoa.Size = new System.Drawing.Size(882, 552);
             this.gbDeletarPessoa.TabIndex = 54;
             this.gbDeletarPessoa.TabStop = false;
-            this.gbDeletarPessoa.Text = "AtualizarVeiculo";
+            this.gbDeletarPessoa.Text = "Deletar Pessoa";
             // 
             // dataGridView1
             // 
