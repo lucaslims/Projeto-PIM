@@ -21,5 +21,10 @@ namespace ClutchKinetcs
         {
 
         }
+
+        private void FormAttLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

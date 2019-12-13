@@ -77,7 +77,7 @@
             this.ID_PESSOA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.ID_PESSOA.HeaderText = "ID Pessoa";
             this.ID_PESSOA.Name = "ID_PESSOA";
-            this.ID_PESSOA.Width = 128;
+            this.ID_PESSOA.Width = 117;
             // 
             // Tipo_permissao
             // 
@@ -103,6 +103,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAttLogin";
             this.Text = "FormAttLogin";
+            this.Load += new System.EventHandler(this.FormAttLogin_Load);
             this.gbFuncionarioLog.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

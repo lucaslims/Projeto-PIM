@@ -19,7 +19,7 @@ namespace ClutchKinetcs
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FormSplash());
             //Application.Run(new FormLogin());
-            Application.Run(new FormMenuPrincipal());
+            Application.Run(new FormSplash());
         }
     }
 }
