@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace ClutchKinetcs
 {
-    public partial class FormAttLogin : Form
+    public partial class Form1 : Form
     {
-        public FormAttLogin()
+        public Form1()
         {
             InitializeComponent();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void FormAttLogin_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

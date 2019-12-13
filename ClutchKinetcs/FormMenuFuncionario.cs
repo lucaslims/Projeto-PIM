@@ -12,17 +12,44 @@ namespace ClutchKinetcs
 {
     public partial class FormMenuFuncionario : Form
     {
-        private FormMenuPrincipal formMenuPrincipal;
+        FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
 
-        public FormMenuFuncionario()
+        public FormMenuFuncionario(FormMenuPrincipal frmAnt)
         {
+            this.menuPrincipal = frmAnt;
             InitializeComponent();
         }
 
-        public FormMenuFuncionario(FormMenuPrincipal formMenuPrincipal)
+ 
+
+        private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            this.formMenuPrincipal = formMenuPrincipal;
-            InitializeComponent();
+            FormAttFuncionario cadPessoa = new FormAttFuncionario();
+            cadPessoa.TopLevel = false;
+            cadPessoa.FormBorderStyle = FormBorderStyle.None;
+            menuPrincipal.pnlPrincipal.Controls.Clear();
+            menuPrincipal.pnlPrincipal.Controls.Add(cadPessoa);
+            cadPessoa.Show();
+        }
+
+        private void btnConsulta_Click(object sender, EventArgs e)
+        {
+            FormConFuncionario cadPessoa = new FormConFuncionario();
+            cadPessoa.TopLevel = false;
+            cadPessoa.FormBorderStyle = FormBorderStyle.None;
+            menuPrincipal.pnlPrincipal.Controls.Clear();
+            menuPrincipal.pnlPrincipal.Controls.Add(cadPessoa);
+            cadPessoa.Show();
+        }
+
+        private void btnDeletar_Click(object sender, EventArgs e)
+        {
+            FormDelFuncionario cadPessoa = new FormDelFuncionario();
+            cadPessoa.TopLevel = false;
+            cadPessoa.FormBorderStyle = FormBorderStyle.None;
+            menuPrincipal.pnlPrincipal.Controls.Clear();
+            menuPrincipal.pnlPrincipal.Controls.Add(cadPessoa);
+            cadPessoa.Show();
         }
     }
 }

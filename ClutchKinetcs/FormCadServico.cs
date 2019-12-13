@@ -34,15 +34,26 @@ namespace ClutchKinetcs
         {
             connMySql = clsConexao.GetConexaoMySql();
             connSqlServer = clsConexao.GetConexaoSqlServer();
+            double quantidadestacional, total, total2, estacionamento,valped,quantped;
+            quantidadestacional = Convert.ToDouble(txtQuantEst.Text);
+            estacionamento = Convert.ToDouble(txtEstVal.Text);
 
+            total = quantidadestacional * estacionamento;
+            txtTotalEst.Text = Convert.ToString(total);
+
+            valped = Convert.ToDouble(txtValorPed.Text);
+            quantped = Convert.ToDouble(txtQuantPed.Text);
+
+            total2 = valped * quantped;
+
+            txtTotalPed.Text = Convert.ToString(total2);
             List<string> dadosServico = new List<string>();
             try
             {
                 dadosServico.Add(txtTotalEst.Text);
                 dadosServico.Add(txtTotalPed.Text);
 
-
-
+              
 
                 varGlob.InsereLog();
 

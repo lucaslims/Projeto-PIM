@@ -164,6 +164,7 @@
             this.btnDeletar.Size = new System.Drawing.Size(241, 31);
             this.btnDeletar.TabIndex = 67;
             this.btnDeletar.Tag = "Teste";
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
             // btnAtualizar
             // 
@@ -184,6 +185,7 @@
             this.btnAtualizar.Size = new System.Drawing.Size(241, 31);
             this.btnAtualizar.TabIndex = 66;
             this.btnAtualizar.Tag = "Teste";
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // btnConsulta
             // 
@@ -204,6 +206,7 @@
             this.btnConsulta.Size = new System.Drawing.Size(241, 32);
             this.btnConsulta.TabIndex = 65;
             this.btnConsulta.Tag = "Teste";
+            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
             // btnCadastro
             // 
