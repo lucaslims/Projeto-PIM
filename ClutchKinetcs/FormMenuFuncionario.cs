@@ -31,5 +31,25 @@ namespace ClutchKinetcs
             menuPrincipal.pnlPrincipal.Controls.Add(cadPessoa);
             cadPessoa.Show();
         }
+
+        private void btnConsulta_Click(object sender, EventArgs e)
+        {
+            FormConFuncionario cadPessoa = new FormConFuncionario();
+            cadPessoa.TopLevel = false;
+            cadPessoa.FormBorderStyle = FormBorderStyle.None;
+            menuPrincipal.pnlPrincipal.Controls.Clear();
+            menuPrincipal.pnlPrincipal.Controls.Add(cadPessoa);
+            cadPessoa.Show();
+        }
+
+        private void btnDeletar_Click(object sender, EventArgs e)
+        {
+            FormDelFuncionario cadPessoa = new FormDelFuncionario();
+            cadPessoa.TopLevel = false;
+            cadPessoa.FormBorderStyle = FormBorderStyle.None;
+            menuPrincipal.pnlPrincipal.Controls.Clear();
+            menuPrincipal.pnlPrincipal.Controls.Add(cadPessoa);
+            cadPessoa.Show();
+        }
     }
 }

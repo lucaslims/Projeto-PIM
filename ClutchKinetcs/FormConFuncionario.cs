@@ -68,5 +68,10 @@ namespace ClutchKinetcs
             catch (Exception ex) { MessageBox.Show("Erro" + ex, "Erro: ", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             finally { varGlob.FecharConexaoMySql(conMySql); }
         }
+
+        private void FormConFuncionario_Load(object sender, EventArgs e)
+        {
+            GridProdutos();
+        }
     }
 }

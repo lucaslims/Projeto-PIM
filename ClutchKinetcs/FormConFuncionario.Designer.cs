@@ -66,6 +66,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormConFuncionario";
             this.Text = "FormConFuncionario";
+            this.Load += new System.EventHandler(this.FormConFuncionario_Load);
             this.gbConsultaFuncionario.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
