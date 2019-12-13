@@ -131,25 +131,32 @@ namespace DAL
                 throw ex;
             }
         }
-        public clsPessoa SelectPessoaId(MySqlConnection conMySql, SqlConnection conServer, clsPessoa objPessoa)
+        public clsPessoa SelectPessoaId(MySqlConnection conMySql, SqlConnection conServer, clsPessoa objPessoa, clsGlobal varGlob)
         {
             string buscarPessoaID = "select * from tb_cd_pessoa where id = " + objPessoa.Id;
-
+            clsStatus objStatus = new clsStatus();
+            objPessoa.StatusPessoa = objStatus;
             try
             {
                 if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarPessoaID, conServer);
                     dr.Read();
-                    objPessoa.Nome = dr[1].ToString();
-                    objPessoa.StatusPessoa.Id = Convert.ToInt32(dr[2].ToString());
+                    {
+                        objPessoa.Nome = dr[1].ToString();
+                        objPessoa.StatusPessoa.Id = Convert.ToInt32(dr[2].ToString());
+                    }
+                    dr.Close();
                 }
                 else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarPessoaID, conMySql);
                     dr.Read();
-                    objPessoa.Nome = dr[1].ToString();
-                    objPessoa.StatusPessoa.Id = Convert.ToInt32(dr[2].ToString());
+                    
+                        objPessoa.Nome = dr[1].ToString();
+                        objPessoa.StatusPessoa.Id = Convert.ToInt32(dr[2].ToString());
+                    
+                    dr.Close();
                 }
 
                 return objPessoa;

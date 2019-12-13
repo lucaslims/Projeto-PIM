@@ -6,13 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Control;
+using DAL;
+using Model;
 using MySql.Data.MySqlClient;
 
 namespace DAL
 {
     public class clsDalLogin : SqlHelper
     {
-        clsGlobal varGlob = new clsGlobal();
+        MySqlConnection connMy = clsConexao.GetConexaoMySql();
+        SqlConnection connSqlSv = clsConexao.GetConexaoSqlServer();
+        clsGlobal varGlob;
 
         public bool InsertLogin(MySqlConnection conMySql, SqlConnection conServer, clsLogin objLogin)
         {
@@ -105,30 +109,45 @@ namespace DAL
             {
                 throw ex;
             }
-        }    
-        public clsLogin SelectLoginUserSenha(MySqlConnection conMySql, SqlConnection conServer, clsLogin objLogin)
+        }
+        public clsLogin SelectLoginUserSenha(MySqlConnection conMySql, SqlConnection conServer, clsLogin objLogin, clsGlobal varGlob)
         {
-            string buscarLoginID = "select * from TB_CD_LOGIN where login = '" + objLogin.Nome_login + "' and senha = '" + objLogin.Senha_login +"'";
+            string buscarLoginID = "select if(id_pessoa is null,0,id_pessoa) as id_pessoa, if(LOGIN is null,'',login) as login, if(senha is null,'',senha) as SENHA, if(ID_TIPO_PERMISSAO is null,0,ID_TIPO_PERMISSAO) as ID_TIPO_PERMISSAO      from TB_CD_LOGIN where login = '" + objLogin.Nome_login + "' and senha = '" + objLogin.Senha_login + "'";
+            clsDalPessoa dalPessoa = new clsDalPessoa();
+            clsPessoa objPessoa = new clsPessoa();
 
+            objLogin.Id_pessoa = objPessoa;
             try
-            { 
+            {
                 if (varGlob.BdConexao == "SqlServer")
                 {
                     SqlDataReader dr = RetornaDataReaderSqlServer(buscarLoginID, conServer);
                     dr.Read();
-                    objLogin.Id_pessoa.Id = Convert.ToInt32(dr[0].ToString());
-                    objLogin.Nome_login = dr[1].ToString();
-                    objLogin.Senha_login = dr[2].ToString();
-                    objLogin.Id_tipo_permissao.Id = Convert.ToInt32(dr[3].ToString());
+                    {
+                        objLogin.Id_pessoa.Id = Convert.ToInt32(dr[0].ToString());
+                        dalPessoa.AbrirConexaoSqlServer(connSqlSv);
+                        objPessoa = dalPessoa.SelectPessoaId(conMySql, connSqlSv, objPessoa, varGlob);
+                        dalPessoa.FecharConexaoSqlServer(connSqlSv);
+                        objLogin.Nome_login = dr[1].ToString();
+                        objLogin.Senha_login = dr[2].ToString();
+                        objLogin.Id_tipo_permissao.Id = Convert.ToInt32(dr[3].ToString());
+                    }
+                    dr.Close();
                 }
                 else if (varGlob.BdConexao == "MySql")
                 {
                     MySqlDataReader dr = RetornaDataReaderMySql(buscarLoginID, conMySql);
                     dr.Read();
-                    objLogin.Id_pessoa.Id = Convert.ToInt32(dr[0].ToString());
+
+                    objLogin.Id_pessoa.Id = Convert.ToInt32(dr[0]);
+                    dalPessoa.AbrirConexaoMySql(connMy);
+                    objPessoa = dalPessoa.SelectPessoaId(connMy, conServer, objPessoa, varGlob);
+                    dalPessoa.FecharConexaoMySql(connMy);
                     objLogin.Nome_login = dr[1].ToString();
                     objLogin.Senha_login = dr[2].ToString();
                     objLogin.Id_tipo_permissao.Id = Convert.ToInt32(dr[3].ToString());
+
+                    dr.Close();
                 }
 
                 return objLogin;

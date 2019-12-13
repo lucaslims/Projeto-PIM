@@ -57,8 +57,26 @@
             this.pnlPrincipal = new System.Windows.Forms.Panel();
             this.toolTipPessoas = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipVeiculos = new System.Windows.Forms.ToolTip(this.components);
+            this.bunifuTileButton1 = new Bunifu.Framework.UI.BunifuTileButton();
+            this.bunifuTileButton2 = new Bunifu.Framework.UI.BunifuTileButton();
+            this.bunifuTileButton3 = new Bunifu.Framework.UI.BunifuTileButton();
+            this.bunifuTileButton4 = new Bunifu.Framework.UI.BunifuTileButton();
+            this.bunifuTileButton5 = new Bunifu.Framework.UI.BunifuTileButton();
+            this.bunifuTileButton6 = new Bunifu.Framework.UI.BunifuTileButton();
+            this.bunifuTileButton7 = new Bunifu.Framework.UI.BunifuTileButton();
+            this.bunifuTileButton8 = new Bunifu.Framework.UI.BunifuTileButton();
+            this.lblBemVindoSistemaCK = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pnlOpcSW.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoSistema)).BeginInit();
+            this.pnlPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnRota
@@ -248,6 +266,7 @@
             this.btnMaximizeState.color = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnMaximizeState.colorActive = System.Drawing.Color.Maroon;
             this.btnMaximizeState.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaximizeState.Enabled = false;
             this.btnMaximizeState.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.btnMaximizeState.ForeColor = System.Drawing.Color.White;
             this.btnMaximizeState.Image = global::ClutchKinetcs.Properties.Resources.maximize;
@@ -462,6 +481,23 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnlPrincipal.Controls.Add(this.bunifuCustomLabel9);
+            this.pnlPrincipal.Controls.Add(this.bunifuCustomLabel8);
+            this.pnlPrincipal.Controls.Add(this.bunifuCustomLabel7);
+            this.pnlPrincipal.Controls.Add(this.bunifuCustomLabel6);
+            this.pnlPrincipal.Controls.Add(this.bunifuCustomLabel5);
+            this.pnlPrincipal.Controls.Add(this.bunifuCustomLabel4);
+            this.pnlPrincipal.Controls.Add(this.bunifuCustomLabel3);
+            this.pnlPrincipal.Controls.Add(this.bunifuCustomLabel2);
+            this.pnlPrincipal.Controls.Add(this.lblBemVindoSistemaCK);
+            this.pnlPrincipal.Controls.Add(this.bunifuTileButton8);
+            this.pnlPrincipal.Controls.Add(this.bunifuTileButton7);
+            this.pnlPrincipal.Controls.Add(this.bunifuTileButton6);
+            this.pnlPrincipal.Controls.Add(this.bunifuTileButton5);
+            this.pnlPrincipal.Controls.Add(this.bunifuTileButton4);
+            this.pnlPrincipal.Controls.Add(this.bunifuTileButton3);
+            this.pnlPrincipal.Controls.Add(this.bunifuTileButton2);
+            this.pnlPrincipal.Controls.Add(this.bunifuTileButton1);
             this.pnlPrincipal.Location = new System.Drawing.Point(330, 25);
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.Size = new System.Drawing.Size(950, 678);
@@ -474,6 +510,300 @@
             // toolTipVeiculos
             // 
             this.toolTipVeiculos.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
+            // bunifuTileButton1
+            // 
+            this.bunifuTileButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuTileButton1.color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuTileButton1.colorActive = System.Drawing.Color.Maroon;
+            this.bunifuTileButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTileButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.bunifuTileButton1.ForeColor = System.Drawing.Color.White;
+            this.bunifuTileButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuTileButton1.Image")));
+            this.bunifuTileButton1.ImagePosition = 20;
+            this.bunifuTileButton1.ImageZoom = 60;
+            this.bunifuTileButton1.LabelPosition = 0;
+            this.bunifuTileButton1.LabelText = "Teste";
+            this.bunifuTileButton1.Location = new System.Drawing.Point(44, 91);
+            this.bunifuTileButton1.Margin = new System.Windows.Forms.Padding(6);
+            this.bunifuTileButton1.Name = "bunifuTileButton1";
+            this.bunifuTileButton1.Size = new System.Drawing.Size(117, 113);
+            this.bunifuTileButton1.TabIndex = 51;
+            this.bunifuTileButton1.Tag = "Teste";
+            this.bunifuTileButton1.Click += new System.EventHandler(this.BtnPessoas_Click);
+            // 
+            // bunifuTileButton2
+            // 
+            this.bunifuTileButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuTileButton2.color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuTileButton2.colorActive = System.Drawing.Color.Maroon;
+            this.bunifuTileButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTileButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.bunifuTileButton2.ForeColor = System.Drawing.Color.White;
+            this.bunifuTileButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuTileButton2.Image")));
+            this.bunifuTileButton2.ImagePosition = 20;
+            this.bunifuTileButton2.ImageZoom = 60;
+            this.bunifuTileButton2.LabelPosition = 0;
+            this.bunifuTileButton2.LabelText = "";
+            this.bunifuTileButton2.Location = new System.Drawing.Point(261, 91);
+            this.bunifuTileButton2.Margin = new System.Windows.Forms.Padding(6);
+            this.bunifuTileButton2.Name = "bunifuTileButton2";
+            this.bunifuTileButton2.Size = new System.Drawing.Size(117, 113);
+            this.bunifuTileButton2.TabIndex = 51;
+            this.bunifuTileButton2.Click += new System.EventHandler(this.BtnVeiculos_Click);
+            // 
+            // bunifuTileButton3
+            // 
+            this.bunifuTileButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuTileButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuTileButton3.color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuTileButton3.colorActive = System.Drawing.Color.Maroon;
+            this.bunifuTileButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTileButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.bunifuTileButton3.ForeColor = System.Drawing.Color.White;
+            this.bunifuTileButton3.Image = ((System.Drawing.Image)(resources.GetObject("bunifuTileButton3.Image")));
+            this.bunifuTileButton3.ImagePosition = 20;
+            this.bunifuTileButton3.ImageZoom = 60;
+            this.bunifuTileButton3.LabelPosition = 0;
+            this.bunifuTileButton3.LabelText = "";
+            this.bunifuTileButton3.Location = new System.Drawing.Point(475, 91);
+            this.bunifuTileButton3.Margin = new System.Windows.Forms.Padding(6);
+            this.bunifuTileButton3.Name = "bunifuTileButton3";
+            this.bunifuTileButton3.Size = new System.Drawing.Size(117, 113);
+            this.bunifuTileButton3.TabIndex = 51;
+            this.bunifuTileButton3.Click += new System.EventHandler(this.BtnFuncionarios_Click);
+            // 
+            // bunifuTileButton4
+            // 
+            this.bunifuTileButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuTileButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuTileButton4.color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuTileButton4.colorActive = System.Drawing.Color.Maroon;
+            this.bunifuTileButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTileButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.bunifuTileButton4.ForeColor = System.Drawing.Color.White;
+            this.bunifuTileButton4.Image = ((System.Drawing.Image)(resources.GetObject("bunifuTileButton4.Image")));
+            this.bunifuTileButton4.ImagePosition = 20;
+            this.bunifuTileButton4.ImageZoom = 60;
+            this.bunifuTileButton4.LabelPosition = 0;
+            this.bunifuTileButton4.LabelText = "";
+            this.bunifuTileButton4.Location = new System.Drawing.Point(719, 91);
+            this.bunifuTileButton4.Margin = new System.Windows.Forms.Padding(6);
+            this.bunifuTileButton4.Name = "bunifuTileButton4";
+            this.bunifuTileButton4.Size = new System.Drawing.Size(117, 113);
+            this.bunifuTileButton4.TabIndex = 51;
+            this.bunifuTileButton4.Click += new System.EventHandler(this.BtnLocacao_Click);
+            // 
+            // bunifuTileButton5
+            // 
+            this.bunifuTileButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bunifuTileButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuTileButton5.color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuTileButton5.colorActive = System.Drawing.Color.Maroon;
+            this.bunifuTileButton5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTileButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.bunifuTileButton5.ForeColor = System.Drawing.Color.White;
+            this.bunifuTileButton5.Image = ((System.Drawing.Image)(resources.GetObject("bunifuTileButton5.Image")));
+            this.bunifuTileButton5.ImagePosition = 20;
+            this.bunifuTileButton5.ImageZoom = 60;
+            this.bunifuTileButton5.LabelPosition = 0;
+            this.bunifuTileButton5.LabelText = "";
+            this.bunifuTileButton5.Location = new System.Drawing.Point(44, 470);
+            this.bunifuTileButton5.Margin = new System.Windows.Forms.Padding(6);
+            this.bunifuTileButton5.Name = "bunifuTileButton5";
+            this.bunifuTileButton5.Size = new System.Drawing.Size(117, 113);
+            this.bunifuTileButton5.TabIndex = 52;
+            this.bunifuTileButton5.Click += new System.EventHandler(this.BtnServicos_Click);
+            // 
+            // bunifuTileButton6
+            // 
+            this.bunifuTileButton6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bunifuTileButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuTileButton6.color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuTileButton6.colorActive = System.Drawing.Color.Maroon;
+            this.bunifuTileButton6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTileButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.bunifuTileButton6.ForeColor = System.Drawing.Color.White;
+            this.bunifuTileButton6.Image = ((System.Drawing.Image)(resources.GetObject("bunifuTileButton6.Image")));
+            this.bunifuTileButton6.ImagePosition = 20;
+            this.bunifuTileButton6.ImageZoom = 60;
+            this.bunifuTileButton6.LabelPosition = 0;
+            this.bunifuTileButton6.LabelText = "";
+            this.bunifuTileButton6.Location = new System.Drawing.Point(261, 470);
+            this.bunifuTileButton6.Margin = new System.Windows.Forms.Padding(6);
+            this.bunifuTileButton6.Name = "bunifuTileButton6";
+            this.bunifuTileButton6.Size = new System.Drawing.Size(117, 113);
+            this.bunifuTileButton6.TabIndex = 51;
+            this.bunifuTileButton6.Click += new System.EventHandler(this.BtnLocalizacao_Click);
+            // 
+            // bunifuTileButton7
+            // 
+            this.bunifuTileButton7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuTileButton7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuTileButton7.color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuTileButton7.colorActive = System.Drawing.Color.Maroon;
+            this.bunifuTileButton7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTileButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.bunifuTileButton7.ForeColor = System.Drawing.Color.White;
+            this.bunifuTileButton7.Image = global::ClutchKinetcs.Properties.Resources.route;
+            this.bunifuTileButton7.ImagePosition = 20;
+            this.bunifuTileButton7.ImageZoom = 60;
+            this.bunifuTileButton7.LabelPosition = 0;
+            this.bunifuTileButton7.LabelText = "";
+            this.bunifuTileButton7.Location = new System.Drawing.Point(475, 470);
+            this.bunifuTileButton7.Margin = new System.Windows.Forms.Padding(6);
+            this.bunifuTileButton7.Name = "bunifuTileButton7";
+            this.bunifuTileButton7.Size = new System.Drawing.Size(117, 113);
+            this.bunifuTileButton7.TabIndex = 53;
+            this.bunifuTileButton7.Click += new System.EventHandler(this.BtnRota_Click);
+            // 
+            // bunifuTileButton8
+            // 
+            this.bunifuTileButton8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuTileButton8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuTileButton8.color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuTileButton8.colorActive = System.Drawing.Color.Maroon;
+            this.bunifuTileButton8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTileButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.bunifuTileButton8.ForeColor = System.Drawing.Color.White;
+            this.bunifuTileButton8.Image = global::ClutchKinetcs.Properties.Resources.folder;
+            this.bunifuTileButton8.ImagePosition = 20;
+            this.bunifuTileButton8.ImageZoom = 60;
+            this.bunifuTileButton8.LabelPosition = 0;
+            this.bunifuTileButton8.LabelText = "";
+            this.bunifuTileButton8.Location = new System.Drawing.Point(719, 470);
+            this.bunifuTileButton8.Margin = new System.Windows.Forms.Padding(6);
+            this.bunifuTileButton8.Name = "bunifuTileButton8";
+            this.bunifuTileButton8.Size = new System.Drawing.Size(117, 113);
+            this.bunifuTileButton8.TabIndex = 51;
+            // 
+            // lblBemVindoSistemaCK
+            // 
+            this.lblBemVindoSistemaCK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblBemVindoSistemaCK.AutoSize = true;
+            this.lblBemVindoSistemaCK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblBemVindoSistemaCK.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBemVindoSistemaCK.ForeColor = System.Drawing.Color.White;
+            this.lblBemVindoSistemaCK.Location = new System.Drawing.Point(115, 266);
+            this.lblBemVindoSistemaCK.Name = "lblBemVindoSistemaCK";
+            this.lblBemVindoSistemaCK.Size = new System.Drawing.Size(708, 146);
+            this.lblBemVindoSistemaCK.TabIndex = 51;
+            this.lblBemVindoSistemaCK.Text = "Bem Vindo Ao Sistema \r\nClutch Kinetics";
+            this.lblBemVindoSistemaCK.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblBemVindoSistemaCK.Click += new System.EventHandler(this.bunifuCustomLabel1_Click);
+            // 
+            // bunifuCustomLabel2
+            // 
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(68, 206);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(81, 24);
+            this.bunifuCustomLabel2.TabIndex = 54;
+            this.bunifuCustomLabel2.Text = "Pessoas";
+            this.bunifuCustomLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuCustomLabel2.Click += new System.EventHandler(this.bunifuCustomLabel2_Click);
+            // 
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.AutoSize = true;
+            this.bunifuCustomLabel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(279, 206);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(83, 24);
+            this.bunifuCustomLabel3.TabIndex = 55;
+            this.bunifuCustomLabel3.Text = "Veiculos";
+            this.bunifuCustomLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bunifuCustomLabel4
+            // 
+            this.bunifuCustomLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuCustomLabel4.AutoSize = true;
+            this.bunifuCustomLabel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(487, 206);
+            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(94, 24);
+            this.bunifuCustomLabel4.TabIndex = 56;
+            this.bunifuCustomLabel4.Text = "Motoristas";
+            this.bunifuCustomLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bunifuCustomLabel5
+            // 
+            this.bunifuCustomLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuCustomLabel5.AutoSize = true;
+            this.bunifuCustomLabel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(690, 206);
+            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
+            this.bunifuCustomLabel5.Size = new System.Drawing.Size(187, 24);
+            this.bunifuCustomLabel5.TabIndex = 57;
+            this.bunifuCustomLabel5.Text = "Locação de Veiculos";
+            this.bunifuCustomLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bunifuCustomLabel6
+            // 
+            this.bunifuCustomLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bunifuCustomLabel6.AutoSize = true;
+            this.bunifuCustomLabel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuCustomLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(56, 591);
+            this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
+            this.bunifuCustomLabel6.Size = new System.Drawing.Size(82, 24);
+            this.bunifuCustomLabel6.TabIndex = 58;
+            this.bunifuCustomLabel6.Text = "Serviços";
+            this.bunifuCustomLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bunifuCustomLabel7
+            // 
+            this.bunifuCustomLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bunifuCustomLabel7.AutoSize = true;
+            this.bunifuCustomLabel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuCustomLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel7.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(269, 591);
+            this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
+            this.bunifuCustomLabel7.Size = new System.Drawing.Size(109, 24);
+            this.bunifuCustomLabel7.TabIndex = 59;
+            this.bunifuCustomLabel7.Text = "Localização";
+            this.bunifuCustomLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bunifuCustomLabel8
+            // 
+            this.bunifuCustomLabel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuCustomLabel8.AutoSize = true;
+            this.bunifuCustomLabel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel8.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(504, 591);
+            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
+            this.bunifuCustomLabel8.Size = new System.Drawing.Size(57, 24);
+            this.bunifuCustomLabel8.TabIndex = 60;
+            this.bunifuCustomLabel8.Text = "Rotas";
+            this.bunifuCustomLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bunifuCustomLabel9
+            // 
+            this.bunifuCustomLabel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuCustomLabel9.AutoSize = true;
+            this.bunifuCustomLabel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuCustomLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel9.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(730, 591);
+            this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
+            this.bunifuCustomLabel9.Size = new System.Drawing.Size(93, 24);
+            this.bunifuCustomLabel9.TabIndex = 61;
+            this.bunifuCustomLabel9.Text = "Relatorios";
+            this.bunifuCustomLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormMenuPrincipal
             // 
@@ -508,6 +838,8 @@
             this.Click += new System.EventHandler(this.FormMenuPrincipal_Load);
             this.pnlOpcSW.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoSistema)).EndInit();
+            this.pnlPrincipal.ResumeLayout(false);
+            this.pnlPrincipal.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -542,5 +874,22 @@
         public System.Windows.Forms.Panel pnlPrincipal;
         private System.Windows.Forms.ToolTip toolTipPessoas;
         private System.Windows.Forms.ToolTip toolTipVeiculos;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblBemVindoSistemaCK;
+        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton8;
+        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton7;
+        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton6;
+        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton5;
+        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton4;
+        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton3;
+        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton2;
+        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton1;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
     }
 }
