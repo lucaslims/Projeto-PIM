@@ -52,7 +52,7 @@
             this.gbLocacao.Size = new System.Drawing.Size(878, 553);
             this.gbLocacao.TabIndex = 49;
             this.gbLocacao.TabStop = false;
-            this.gbLocacao.Text = "Atualizar Locacoa";
+            this.gbLocacao.Text = "Atualizar Locacao";
             // 
             // dataGridView1
             // 

@@ -20,6 +20,8 @@ namespace ClutchKinetcs
         int Y = 0;
 
         static clsGlobal varglob = new clsGlobal();
+
+        Point pointlbl = new Point();
          
         private void pnlOpcSW_MouseDown(object sender, MouseEventArgs e)
         {
@@ -56,6 +58,7 @@ namespace ClutchKinetcs
                 this.btnMaximizeState.Enabled = false;
                 this.btnNormalState.Visible = true;
                 this.btnNormalState.Enabled = true;
+               
             }
         }
 
@@ -76,12 +79,13 @@ namespace ClutchKinetcs
         }
         public FormMenuPrincipal(FormLogin formAnt, clsPessoa pessoaLogada)
         {
-            InitializeComponent();
             formAnt = frmLogin;
             this.pessoaLogada = pessoaLogada;
+            InitializeComponent();
             this.MouseDown += new MouseEventHandler(pnlOpcSW_MouseDown);
             this.MouseMove += new MouseEventHandler(pnlOpcSW_MouseMove);
-            TrocaBotoesMaximizeNormalWinState();
+            //TrocaBotoesMaximizeNormalWinState();
+            lblNomeUser.Text = pessoaLogada.Nome;
         }
 
         private void FormMenuPrincipal_Load(object sender, EventArgs e)
@@ -91,38 +95,7 @@ namespace ClutchKinetcs
             MySqlCommand command = conn.CreateCommand();
             MySqlDataReader dr;
 
-            try
-            {
-                //abrindo conexao
-                conn.Open();
-                {
-                    //comando de pesquisa de usuário
-                    command.CommandText = "SELECT FUNC_NOME Nome FROM tb_funcionario func inner join tb_login login on login.ID_LOGIN = func.FUNC_ID_LOGIN where login.ID_LOGIN = " +/* ClsGlobal.IdLogin */0 + ";";
-                    //execuxao do comando
-                    dr = command.ExecuteReader();
-                    //abrindo leitura de dados retornada pelo comando
-                    while (dr.Read())
-                    {
-                        //Pegando o total de usuarios retornados pela consulta
-                        lblNomeUser.Text = dr.GetString("Nome");
-                    }
-                    //fechando leitura de dados
-                    dr.Close();
-                }
-                //fechando conexao
-                conn.Close();
-
-            }
-            catch (Exception ex)
-            {
-                //Mensagem de erro caso não conectar ao banco de dados
-                MessageBox.Show("Erro: " + ex);
-
-            }
-
             lblNomeUser.Text = pessoaLogada.Nome;
-
-
             // Create the ToolTip and associate with the Form container.
             ToolTip toolTip1 = new ToolTip();
 
@@ -136,8 +109,6 @@ namespace ClutchKinetcs
             // Set up the ToolTip text for the Button and Checkbox.
             toolTip1.SetToolTip(this.btnPessoas, "Gerenciamento de Pessoas");
             toolTip1.SetToolTip(this.btnVeiculos, "Gerenciamento de Veiculos");
-
-
         }
 
         private void TimerHora_Tick(object sender, EventArgs e)
@@ -294,6 +265,16 @@ namespace ClutchKinetcs
         private void pnlOpcSW_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             TrocaBotoesMaximizeNormalWinState();
+        }
+
+        private void bunifuCustomLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuCustomLabel2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

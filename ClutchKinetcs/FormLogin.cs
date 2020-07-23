@@ -18,7 +18,7 @@ namespace ClutchKinetcs
     {
         MySqlConnection connMySql;
         SqlConnection connSqlServer;
-        clsGlobal varGlob = new clsGlobal();
+        clsGlobal varGlob;
         int X = 0;
         int Y = 0;
 
@@ -67,14 +67,10 @@ namespace ClutchKinetcs
                 user = txtUsuario.Text;
                 senha = txtSenha.Text;
 
-                clsPessoa pessoa = new clsPessoa();
-                clsTipoPermissao tipoPermissao = new clsTipoPermissao();
                 clsLogin login = new clsLogin();
 
-                login.Id_pessoa = pessoa;
                 login.Nome_login = user;
                 login.Senha_login = senha;
-                login.Id_tipo_permissao = tipoPermissao;
 
                 varGlob.InsereLog();
                 clsDalLogin dalLogin = new clsDalLogin();
@@ -88,37 +84,37 @@ namespace ClutchKinetcs
                     else if (varGlob.BdConexao == "SqlServer")
                         dalLogin.AbrirConexaoSqlServer(connSqlServer);
 
-                    login = dalLogin.SelectLoginUserSenha(connMySql, connSqlServer, login);
+                    login = dalLogin.SelectLoginUserSenha(connMySql, connSqlServer, login, varGlob);
                 }
                 catch (Exception ex) { MessageBox.Show("Usuário não encontrado! Erro: " + ex.Message); throw ex; }
                 finally { dalLogin.FecharConexaoMySql(connMySql); dalLogin.FecharConexaoSqlServer(connSqlServer); }
 
                 try
                 {
-                    if (varGlob.BdConexao == "MySql")
-                        dalLogin.AbrirConexaoMySql(connMySql);
-                    else if (varGlob.BdConexao == "SqlServer")
-                        dalLogin.AbrirConexaoSqlServer(connSqlServer);
-
-                    dalPessoa.SelectPessoaId(connMySql, connSqlServer, pessoa);
-
-                    //abrindo o form menu principal
-                    FormMenuPrincipal frmMenupcp = new FormMenuPrincipal(this, pessoa);
-                    //Ocuta o form
-                    this.Hide();
-                    //Muda a Opacidade do form menu principal para 0
-                    frmMenupcp.Opacity = 0;
-                    //Abre o form menu principal
-                    frmMenupcp.Show(this);
-                    //For para aumentar gradativamente a opacidade do form menu principal
-                    for (double i = 0; i <= 1; i += 0.1)
+                    if (login.Id_pessoa is null)
                     {
-                        //Acrescenta em 0.1 a opacidade do form
-                        frmMenupcp.Opacity = i;
-                        //Atualizao form menu principal
-                        frmMenupcp.Refresh();
-                        //Limitador da velocidade que o form seguinte irá aparecer
-                        System.Threading.Thread.Sleep(70);
+                        throw new Exception();
+                    }
+                    else
+                    {
+                        //abrindo o form menu principal
+                        FormMenuPrincipal frmMenupcp = new FormMenuPrincipal(this, login.Id_pessoa);
+                        //Ocuta o form
+                        this.Hide();
+                        //Muda a Opacidade do form menu principal para 0
+                        frmMenupcp.Opacity = 0;
+                        //Abre o form menu principal
+                        frmMenupcp.Show(this);
+                        //For para aumentar gradativamente a opacidade do form menu principal
+                        for (double i = 0; i <= 1; i += 0.1)
+                        {
+                            //Acrescenta em 0.1 a opacidade do form
+                            frmMenupcp.Opacity = i;
+                            //Atualizao form menu principal
+                            frmMenupcp.Refresh();
+                            //Limitador da velocidade que o form seguinte irá aparecer
+                            System.Threading.Thread.Sleep(70);
+                        }
                     }
                 }
                 catch (Exception ex) { MessageBox.Show("Usuário não encontrado! Erro: " + ex.Message); throw ex; }
@@ -126,6 +122,7 @@ namespace ClutchKinetcs
             }
             catch
             {
+                /*
                 MessageBox.Show("Erro de conexão ao utilizar metodo Orientado a Objeto", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 try
                 {
@@ -266,6 +263,7 @@ namespace ClutchKinetcs
                 {
                     MessageBox.Show("Erro de conexão ao utilizar metodo Antigo!!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                */
             }
         }
 

@@ -48,7 +48,7 @@ namespace ClutchKinetcs
 
                 // ele vai ignorar a query acima
                 //coloca ae o nome da tabela q nao lembro
-                query = "select*  from TB_NG_SERVICO ;";
+                query = "select *  from TB_NG_SERVICO ;";
                 //criado a query vc precisa
                 dt = varGlob.RetornaDataTableMySql(query, conMySql);
 
@@ -64,7 +64,7 @@ namespace ClutchKinetcs
 
         private void FormDelServico_Load(object sender, EventArgs e)
         {
-            GridProdutos(); 
+            GridProdutos();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -77,7 +77,7 @@ namespace ClutchKinetcs
                 DataTable dt;
 
                 string id;
-                id = Delete
+                id = Delete.Text;
                 try
                 {
                     varGlob.AbrirConexaoMySql(conMySql);
@@ -96,21 +96,17 @@ namespace ClutchKinetcs
 
                     // ele vai ignorar a query acima
                     //coloca ae o nome da tabela q nao lembro
-                    query = "delete from TB_NG_SERVICO;";
+                    query = "delete from TB_NG_SERVICO where id = " + dataGridView1.Rows[e.RowIndex].Cells[1].Value;
                     //criado a query vc precisa
                     dt = varGlob.RetornaDataTableMySql(query, conMySql);
 
-
-                    //esse foreach vc percorre as linhas do datatable q eu criei encima e add no gridview!!
                     dataGridView1.DataSource = dt;
-
-
                 }
                 catch (Exception ex) { MessageBox.Show("Erro" + ex, "Erro: ", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 finally { varGlob.FecharConexaoMySql(conMySql); }
             }
 
-        
+
             else if (result == DialogResult.No)
             {
 
